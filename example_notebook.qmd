@@ -1,10 +1,18 @@
 # Screen time: effects on sleep and mood
 
+Author: Niklas Edvall <br> Date: 2026-01-14
+
 ## Introduction
 
-Text here
+This report presents a mock-up cross-sectional survey study designed for instructional purposes. The dataset consists of 120 simulated respondents spanning a wide age range and representing students and staff within an academic setting.
+
+The survey includes basic demographic information, lifestyle factors such as daily screen time and sleep duration, and two brief, widely used mental health questionnaires: the [WHO-5 Well-Being Index](https://www.who.int/publications/m/item/WHO-UCN-MSD-MHE-2024.01) and the [PHQ-4](https://pubmed.ncbi.nlm.nih.gov/19996233/), measuring subjective well-being and symptoms of anxiety and depression, respectively.
+
+The data were simulated to reflect plausible real-world relationships with the primary aim to illustrate common analysis methods, including descriptive analysis, scale construction, correlation, and regression modeling, rather than to draw substantive conclusions.
 
 ```{r}
+#| echo: false
+
 # Load relevant packages
 library(arsenal) # Create descriptive tables
 library(ggplot2) # Make nice figures
@@ -24,14 +32,26 @@ dat$position <- factor(dat$position, levels = c(1,2,3,4,5), labels = c("Student"
 
 ## Data collection
 
-Data was collected via online survey between 2023-03-18 and 2023-07-30. The survey as advertised to students and staff at a Swedish university and required university log in details to complete but was otherwise anonymous.
-
-```{r}
-# Descriptives
-tab1 <- tableby(data = dat, Position ~ age + survey)
-summary(tab1, digits = 1, text = TRUE)
-```
+The survey was advertised to students and staff at a Swedish university and required university login credentials to access. Participation was voluntary, and no financial or other incentives were offered. Respondents completed the questionnaire in a single session, which typically required less than 10 minutes. No personally identifiable information was stored. The dataset used in this report is simulated and intended solely for educational purposes.
 
 ## Demographics
 
 Table 1 show age distribution
+
+```{r}
+#| results: asis
+#| echo: false
+# Descriptives
+tab1 <- tableby(data = dat, position ~ age + survey, 
+                digits = 1, 
+                test = FALSE,
+                numeric.stats = c("meansd"),
+                cat.stats = c("countpct"))
+cat('<div style="font-size: 12px;"><style>table td, table th { padding: 2px 8px; line-height: 1.2; }</style>')
+summary(tab1, labelTranslations = c(age = "Age (years)", survey = "Survey"))
+cat('</div>')
+```
+
+## Results
+
+Figures goes here
