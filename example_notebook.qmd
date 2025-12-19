@@ -1,0 +1,37 @@
+# Screen time: effects on sleep and mood
+
+## Introduction
+
+Text here
+
+```{r}
+# Load relevant packages
+library(arsenal) # Create descriptive tables
+library(ggplot2) # Make nice figures
+
+# Read in data
+dat <- read.csv("data/simdata1.csv")
+
+# Recode variables
+dat$sex <- factor(dat$sex, levels = c(1,2,3), labels = c("M", "F", "O"))
+dat$survey <- factor(dat$survey, levels = c(1,2,3,4), labels = c("Webpage", "Newsletter", "Colleagues", "Lecture"))
+dat$position <- factor(dat$position, levels = c(1,2,3,4,5), labels = c("Student", 
+                                                                       "PhD Candidate", 
+                                                                       "Staff", 
+                                                                       "Teacher", 
+                                                                       "Other staff"))
+```
+
+## Data collection
+
+Data was collected via online survey between 2023-03-18 and 2023-07-30. The survey as advertised to students and staff at a Swedish university and required university log in details to complete but was otherwise anonymous.
+
+```{r}
+# Descriptives
+tab1 <- tableby(data = dat, Position ~ age + survey)
+summary(tab1, digits = 1, text = TRUE)
+```
+
+## Demographics
+
+Table 1 show age distribution
