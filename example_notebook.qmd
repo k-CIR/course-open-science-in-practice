@@ -55,3 +55,44 @@ cat('</div>')
 ## Results
 
 Figures goes here
+
+```{r}
+#| echo: FALSE
+#| message: FALSE
+#| fig-align: center
+#| layout-ncol: 2
+
+# WHO-5 plot
+ggplot(dat, aes(x = WHO5_total, y = age)) +
+  geom_point(color = "dark grey") +
+  geom_smooth(method = "lm", se = FALSE, color = "blue") +
+  labs(
+    title = "WHO-5 Well-being vs Age",
+    x = "WHO-5 Well-being Score",
+    y = "Age (years)"
+  ) +
+  theme_minimal() +
+  theme(
+    axis.line = element_line(color = "black"),
+    plot.title = element_text(size = 14, hjust = 0.5),
+    axis.title = element_text(size = 12),
+    axis.text = element_text(size = 11)
+  )
+
+# PHQ-4 plot
+ggplot(dat, aes(x = PHQ4_total, y = age)) +
+  geom_point(color = "dark grey") +
+  geom_smooth(method = "lm", se = FALSE, color = "blue") +
+  labs(
+    title = "PHQ-4 vs Age",
+    x = "PHQ-4 Score",
+    y = "Age (years)"
+  ) +
+  theme_minimal() +
+  theme(
+    axis.line = element_line(color = "black"),
+    plot.title = element_text(size = 14, hjust = 0.5),
+    axis.title = element_text(size = 12),
+    axis.text = element_text(size = 11)
+  )
+```
