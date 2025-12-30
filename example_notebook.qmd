@@ -32,6 +32,9 @@ axis_text_size <- 14
 # Read in data
 dat <- read.csv("data/simdata1.csv")
 
+# Fix age data: convert birthyear to age for any four-digit values
+dat$age[dat$age > 999] <- 2026 - dat$age[dat$age > 999]
+
 # Recode variables
 dat$sex <- factor(dat$sex, levels = c(1,2,3), labels = c("M", "F", "O"))
 dat$survey <- factor(dat$survey, levels = c(1,2,3,4), labels = c("Webpage", "Newsletter", "Colleagues", "Lecture"))
@@ -42,6 +45,10 @@ dat$position <- factor(dat$position, levels = c(1,2,3,4,5), labels = c("Student"
                                                                        "Other staff"))
 dat$sleep_cat <- cut(dat$sleep, breaks = c(0,6,9,24), 
                         labels = c("Short (<6)", "Normal (6-9)", "Long (>9)"), right = FALSE)
+
+# Calculate questionnaire totals
+dat$WHO5_total <- rowSums(dat[, grep("WHO5_item", names(dat))])
+dat$PHQ4_total <- rowSums(dat[, grep("PHQ4_item", names(dat))])
 ```
 
 ## Data collection

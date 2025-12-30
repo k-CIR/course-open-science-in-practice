@@ -140,6 +140,10 @@ who_items <- replicate(5, {
 
 colnames(who_items) <- paste0("WHO5_item", 1:5)
 
+# Create problem - age as birthyear for teaching purposes
+troublemaker <- sample(n, 1)
+age[troublemaker] <- 2026 - age[troublemaker]
+
 # Assemble dataset
 data <- data.frame(
   age = age,
@@ -154,13 +158,13 @@ data <- data.frame(
 )
 
 # Optional total scores (useful for teaching)
-data$WHO5_total <- rowSums(data[, grep("WHO5_item", names(data))])
-data$PHQ4_total <- rowSums(data[, grep("PHQ4_item", names(data))])
+# data$WHO5_total <- rowSums(data[, grep("WHO5_item", names(data))])
+# data$PHQ4_total <- rowSums(data[, grep("PHQ4_item", names(data))])
 
 # Quick sanity checks
 cor(data$screen_time, data$sleep)
-cor(data$screen_time, data$WHO5_total)
-cor(data$screen_time, data$PHQ4_total)
+#cor(data$screen_time, data$WHO5_total)
+#cor(data$screen_time, data$PHQ4_total)
 cor(data$age, data$screen_time)
 
 write.csv(data, "data/simdata1.csv")
