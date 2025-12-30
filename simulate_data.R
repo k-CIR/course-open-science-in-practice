@@ -25,6 +25,10 @@ survey <- sample(
   prob = c(0.05, 0.60, 0.15, 0.20)
 )
 
+# Set 3 random observations to missing
+missing_indices <- sample(1:n, size = 3)
+survey[missing_indices] <- NA
+
 # ----------------------------
 # Position
 # 1 = student
@@ -101,7 +105,7 @@ screen_time <- pmin(pmax(screen_time, 0), 11)
 # Mean around 7, range 4–10
 sleep <- 7 -
   0.35 * (screen_time - mean(screen_time)) +
-  rnorm(n, 0, 0.8)
+  rnorm(n, 0, 1.2)
 
 sleep <- pmin(pmax(sleep, 4), 10)
 
