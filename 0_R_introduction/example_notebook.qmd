@@ -30,7 +30,7 @@ axis_title_size <- 16
 axis_text_size <- 14
 
 # Read in data
-dat <- read.csv("data/simdata1.csv")
+dat <- read.csv("../data/simdata1.csv")
 
 # Fix age data: convert birthyear to age for any four-digit values
 dat$age[dat$age > 999] <- 2026 - dat$age[dat$age > 999]
@@ -68,8 +68,8 @@ Survey recruitment methods showed differential effectiveness, with the majority 
 tab1 <- tableby(data = dat, position ~ age + survey, 
                 digits = 1, 
                 test = FALSE,
-                numeric.stats = c("meansd", "N"),
-                cat.stats = c("countpct", "N"))
+                numeric.stats = c("meansd", "Nmiss"),
+                cat.stats = c("countpct", "Nmiss"))
 cat('<div style="font-size: 16px;"><style>table td, table th { padding: 2px 8px; line-height: 1.2; }</style>')
 summary(tab1, labelTranslations = c(age = "Age (years)", survey = "Survey"))
 cat('</div>')
