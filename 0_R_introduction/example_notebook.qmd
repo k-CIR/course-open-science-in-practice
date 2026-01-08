@@ -30,7 +30,7 @@ axis_title_size <- 16
 axis_text_size <- 14
 
 # Read in data
-dat <- read.csv("../data/simdata1.csv")
+dat <- read.csv("data/simdata1.csv")
 
 # Fix age data: convert birthyear to age for any four-digit values
 dat$age[dat$age > 999] <- 2026 - dat$age[dat$age > 999]
