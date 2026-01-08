@@ -167,4 +167,8 @@ cor(data$screen_time, data$sleep)
 #cor(data$screen_time, data$PHQ4_total)
 cor(data$age, data$screen_time)
 
+# Make dir if doesn't exist
+if (!dir.exists("data")) {
+  dir.create("data")
+}
 write.csv(data, "data/simdata1.csv")
