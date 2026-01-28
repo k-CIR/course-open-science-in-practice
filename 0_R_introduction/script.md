@@ -1,6 +1,6 @@
 In this video, you will learn how to go from a raw data table like this \[on screen\] to a result report like this \[on screen\] using the R programming language for statistical computing.
 
-Firstly R is the programming language and there are plenty of ways to interact with it. The most basic is in a command window or terminal like this.
+Firstly, R is the programming language and there are plenty of ways to interact with it. The most basic is in a command window or terminal like this.
 
 > *Open command window*
 
@@ -20,7 +20,7 @@ Essentially R is a calculator and in this command window you can perform differe
 [1] 5
 ```
 
-The 1 in brackets that we see before the returned value just tells us that we had 1 value returned. For longer or more complex output it is numbered like this to make it easier to gauge the size of the output.
+The 1 in brackets that we see before the returned value just tells us that we had 1 value returned. For longer or more complex output, it is numbered like this to make it easier to gauge the size of the output.
 
 The nice thing is that you can combine data into variables and then use operations on those variables. If we for example give the variable `small` the value 3 and then give the variable `bigger` the value 11 - we can add these two up.
 
@@ -37,7 +37,7 @@ small + bigger
 
 Variables are a representation of something - in this case just two numbers. One of the more difficult things in R, and programming in general, is to come up with short but descriptive variable names.
 
-Many programming languages use the equals sign to assign variables, but the convention in R is to use an arrow to assign variables, this is not a special character - simply type the smaller-than symbol followed by a dash on your keyboard to assign a variable.
+Many programming languages use the equals sign to assign variables, but the convention in R is to use an arrow to assign variables, this is not a special character - simply type the smaller-than symbol followed by a dash on your keyboard.
 
 #### \[Chime\] - Use an arrow to assign a variable with information/data.
 
@@ -87,7 +87,7 @@ Now, if we have some data - say we measured how many centimeters tall some of or
 tall <- c(167, 153, 187, 202, 173, 172)
 ```
 
-We can now use different built in functions to get some descriptives of our data. Commonly we are interested in how much data we have, the mean value of our data, and its standard deviation. We can start finding this out by using the function `length()` for getting information on the length of our variable, meaning how many values it is containing.
+We can now use different built in functions to get some descriptives of our data. Commonly we are interested in how much data we have, the mean value of our data, and its standard deviation. We can start finding this out by using the function `length()` for getting information on the length of our variable, meaning how many values it's containing.
 
 ``` r
 length(tall)
@@ -116,6 +116,15 @@ sd(tall)
 ```
 
 We see our standard deviation is `16.91942`, which is a measure of how spread out our observations are from the mean, a measurement of or datas distribution.
+
+-----------------------------
+Now, the point with R is that you can write an analysis script for your data. This makes your analysis 100% transparent and reproducible. Basically, this means writing down all the functions and processing steps in a text file that we can execute with R. 
+
+To simplify this, there are different programs called _Integrated Development Environment_ or IDEs available to facilitate writing code. A few popular examples of these are Spyder for writing Python, Rstudio for writing R, or VScode for a general-purpose code editor. Using an IDE lets you browse through variables, view plots, figures and tables and test run code to build up your analysis piece by piece.
+
+In this video, we'll be using the IDE _Positron_ developed by Posit, which is freely available to download from https://positron.posit.co/ 
+
+
 
 Getting started with R, all the different functions available may seem overwhelming. The goal is not to memorize functions, the most common ones will become familiar with practical experience. Rather, you should start by laying out the different steps required to go from raw data to result - the endpoint can be either a statistical result or a visualization. Personally I like to ask
 
