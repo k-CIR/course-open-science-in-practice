@@ -1,23 +1,5 @@
-## Teaching material for PhD course: Open science in practice
+<img width="1536" height="1024" alt="image" src="https://github.com/user-attachments/assets/ca2ba0a0-ff11-42bb-b3ab-fba37fe08775" />
 
-## 0_R_introduction
+## K8F6106: Open Science in Practice: Collaborative Research with Git
 
-Material for video lecture introducing R programming language and basic concepts. Meant as a primer before course starts.
-
--   script.md - Script for video lecture.
--   example_notebook.qmd - Generate an example report as learning outcome of lecture.
-
-
-## TODO
-- Make an additional dataset similar to the first
-- Make an advanced dataset with simulated 1 sek ERP, 1 file per subject
-
-## Proposed reading material
-An invitation to reproducible computational research <br>
-https://academic.oup.com/biostatistics/article/11/3/385/257703
-
-Toward standard practices for sharing computer code and programs in neuroscience <br>
-https://www.nature.com/articles/nn.4550
-
-Towards readable code in neuroscience <br>
-https://www.nature.com/articles/s41583-021-00450-y
+This repository gather information and tutorials for a course given at Karolinska Institutet in the fall of 2026. Application will be open between 15th of April and 5th of May 2026.
