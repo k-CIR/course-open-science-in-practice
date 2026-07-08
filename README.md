@@ -13,6 +13,6 @@ This repository gather information and tutorials for a course given at Karolinsk
 - Benefit from a workflow where structure and documentation lead to transparency and reproducibility.
 
 <p align="center">
-<img width="400" height="380" alt="ai-banner_crop" src="https://github.com/user-attachments/assets/8f1a45e1-1da0-4013-8ae6-80850998a995" />
+<img width="750" height="380" alt="ai-banner_crop" src="https://github.com/user-attachments/assets/8f1a45e1-1da0-4013-8ae6-80850998a995" />
 </p>
 <br>
