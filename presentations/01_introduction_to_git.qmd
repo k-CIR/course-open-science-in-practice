@@ -1,7 +1,7 @@
 ---
 title: "Introduction to Git"
-subtitle: "Version control fundamentals for collaborative research"
-author: "Open Science in Practice"
+subtitle: "Open Science in Practice: collaborative research using git"
+author: "Niklas Edvall & Andreas Gerhardsson"
 format:
   revealjs:
     theme: simple
@@ -145,6 +145,14 @@ A commit is:
 - author + timestamp metadata
 - a message explaining the change
 - a pointer to one or more parent commits
+
+## Important terms
+
+- terminal
+- flag
+- commands
+
+
 
 ## Commit History as a Graph
 
