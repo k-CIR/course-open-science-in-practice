@@ -1,14 +1,13 @@
----
-title: "intro to Git"
-author: "Niklas Edvall & Andreas Gerhardsson"
----
+
+# Intro to Git
 
 - Format: Lecture 
 - Teacher: Andreas
 
-!!! todo "Content TODO"
+!!! todo "Content TODO :octicons-video-24:"
     This session page is a placeholder. Add learning goals,
     materials, exercises, and links here.
+
 
 
 ## Why Git?
