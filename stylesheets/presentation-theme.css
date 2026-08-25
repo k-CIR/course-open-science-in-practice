@@ -1,0 +1,594 @@
+/* ============================================================
+   presentation-theme.css
+   Course theme for K8F6106 – Open Science in Practice
+   Adapted from ../main/presentations/styles.css
+   ============================================================ */
+
+/* ── Google Fonts ─────────────────────────────────────────── */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap");
+
+/* ── Brand palette ───────────────────────────────────────── */
+:root {
+  --course-bg:           #4f0433;
+  --course-bg-raised:    #3a0326;
+  --course-bg-sunken:    #2a0120;
+  --course-bg-overlay:   rgba(0, 0, 0, 0.25);
+
+  --course-fg:           #ffffff;
+  --course-fg-muted:     rgba(255, 255, 255, 0.72);
+  --course-fg-subtle:    rgba(255, 255, 255, 0.40);
+
+  --course-accent:       #ffb3d1;
+  --course-accent-strong:#ff8fbf;
+  --course-accent-dim:   rgba(255, 143, 191, 0.15);
+
+  --course-border:       rgba(255, 255, 255, 0.14);
+  --course-border-strong:rgba(255, 255, 255, 0.28);
+  --course-shadow-sm:    0 2px  8px rgba(0, 0, 0, 0.35);
+  --course-shadow-md:    0 6px 20px rgba(0, 0, 0, 0.45);
+  --course-shadow-lg:    0 12px 36px rgba(0, 0, 0, 0.55);
+
+  --course-radius-sm:    0.35em;
+  --course-radius-md:    0.55em;
+  --course-radius-lg:    0.85em;
+  --course-radius-pill:  999px;
+}
+
+/* ── Light scheme ────────────────────────────────────────── */
+[data-md-color-scheme="default"] {
+  --md-default-bg-color:           var(--course-bg);
+  --md-default-bg-color--light:    var(--course-bg-raised);
+  --md-default-bg-color--lighter:  rgba(255, 255, 255, 0.04);
+  --md-default-bg-color--lightest: rgba(255, 255, 255, 0.02);
+
+  --md-default-fg-color:           var(--course-fg);
+  --md-default-fg-color--light:    var(--course-fg-muted);
+  --md-default-fg-color--lighter:  var(--course-fg-subtle);
+  --md-default-fg-color--lightest: rgba(255, 255, 255, 0.14);
+
+  --md-primary-fg-color:           var(--course-bg-sunken);
+  --md-primary-fg-color--light:    var(--course-bg-raised);
+  --md-primary-fg-color--dark:     #1a000f;
+  --md-primary-bg-color:           var(--course-fg);
+  --md-primary-bg-color--light:    var(--course-fg-muted);
+
+  --md-accent-fg-color:            var(--course-accent-strong);
+  --md-accent-fg-color--transparent: var(--course-accent-dim);
+  --md-accent-bg-color:            var(--course-fg);
+
+  --md-code-fg-color:              var(--course-fg);
+  --md-code-bg-color:              var(--course-bg-raised);
+  --md-code-hl-color:              var(--course-accent-dim);
+
+  --md-typeset-a-color:            var(--course-accent-strong);
+  --md-typeset-mark-color:         rgba(255, 179, 209, 0.28);
+  --md-typeset-kbd-color:          var(--course-fg);
+  --md-typeset-kbd-accent-color:   var(--course-bg-raised);
+  --md-typeset-kbd-border-color:   var(--course-border-strong);
+
+  --md-admonition-bg-color:        var(--course-bg-overlay);
+  --md-footer-bg-color:            var(--course-bg-sunken);
+  --md-footer-bg-color--dark:      #1a000f;
+  --md-shadow-z1:                  var(--course-shadow-sm);
+  --md-shadow-z2:                  var(--course-shadow-md);
+  --md-shadow-z3:                  var(--course-shadow-lg);
+}
+
+/* ── Dark scheme — slightly lighter surface so contrast is comfortable ── */
+[data-md-color-scheme="slate"] {
+  --md-default-bg-color:           #3a0326;
+  --md-default-bg-color--light:    #2a0120;
+  --md-default-bg-color--lighter:  rgba(255, 255, 255, 0.04);
+  --md-default-bg-color--lightest: rgba(255, 255, 255, 0.02);
+
+  --md-default-fg-color:           var(--course-fg);
+  --md-default-fg-color--light:    var(--course-fg-muted);
+  --md-default-fg-color--lighter:  var(--course-fg-subtle);
+  --md-default-fg-color--lightest: rgba(255, 255, 255, 0.14);
+
+  --md-primary-fg-color:           #1a000f;
+  --md-primary-fg-color--light:    var(--course-bg-sunken);
+  --md-primary-fg-color--dark:     #0f0009;
+  --md-primary-bg-color:           var(--course-fg);
+  --md-primary-bg-color--light:    var(--course-fg-muted);
+
+  --md-accent-fg-color:            var(--course-accent);
+  --md-accent-fg-color--transparent: var(--course-accent-dim);
+
+  --md-code-fg-color:              var(--course-fg);
+  --md-code-bg-color:              #1a000f;
+
+  --md-typeset-a-color:            var(--course-accent);
+  --md-admonition-bg-color:        rgba(0, 0, 0, 0.30);
+  --md-footer-bg-color:            #1a000f;
+  --md-footer-bg-color--dark:      #0f0009;
+}
+
+/* ── Base typography ─────────────────────────────────────── */
+body,
+.md-typeset,
+input,
+button,
+select,
+textarea {
+  font-family: "Inter", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Comfortable reading width and line-height for prose */
+.md-typeset {
+  font-size: 0.8rem;
+  line-height: 1.75;
+  color: var(--course-fg);
+}
+
+.md-content__inner {
+  max-width: 860px;
+}
+
+/* ── Headings ────────────────────────────────────────────── */
+.md-typeset h1,
+.md-typeset h2,
+.md-typeset h3,
+.md-typeset h4,
+.md-typeset h5,
+.md-typeset h6 {
+  font-family: "Inter", sans-serif;
+  color: var(--course-fg);
+  letter-spacing: 0.01em;
+  line-height: 1.25;
+}
+
+.md-typeset h1 {
+  font-size: 2em;
+  font-weight: 700;
+  text-shadow: var(--course-shadow-sm);
+  margin-bottom: 0.6em;
+}
+
+.md-typeset h2 {
+  font-size: 1.4em;
+  font-weight: 600;
+  border-bottom: 2px solid var(--course-accent);
+  padding-bottom: 0.3em;
+  margin-top: 2em;
+}
+
+.md-typeset h3 {
+  font-size: 1.15em;
+  font-weight: 600;
+  color: var(--course-accent);
+}
+
+.md-typeset h4,
+.md-typeset h5,
+.md-typeset h6 {
+  font-size: 1em;
+  font-weight: 600;
+  color: var(--course-fg-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+/* ── Paragraphs and prose ────────────────────────────────── */
+.md-typeset p {
+  color: var(--course-fg-muted);
+  margin-bottom: 1em;
+}
+
+.md-typeset strong {
+  color: var(--course-fg);
+  font-weight: 600;
+}
+
+.md-typeset em {
+  color: var(--course-accent);
+  font-style: italic;
+}
+
+/* ── Links ───────────────────────────────────────────────── */
+.md-typeset a {
+  color: var(--course-accent-strong);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255, 143, 191, 0.35);
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+
+.md-typeset a:hover {
+  color: var(--course-accent);
+  border-bottom-color: var(--course-accent);
+}
+
+.md-nav__link:hover,
+.md-nav__link--active {
+  color: var(--course-accent) !important;
+}
+
+.md-tabs__link:hover,
+.md-tabs__link--active {
+  color: var(--course-accent) !important;
+}
+
+/* ── Header ───────────────────────────────────────────────── */
+.md-header {
+  background-color: var(--course-bg-sunken);
+  box-shadow: var(--course-shadow-md);
+  border-bottom: 1px solid var(--course-border);
+  color: var(--course-fg);
+}
+
+.md-header__title {
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  color: var(--course-fg);
+}
+
+.md-header__button {
+  color: var(--course-fg-muted);
+}
+
+.md-header__button:hover {
+  color: var(--course-accent);
+}
+
+/* ── Top navigation tabs ──────────────────────────────────── */
+.md-tabs {
+  background-color: var(--course-bg-sunken);
+  border-bottom: 1px solid var(--course-border);
+}
+
+.md-tabs__link {
+  color: var(--course-fg-muted) !important;
+  opacity: 1;
+  transition: color 0.15s ease;
+}
+
+.md-tabs__link:hover,
+.md-tabs__link--active {
+  color: var(--course-accent) !important;
+}
+
+/* ── Sidebar shell ────────────────────────────────────────── */
+.md-sidebar {
+  background-color: var(--course-bg-sunken);
+}
+
+.md-sidebar__scrollwrap {
+  background-color: var(--course-bg-sunken);
+}
+
+.md-sidebar__inner {
+  background-color: var(--course-bg-sunken);
+}
+
+/* ── Nav tree ─────────────────────────────────────────────── */
+.md-nav {
+  font-size: 0.75rem;
+  background-color: var(--course-bg-sunken);
+}
+
+/* Section / top-level labels */
+.md-nav__title {
+  background-color: var(--course-bg-sunken);
+  border-bottom: 1px solid var(--course-border);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  font-size: 0.7rem;
+  color: var(--course-fg-subtle);
+}
+
+/* All nav links — base state */
+.md-nav__link {
+  color: var(--course-fg-muted) !important;
+  transition: color 0.15s ease, background-color 0.15s ease;
+  border-radius: var(--course-radius-sm);
+  padding: 0.2em 0.5em;
+}
+
+/* Hover */
+.md-nav__link:hover {
+  color: var(--course-accent) !important;
+  background-color: var(--course-accent-dim);
+}
+
+/* Active / current page */
+.md-nav__link--active,
+.md-nav__item--active > .md-nav__link {
+  color: var(--course-accent-strong) !important;
+  font-weight: 600;
+}
+
+/* Section toggle arrows */
+.md-nav__icon {
+  color: var(--course-fg-subtle);
+  transition: color 0.15s ease;
+}
+
+.md-nav__item:hover > .md-nav__link .md-nav__icon {
+  color: var(--course-accent);
+}
+
+/* ── Search ──────────────────────────────────────────────── */
+.md-search__form {
+  background-color: var(--course-bg-raised);
+  border: 1px solid var(--course-border);
+  border-radius: var(--course-radius-pill);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.md-search__form:focus-within {
+  border-color: var(--course-accent-strong);
+  box-shadow: 0 0 0 3px var(--course-accent-dim);
+}
+
+.md-search__input {
+  color: var(--course-fg);
+}
+
+.md-search__output {
+  background-color: var(--course-bg-raised);
+  border: 1px solid var(--course-border);
+  border-radius: var(--course-radius-md);
+  box-shadow: var(--course-shadow-lg);
+}
+
+.md-search-result__link:hover {
+  background-color: var(--course-accent-dim);
+}
+
+.md-search-result__title {
+  color: var(--course-fg);
+}
+
+.md-search-result__teaser {
+  color: var(--course-fg-muted);
+}
+
+/* ── Code ────────────────────────────────────────────────── */
+.md-typeset code {
+  font-family: "JetBrains Mono", "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+  font-size: 0.85em;
+  background: var(--course-bg-overlay);
+  border: 1px solid var(--course-border);
+  border-radius: var(--course-radius-sm);
+  color: var(--course-accent);
+  padding: 0.15em 0.4em;
+}
+
+.md-typeset pre {
+  border-radius: var(--course-radius-md);
+  box-shadow: var(--course-shadow-md);
+  border: 1px solid var(--course-border);
+}
+
+.md-typeset pre > code {
+  font-size: 0.82em;
+  line-height: 1.65;
+  background: var(--course-bg-raised);
+  color: var(--course-fg);
+  border: none;
+  padding: 0;
+  border-radius: 0;
+}
+
+/* Code copy button */
+.md-clipboard {
+  color: var(--course-fg-muted);
+  transition: color 0.15s ease;
+}
+.md-clipboard:hover { color: var(--course-accent); }
+
+/* ── Keyboard keys ───────────────────────────────────────── */
+.md-typeset kbd {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.8em;
+  background: var(--course-bg-raised);
+  border: 1px solid var(--course-border-strong);
+  border-bottom-width: 3px;
+  border-radius: var(--course-radius-sm);
+  color: var(--course-fg);
+  padding: 0.15em 0.45em;
+  box-shadow: none;
+}
+
+/* ── Blockquotes ─────────────────────────────────────────── */
+.md-typeset blockquote {
+  border-left: 4px solid var(--course-accent-strong);
+  background: var(--course-bg-overlay);
+  border-radius: 0 var(--course-radius-md) var(--course-radius-md) 0;
+  color: var(--course-fg-muted);
+  box-shadow: var(--course-shadow-sm);
+  padding: 0.75em 1.1em;
+  margin: 1.25em 0;
+}
+
+.md-typeset blockquote p {
+  color: inherit;
+  margin-bottom: 0;
+}
+
+/* ── Tables ──────────────────────────────────────────────── */
+.md-typeset table:not([class]) {
+  border-collapse: collapse;
+  width: 100%;
+  font-size: 0.88em;
+  border-radius: var(--course-radius-md);
+  overflow: hidden;
+  box-shadow: var(--course-shadow-sm);
+}
+
+.md-typeset table:not([class]) th,
+.md-typeset table:not([class]) td {
+  border: 1px solid var(--course-border);
+  padding: 0.6em 0.9em;
+  color: var(--course-fg-muted);
+}
+
+.md-typeset table:not([class]) th {
+  background: var(--course-bg-sunken);
+  color: var(--course-fg);
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.8em;
+  letter-spacing: 0.05em;
+}
+
+.md-typeset table:not([class]) tbody tr {
+  background: var(--course-bg-overlay);
+  transition: background 0.12s ease;
+}
+
+.md-typeset table:not([class]) tbody tr:hover {
+  background: rgba(255, 143, 191, 0.07);
+}
+
+/* ── Admonitions ─────────────────────────────────────────── */
+.md-typeset .admonition,
+.md-typeset details {
+  background: var(--course-bg-overlay);
+  border-color: var(--course-accent-strong);
+  border-radius: var(--course-radius-md);
+  box-shadow: var(--course-shadow-sm);
+  font-size: 0.85em;
+}
+
+.md-typeset .admonition-title,
+.md-typeset summary {
+  background: rgba(255, 143, 191, 0.10);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.md-typeset .admonition-title::before,
+.md-typeset summary::before {
+  color: var(--course-accent-strong);
+}
+
+/* ── Task lists ──────────────────────────────────────────── */
+.md-typeset .task-list-item [type="checkbox"] {
+  accent-color: var(--course-accent-strong);
+}
+
+/* ── Tabs (pymdownx.tabbed) ──────────────────────────────── */
+.md-typeset .tabbed-labels > label {
+  color: var(--course-fg-muted);
+  font-weight: 500;
+  font-size: 0.82em;
+  letter-spacing: 0.03em;
+  border-bottom: 2px solid transparent;
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+
+.md-typeset .tabbed-labels > label:hover {
+  color: var(--course-fg);
+}
+
+.md-typeset .tabbed-labels > label.tabbed-labels--linked:hover,
+.md-typeset .tabbed-set > input:checked + .tabbed-labels > label {
+  color: var(--course-accent-strong);
+  border-bottom-color: var(--course-accent-strong);
+}
+
+.md-typeset .tabbed-content {
+  background: var(--course-bg-overlay);
+  border: 1px solid var(--course-border);
+  border-radius: 0 var(--course-radius-md) var(--course-radius-md) var(--course-radius-md);
+  box-shadow: var(--course-shadow-sm);
+}
+
+/* ── Buttons ─────────────────────────────────────────────── */
+.md-typeset .md-button {
+  border-radius: var(--course-radius-pill);
+  font-weight: 600;
+  font-size: 0.8em;
+  letter-spacing: 0.03em;
+  padding: 0.5em 1.4em;
+  border: 2px solid var(--course-accent-strong);
+  color: var(--course-accent-strong);
+  transition: background 0.15s ease, color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.md-typeset .md-button:hover {
+  background: var(--course-accent-strong);
+  color: var(--course-bg-sunken);
+  box-shadow: var(--course-shadow-sm);
+}
+
+.md-typeset .md-button--primary {
+  background: var(--course-accent-strong);
+  color: var(--course-bg-sunken);
+}
+
+.md-typeset .md-button--primary:hover {
+  background: var(--course-accent);
+  border-color: var(--course-accent);
+  color: var(--course-bg-sunken);
+}
+
+/* ── Back-to-top button ──────────────────────────────────── */
+.md-top {
+  border-radius: var(--course-radius-pill);
+  background: var(--course-bg-raised);
+  border: 1px solid var(--course-border);
+  color: var(--course-fg-muted);
+  box-shadow: var(--course-shadow-md);
+  transition: color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.md-top:hover {
+  color: var(--course-accent);
+  box-shadow: var(--course-shadow-lg);
+}
+
+/* ── Footer ──────────────────────────────────────────────── */
+.md-footer {
+  background-color: var(--course-bg-sunken);
+  border-top: 1px solid var(--course-border);
+}
+
+.md-footer-meta {
+  background-color: #1a000f;
+}
+
+.md-footer__title {
+  color: var(--course-fg);
+  font-weight: 600;
+}
+
+.md-footer__direction {
+  color: var(--course-fg-muted);
+  font-size: 0.72em;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+/* ── Content area ────────────────────────────────────────── */
+.md-main {
+  background-color: var(--course-bg);
+}
+
+.md-content {
+  background-color: var(--course-bg);
+}
+
+/* Horizontal rule */
+.md-typeset hr {
+  border-color: var(--course-border);
+  margin: 2em 0;
+}
+
+/* Definition lists (used in glossary) */
+.md-typeset dt {
+  font-weight: 600;
+  color: var(--course-fg);
+  margin-top: 1em;
+}
+
+.md-typeset dd {
+  color: var(--course-fg-muted);
+  border-left: 3px solid var(--course-accent-dim);
+  padding-left: 1em;
+  margin-left: 0;
+}

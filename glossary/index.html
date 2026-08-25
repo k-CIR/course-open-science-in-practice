@@ -1,0 +1,2145 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Course docs for K8F6106 (KI, fall 2026)">
+      
+      
+      
+      
+        <link rel="prev" href="../lectures/share-repo/">
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Glossary - Open Science in Practice: Collaborative Research with Git</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/style.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#glossary" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Open Science in Practice: Collaborative Research with Git" class="md-header__button md-logo" aria-label="Open Science in Practice: Collaborative Research with Git" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Open Science in Practice: Collaborative Research with Git
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Glossary
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="indigo"  aria-label="Switch to system preference"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to system preference" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/k-CIR/course-open-science-in-practice.git" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../setup/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Setup
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../schedule/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Schedule
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../lectures/intro-to-git/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Lectures
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="./" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Glossary
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Open Science in Practice: Collaborative Research with Git" class="md-nav__button md-logo" aria-label="Open Science in Practice: Collaborative Research with Git" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Open Science in Practice: Collaborative Research with Git
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/k-CIR/course-open-science-in-practice.git" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Setup
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../schedule/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Schedule
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lectures
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Lectures
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_1" id="__nav_4_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Git
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Git
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lectures/intro-to-git/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Git #1 and GitHub
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lectures/git-create-share/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Create and share a repository
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lectures/ssh-gitignore/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SSH and .gitignore
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lectures/documentation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Documenting your work
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lectures/github/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Create your GitHub account
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lectures/branching-pull-request-merge/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Git #2: Branching, pull request, merge
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lectures/branch-merge-and-make-a-pr/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Branch, merge and make a PR
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Data
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lectures/fair-data-and-code/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FAIR data and reproducibility
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lectures/organise-data/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Organise data and projects
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lectures/structure/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Paths, file names, folder structure
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lectures/simulated-data/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Walkthrough simulated datasets
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lectures/metadata/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Metadata
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lectures/data-quality/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data quality
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lectures/data-standards/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data standards
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lectures/sharing-data/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sharing data
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lectures/quality-control/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quality control
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lectures/data-annotation-and-descriptives/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data annotation and descriptives
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tools
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Tools
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lectures/intro-to-positron/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Intro to Positron
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lectures/intro-to-r/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Intro to R
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lectures/markdown-quarto/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Markdown and Quarto
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lectures/agentic-coding/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Use AI in your work
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lectures/copilot-github/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Copilot (GitHub)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lectures/positron-features/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Positron extended
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_4" id="__nav_4_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Project
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Project
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lectures/fork-code-swap/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Work with your code buddy's code
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lectures/contribute-to-your-buddys-repo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Contribute to your buddy's repo
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lectures/work-on-your-project/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Work on your project
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lectures/work-on-your-project/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Work on your project
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lectures/examination/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Examination
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lectures/presentation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Presentation of results
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lectures/share-repo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GitHub repo - send link
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Glossary
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Glossary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#terminal-shell-basics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Terminal &amp; shell basics
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Terminal &amp; shell basics">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#common-terminal-commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Common terminal commands
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#git-concepts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Git concepts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#github-concepts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GitHub concepts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#file-text-concepts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        File &amp; text concepts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#positron-and-vs-code-concepts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Positron and VS Code concepts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#r-specific-connections" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        R-specific connections
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="glossary">Glossary<a class="headerlink" href="#glossary" title="Permanent link">&para;</a></h1>
+<p>Terms you will encounter in the terminal, in Git, and in your code editor. Entries are aimed at researchers who have some scripting experience (e.g. in R) but are new to version control and the command line.</p>
+<hr />
+<h2 id="terminal-shell-basics">Terminal &amp; shell basics<a class="headerlink" href="#terminal-shell-basics" title="Permanent link">&para;</a></h2>
+<p><strong>Terminal</strong> (also: console, shell window)
+: The text-based application through which you type commands. On macOS it is called <em>Terminal</em>; on Windows you may use <em>Git Bash</em>, <em>PowerShell</em>, or <em>Command Prompt</em>; on Linux any terminal emulator works. You interact with it by typing a command and pressing <code>Enter</code>.</p>
+<p><strong>Shell</strong>
+: The program running <em>inside</em> the terminal that interprets your commands. The most common shells are <code>bash</code> (default on Linux and older macOS) and <code>zsh</code> (default on newer macOS). For most course purposes they behave identically.</p>
+<p><strong>Command</strong>
+: A single instruction you type at the prompt, e.g. <code>git status</code> or <code>ls</code>. Commands can be followed by <em>flags</em> and <em>arguments</em>.</p>
+<p><strong>Flag</strong> (also: option, switch)
+: A modifier that changes how a command behaves. Flags usually start with <code>-</code> (short form) or <code>--</code> (long form), e.g. <code>git log --oneline</code> or <code>ls -l</code>.</p>
+<p><strong>Argument</strong>
+: A value passed to a command, such as a file name or path: <code>git add README.md</code>.</p>
+<p><strong>Prompt</strong>
+: The line the shell displays to signal it is ready for input, typically ending with <code>$</code> or <code>%</code>. You do not type the prompt symbol itself.</p>
+<p><strong>Working directory</strong>
+: The folder the shell is currently "inside". Commands that read or write files look here by default. Equivalent to the folder open in your file browser.</p>
+<p><strong>Path</strong>
+: The address of a file or folder in the filesystem.</p>
+<ul>
+<li><em>Absolute path</em> – starts from the root of the drive: <code>/Users/ada/project/script.R</code></li>
+<li><em>Relative path</em> – starts from the current working directory: <code>data/raw/input.csv</code></li>
+</ul>
+<p><strong><code>~</code> (tilde)</strong>
+: A shorthand for your home directory, e.g. <code>~/Documents</code> expands to <code>/Users/ada/Documents</code> on macOS.</p>
+<p><strong><code>.</code> and <code>..</code></strong>
+: <code>.</code> refers to the current directory; <code>..</code> refers to the parent directory one level up. Useful in paths: <code>cd ../other-project</code>.</p>
+<hr />
+<h3 id="common-terminal-commands">Common terminal commands<a class="headerlink" href="#common-terminal-commands" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>pwd</code></td>
+<td>Print working directory – shows where you are</td>
+</tr>
+<tr>
+<td><code>ls</code></td>
+<td>List files and folders in the current directory</td>
+</tr>
+<tr>
+<td><code>cd &lt;folder&gt;</code></td>
+<td>Change directory – move into <code>&lt;folder&gt;</code></td>
+</tr>
+<tr>
+<td><code>mkdir &lt;name&gt;</code></td>
+<td>Make directory – create a new folder</td>
+</tr>
+<tr>
+<td><code>cp &lt;src&gt; &lt;dst&gt;</code></td>
+<td>Copy a file from <code>&lt;src&gt;</code> to <code>&lt;dst&gt;</code></td>
+</tr>
+<tr>
+<td><code>mv &lt;src&gt; &lt;dst&gt;</code></td>
+<td>Move (or rename) a file</td>
+</tr>
+<tr>
+<td><code>rm &lt;file&gt;</code></td>
+<td>Remove a file (no recycle bin – permanent)</td>
+</tr>
+<tr>
+<td><code>cat &lt;file&gt;</code></td>
+<td>Print the contents of a file to the terminal</td>
+</tr>
+<tr>
+<td><code>clear</code></td>
+<td>Clear the terminal screen</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="git-concepts">Git concepts<a class="headerlink" href="#git-concepts" title="Permanent link">&para;</a></h2>
+<p><strong>Version control</strong>
+: A system that records changes to files over time so you can recall specific versions, compare differences, and collaborate without overwriting each other's work. Git is the most widely used version control system.</p>
+<p><strong>Repository</strong> (repo)
+: A project folder tracked by Git. It contains your files plus a hidden <code>.git/</code> folder where Git stores the full history of changes.</p>
+<p><strong>Initialise / init</strong>
+: The act of turning a plain folder into a Git repository: <code>git init</code>. Only done once per project. When you <em>clone</em> an existing repo this step is automatic.</p>
+<p><strong>Clone</strong>
+: Download a complete copy of a remote repository, including its full history, to your local machine: <code>git clone &lt;url&gt;</code>.</p>
+<p><strong>Staging area</strong> (also: index)
+: A preparation zone where you collect changes before committing them. You add files to it with <code>git add</code>. Think of it as putting items into a box before sealing and labelling it.</p>
+<p><strong>Commit</strong>
+: A saved snapshot of the staged changes, permanently stored in the repository history. Each commit has a unique ID (hash), an author, a timestamp, and a message describing what changed. Equivalent to a labelled save point.</p>
+<p><strong>Commit message</strong>
+: A short description you write when committing, explaining <em>why</em> the change was made. Convention: write in the imperative mood, e.g. <code>Add data cleaning script</code> rather than <code>Added</code> or <code>Adding</code>.</p>
+<p><strong>Hash</strong> (SHA)
+: The unique identifier Git assigns to each commit, e.g. <code>a3f8c12</code>. You rarely need to type the full hash; the first 6–7 characters usually suffice.</p>
+<p><strong><code>HEAD</code></strong>
+: A pointer to the commit you are currently working from — usually the latest commit on your active branch.</p>
+<p><strong>Branch</strong>
+: An independent line of development within a repository. The default branch is typically called <code>main</code> (or <code>master</code> in older repos). Branches let you experiment or develop features without affecting the stable version.</p>
+<p><strong>Checkout</strong>
+: Switch to a different branch or restore a file to a previous state: <code>git checkout &lt;branch&gt;</code>.</p>
+<p><strong>Merge</strong>
+: Combine the history of one branch into another. Git tries to do this automatically; if two branches edited the same lines, a <em>merge conflict</em> occurs and must be resolved manually.</p>
+<p><strong>Merge conflict</strong>
+: A situation where Git cannot automatically combine two sets of changes because they affect the same part of a file. Git marks the conflicting lines in the file and you decide which version to keep.</p>
+<p><strong>Pull</strong>
+: Download new commits from a remote repository and merge them into your local branch: <code>git pull</code>. Combines <code>git fetch</code> and <code>git merge</code>.</p>
+<p><strong>Push</strong>
+: Upload your local commits to a remote repository: <code>git push</code>. Others can then see and pull your changes.</p>
+<p><strong>Remote</strong>
+: A version of your repository hosted elsewhere, typically on GitHub. The default remote is named <code>origin</code>.</p>
+<p><strong><code>origin</code></strong>
+: The conventional name Git gives to the remote repository you cloned from or first pushed to.</p>
+<p><strong>Fetch</strong>
+: Download new information from a remote without merging it: <code>git fetch</code>. Useful for seeing what has changed before deciding to merge.</p>
+<p><strong><code>.gitignore</code></strong>
+: A plain-text file in the repository root listing file patterns Git should not track. Common entries include temporary files, credentials, large data files, and editor cache folders.</p>
+<p><strong>Staging vs committing — a quick analogy</strong>
+: Think of writing a paper. <em>Staging</em> (<code>git add</code>) is highlighting edits on a printout. <em>Committing</em> (<code>git commit</code>) is submitting that revised draft with a cover note explaining what you changed.</p>
+<hr />
+<h2 id="github-concepts">GitHub concepts<a class="headerlink" href="#github-concepts" title="Permanent link">&para;</a></h2>
+<p><strong>GitHub</strong>
+: A cloud platform for hosting Git repositories. It adds a web interface, issue tracking, pull requests, and collaboration tools on top of Git.</p>
+<p><strong>Fork</strong>
+: A personal copy of someone else's GitHub repository, stored under your own GitHub account. You can freely modify a fork without affecting the original.</p>
+<p><strong>Pull request</strong> (PR)
+: A proposal to merge changes from one branch (or fork) into another, reviewed on GitHub before the merge happens. The name is slightly misleading — it is a <em>request for someone to pull your changes</em>.</p>
+<p><strong>Issue</strong>
+: A GitHub discussion thread used to track bugs, feature requests, or tasks. Issues can be linked to pull requests.</p>
+<p><strong>README</strong>
+: A file (usually <code>README.md</code>) at the root of a repository that describes what the project is, how to set it up, and how to use it. Displayed automatically on the GitHub repository page.</p>
+<p><strong><code>main</code> branch</strong>
+: The primary branch of a repository, representing the stable or official version of the project. Previously often called <code>master</code>.</p>
+<hr />
+<h2 id="file-text-concepts">File &amp; text concepts<a class="headerlink" href="#file-text-concepts" title="Permanent link">&para;</a></h2>
+<p><strong>Plain text</strong>
+: A file containing only readable characters with no hidden formatting — e.g. <code>.R</code>, <code>.py</code>, <code>.md</code>, <code>.csv</code>. Plain-text files are what Git tracks most effectively. Contrast with binary files such as <code>.docx</code> or <code>.xlsx</code>.</p>
+<p><strong>Markdown</strong>
+: A lightweight markup language where simple symbols add formatting: <code>**bold**</code>, <code>_italic_</code>, <code># Heading</code>. GitHub renders Markdown automatically in READMEs and issues.</p>
+<p><strong>CSV</strong> (comma-separated values)
+: A plain-text format for tabular data where columns are separated by commas and rows by line breaks. Readable by R (<code>read.csv()</code>), Python, Excel, and most other tools.</p>
+<p><strong>Script</strong>
+: A plain-text file containing a sequence of commands to be run by an interpreter — e.g. an R script (<code>.R</code>), a shell script (<code>.sh</code>), or a Python script (<code>.py</code>).</p>
+<p><strong>Working tree</strong>
+: All the files and folders in your repository as they appear on disk right now, as opposed to what is saved in Git history.</p>
+<hr />
+<h2 id="positron-and-vs-code-concepts">Positron and VS Code concepts<a class="headerlink" href="#positron-and-vs-code-concepts" title="Permanent link">&para;</a></h2>
+<p><strong>Positron</strong>
+: A code editor built by Posit (the company behind RStudio) on top of VS Code. It is designed for data science work with first-class support for R and Python. Because it shares the VS Code engine, most VS Code concepts below apply directly to Positron.</p>
+<p><strong>VS Code</strong> (Visual Studio Code)
+: A free, open-source code editor from Microsoft. It is the engine Positron is built on. Many of the same keyboard shortcuts, settings, and extensions work in both.</p>
+<p><strong>Editor</strong> (also: text editor, IDE)
+: The main area where you write and edit code. In Positron/VS Code the editor occupies the centre of the window and supports syntax highlighting, auto-complete, and inline error markers.</p>
+<p><strong>Extension</strong> (also: plugin)
+: An add-on that gives the editor new capabilities — for example Git integration, a spell checker, a language server for R, or an AI assistant. Extensions are installed from the built-in marketplace (the puzzle-piece icon in the sidebar) and activated automatically on startup.</p>
+<p><strong>Extension marketplace</strong>
+: The searchable catalogue of extensions inside Positron/VS Code. Open it with <code>Ctrl+Shift+X</code> (Windows/Linux) or <code>Cmd+Shift+X</code> (Mac), search by name, and click <strong>Install</strong>.</p>
+<p><strong>Language server</strong> (LSP)
+: A background process that analyses your code and provides features like auto-complete, go-to-definition, and inline diagnostics. For R, the <code>languageserver</code> R package powers these features; Positron bundles its own R language server.</p>
+<p><strong>Integrated terminal</strong>
+: A terminal panel built into the editor (<code>Ctrl+`` or</code>Cmd+``), so you can run shell commands and Git operations without switching windows. The working directory is automatically set to the open project folder.</p>
+<p><strong>Command Palette</strong>
+: A searchable menu of every editor action, opened with <code>Ctrl+Shift+P</code> (Windows/Linux) or <code>Cmd+Shift+P</code> (Mac). If you cannot find a button for something, type it here.</p>
+<p><strong>Workspace</strong> (also: project folder)
+: The folder you open in Positron/VS Code with <strong>File → Open Folder</strong>. All relative paths, terminal sessions, and extension settings are anchored to this folder. Equivalent to an R project root.</p>
+<p><strong>Workspace settings</strong>
+: Configuration values stored in <code>.vscode/settings.json</code> inside your project folder. They override the user-level defaults for that project only and can be committed to Git so collaborators share the same editor behaviour.</p>
+<p><strong>User settings</strong>
+: Global editor preferences stored in your home directory. They apply to every project unless overridden by workspace settings. Open them via the Command Palette: <em>Preferences: Open User Settings</em>.</p>
+<p><strong>Source Control panel</strong>
+: The sidebar tab (branch icon) that shows staged, unstaged, and untracked file changes. It provides a graphical interface for the most common Git operations: staging, committing, pulling, and pushing — without needing the terminal.</p>
+<p><strong>Gutter</strong>
+: The narrow strip to the left of the line numbers in the editor. Positron/VS Code uses it to display Git change indicators (green for added lines, blue for modified, red for deleted) and breakpoint markers.</p>
+<p><strong>IntelliSense</strong> (also: auto-complete, code completion)
+: Suggestions that appear as you type, showing available function names, argument names, and variable names. Powered by the language server. Press <code>Tab</code> or <code>Enter</code> to accept a suggestion.</p>
+<p><strong>Peek / Go to Definition</strong>
+: Right-click a function name and choose <strong>Go to Definition</strong> (or press <code>F12</code>) to jump to where it is defined — useful for inspecting package source code or your own helper functions.</p>
+<p><strong>Snippets</strong>
+: Short reusable templates for common code patterns. Typing a trigger word (e.g. <code>fun</code>) and pressing <code>Tab</code> expands it into a full skeleton (e.g. an R function definition). Custom snippets can be added per language.</p>
+<p><strong>Keybinding</strong> (also: keyboard shortcut)
+: A key combination assigned to an editor action. Positron/VS Code ships with a large default set; you can customise any of them via <strong>Preferences: Open Keyboard Shortcuts</strong> in the Command Palette.</p>
+<p><strong>Split editor</strong>
+: Viewing two files side-by-side in the same window. Drag a tab to the right half of the editor, or use <strong>View → Editor Layout → Split Right</strong>. Useful for comparing a script with its output or a data file.</p>
+<p><strong>Problems panel</strong>
+: A panel (usually at the bottom) listing errors and warnings the language server has detected in open files. Click an entry to jump directly to the relevant line.</p>
+<p><strong>Output / Log panel</strong>
+: Shows messages from running extensions and background processes. Useful for diagnosing why an extension is not behaving as expected.</p>
+<p><strong><code>settings.json</code></strong>
+: The JSON file that stores editor configuration. You can edit it directly via the Command Palette: <em>Preferences: Open Settings (JSON)</em>. Both user-level and workspace-level settings use this format.</p>
+<p><strong><code>.vscode/</code> folder</strong>
+: A hidden folder created by VS Code/Positron in your project root that stores workspace settings (<code>settings.json</code>), recommended extensions (<code>extensions.json</code>), and launch configurations. Committing this folder lets collaborators open the project with the same editor setup.</p>
+<hr />
+<h2 id="r-specific-connections">R-specific connections<a class="headerlink" href="#r-specific-connections" title="Permanent link">&para;</a></h2>
+<p><strong>R project (<code>.Rproj</code>)</strong>
+: An RStudio/Positron file that anchors the working directory to a specific folder, making relative paths in your scripts reliable. Committing the <code>.Rproj</code> file helps collaborators open the project with the same settings.</p>
+<p><strong><code>here</code> package</strong>
+: An R package (<code>library(here)</code>) that constructs file paths relative to the project root, regardless of where the script is run from. Complements Git-tracked R projects and avoids hard-coded absolute paths.</p>
+<p><strong><code>renv</code></strong>
+: An R package that records which packages (and which versions) your project depends on, similar to how Git records file history. Running <code>renv::restore()</code> lets a collaborator reproduce your exact package environment.</p>
+<p><strong>Quarto (<code>.qmd</code>)</strong>
+: A document format that mixes prose (Markdown) with executable R (or Python) code chunks. The rendered output can be HTML, PDF, or slides. Quarto files are plain text and version-controlled cleanly with Git.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../lectures/share-repo/" class="md-footer__link md-footer__link--prev" aria-label="Previous: GitHub repo - send link">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                GitHub repo - send link
+              </div>
+            </div>
+          </a>
+        
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.sections", "navigation.top", "navigation.tracking", "navigation.indexes", "navigation.instant", "navigation.instant.preview", "navigation.tabs", "navigation.tabs.sticky", "navigation.footer", "navigation.sections", "toc.follow", "toc.integrate", "content.code.copy", "content.code.annotate", "search.suggest", "search.highlight", "search.share", "announce.dismiss"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>
