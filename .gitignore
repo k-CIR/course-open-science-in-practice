@@ -1,5 +1,7 @@
 *.json
 *.html
+*.pptx
+*.ppt
 *_files
 *data
 .DS_Store
