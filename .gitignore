@@ -1,4 +1,8 @@
 *.json
 *.html
+!docs/slides/*.html
 *_files
 *data
+.venv
+site/
+.kilo

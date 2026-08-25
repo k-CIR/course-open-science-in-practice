@@ -1,0 +1,118 @@
+site_name: "Open Science in Practice: Collaborative Research with Git"
+site_description: "Course docs for K8F6106 (KI, fall 2026)"
+site_url: ""
+repo_url: "https://github.com/k-CIR/course-open-science-in-practice.git"
+edit_uri: "edit/main/docs/"
+docs_dir: docs
+extra_css:
+  - stylesheets/style.css
+
+theme:
+  name: material
+  color_mode: auto
+  # user_color_mode_toggle: true
+  palette:
+    # - media: "(prefers-color-scheme)"
+    #   primary: black
+    #   toggle:
+    #     icon: material/brightness-auto
+    #     name: Switch to light mode
+
+    # Palette toggle for light mode
+    - media: "(prefers-color-scheme: light)"
+      primary: black
+      scheme: default 
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+
+    # Palette toggle for dark mode
+    - media: "(prefers-color-scheme: dark)"
+      primary: black
+      scheme: slate
+      toggle:
+        icon: material/brightness-4
+        name: Switch to system preference
+  features:
+    - navigation.sections
+    - navigation.top
+    - navigation.tracking
+    - navigation.indexes
+    - navigation.instant
+    - navigation.instant.preview
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.footer
+    - navigation.sections
+    - toc.follow
+    - toc.integrate
+    - content.code.copy
+    - content.code.annotate
+    - search.suggest
+    - search.highlight
+    - search.share
+    - announce.dismiss
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - tables
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tabbed:
+      alternate_style: true
+  - toc:
+      permalink: true
+
+nav:
+  - Home: index.md
+  - Setup: setup.md
+  - Schedule: schedule.md
+  - Lectures:
+      - 'Git':
+        - "Git #1 and GitHub": lectures/intro-to-git.md
+        - "Create and share a repository": lectures/git-create-share.md
+        - "SSH and .gitignore": lectures/ssh-gitignore.md
+        - "Documenting your work": lectures/documentation.md
+        - "Create your GitHub account": lectures/github.md
+        - "Git #2: Branching, pull request, merge": lectures/branching-pull-request-merge.md
+        - "Branch, merge and make a PR": lectures/branch-merge-and-make-a-pr.md
+      - 'Data':
+        - "FAIR data and reproducibility": lectures/fair-data-and-code.md
+        - "Organise data and projects": lectures/organise-data.md
+        - "Paths, file names, folder structure": lectures/structure.md
+        - "Walkthrough simulated datasets": lectures/simulated-data.md
+        - "Metadata": lectures/metadata.md
+        - "Data quality": lectures/data-quality.md
+        - "Data standards": lectures/data-standards.md
+        - "Sharing data": lectures/sharing-data.md
+        - "Quality control": lectures/quality-control.md
+        - "Data annotation and descriptives": lectures/data-annotation-and-descriptives.md
+      - 'Tools':
+        - "Intro to Positron": lectures/intro-to-positron.md
+        - "Intro to R": lectures/intro-to-r.md
+        - "Markdown and Quarto": lectures/markdown-quarto.md
+        - "Use AI in your work": lectures/agentic-coding.md
+        - "Copilot (GitHub)": lectures/copilot-github.md
+        - "Positron extended": lectures/positron-features.md
+      - 'Project':
+        - "Work with your code buddy's code": lectures/fork-code-swap.md
+        - "Contribute to your buddy's repo": lectures/contribute-to-your-buddys-repo.md
+        - "Work on your project": lectures/work-on-your-project.md
+        - "Support session": lectures/work-on-your-project.md
+        - "Examination": lectures/examination.md
+        - "Presentation of results": lectures/presentation.md
+        - "GitHub repo - send link": lectures/share-repo.md
+  - Glossary: glossary.md
+  
+
+  # - Days:
+  #   - "Day 0 - Precourse": lectures/day-0.md
+  #   - "Day 1 - Git & projects": lectures/day-1.md
+  #   - "Day 2 - Data & collaboration": lectures/day-2.md
+  #   - "Day 3 - Peer work": lectures/day-3.md
+  #   - "Day 4 - Support": lectures/day-4.md
+  #   - "Day 5 - Examination": lectures/day-5.md
+  
