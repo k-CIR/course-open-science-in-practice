@@ -71,6 +71,7 @@ nav:
   - Setup: setup.md
   - Schedule: schedule.md
   - Lectures:
+      - "Overview": lectures/index.md
       - 'Git':
         - "Git #1 and GitHub": lectures/intro-to-git.md
         - "Create and share a repository": lectures/git-create-share.md
