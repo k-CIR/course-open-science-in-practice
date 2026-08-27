@@ -1,9 +1,9 @@
 ---
-title: Quality Control
+title: FAIR data
 author: "Niklas Edvall & Andreas Gerhardsson"
 ---
 
-- Format: Online workbook
+- Format: -
 - Teacher: -
 
 !!! todo "Content TODO"
