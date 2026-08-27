@@ -22,5 +22,5 @@ This course is intended for PhD students who:
 ## Quick Links
 
 - [Full schedule](schedule.md)
-- [Before the course setup guide](setup.md)
+- [Before the course setup guide](setup/index.md)
 - [Lecture and workshop material by theme](lectures/index.md)

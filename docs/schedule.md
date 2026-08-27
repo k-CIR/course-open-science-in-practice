@@ -11,9 +11,8 @@
 |          | 13:00   | [Git Lecture #1 basics](lectures/git-lectures-1.md)                                                 |
 |          |         | [Git Exercise #1 ](exercises/git-exercises-1.md)                                                    |
 |          |         | [Git Lecture #2 branching](lectures/git-lectures-2.md)                                              | 
-|          |         | [Git Exercise #2 branching](exercises/git-exercises-2.md)                                              | 
+|          |         | [Git Exercise #2 branching](exercises/git-exercises-2.md)                                           | 
 |          |         | [Documenting your work](lectures/documentation.md)                                                  |
-|          |         | [Create your GitHub account and a repo](lectures/github.md)                                         |
 | **Day 2**|         |                                                                                                     | 
 |          | 09:00   | [Walkthrough simulated datasets](lectures/simulated-data.md)                                        |
 |          |         | [Metadata](lectures/metadata.md)                                                                    |
@@ -32,7 +31,7 @@
 |          | 09:00   | [Work with your code - buddy's code](lectures/fork-code-swap.md)                                    |
 |          |         | **Lunch**                                                                                           |
 |          |         | [Contribute to your buddy's repo](lectures/contribute-to-your-buddys-repo.md)                       | 
-|          |         | [Branch, merge and make a PR](lectures/git-lectures-4.md)                               |
+|          |         | [Branch, merge and make a PR](lectures/git-lectures-4.md)                                           |
 |          |         | [Work on your project](lectures/work-on-your-project.md)                                            | 
 | **Day 4**|         |                                                                                                     | 
 |          | 09:00   | [Support session: work on your project](lectures/work-on-your-project.md)                           | 

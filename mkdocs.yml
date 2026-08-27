@@ -71,7 +71,11 @@ markdown_extensions:
 
 nav:
   - Home: index.md
-  - Setup: setup.md
+  - Setup: 
+    - setup/index.md
+    - "Setup Git": setup/git-setup.md
+    - "Setup Positron": setup/positron-setup.md
+    - "Setup GitHub": setup/github-setup.md
   - Schedule: schedule.md
   - Lectures:
       - "Overview": lectures/index.md
@@ -81,7 +85,6 @@ nav:
         - "Git #3 remote": lectures/git-lectures-3.md
         - "Git #4 collaboration": lectures/git-lectures-4.md
         - "Documenting your work": lectures/documentation.md
-        - "Create your GitHub account": lectures/github.md
       - 'Data':
         - "FAIR data and reproducibility": lectures/fair-data-and-code.md
         - "Organise data and projects": lectures/organise-data.md
