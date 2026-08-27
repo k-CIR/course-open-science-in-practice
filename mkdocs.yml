@@ -84,7 +84,6 @@ nav:
         - "Git #2 branching": lectures/git-lectures-2.md
         - "Git #3 remote": lectures/git-lectures-3.md
         - "Git #4 collaboration": lectures/git-lectures-4.md
-        - "Documenting your work": lectures/documentation.md
       - 'Data':
         - "FAIR data and reproducibility": lectures/data-fair.md
         - "Organise data and projects": lectures/data-organise.md
@@ -93,14 +92,15 @@ nav:
         - "Metadata": lectures/data-metadata.md
         - "Data quality": lectures/data-quality.md
         - "Data standards": lectures/data-standards.md
-        - "Sharing data": lectures/data-sharing.md
         - "Data annotation and descriptives": lectures/data-annotation-and-descriptives.md
+        - "Sharing data": lectures/data-sharing.md
       - 'Tools':
+        - "Documenting your work": lectures/documentation.md
         - "Positron #1 basics": lectures/positron-lectures-1.md
+        - "Positron #2 extended": lectures/positron-lectures-2.md
         - "R #1 basics": lectures/r-lectures-1.md
         - "Markdown and Quarto": lectures/markdown-quarto.md
         - "Use AI in your work": lectures/agentic-coding.md
-        - "Positron #2 extended": lectures/positron-lectures-2.md
   - Exercises:
     - 'Workshops':
       - 'Git #1 basics': 'exercises/git-exercises-1.md'
