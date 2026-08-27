@@ -72,7 +72,12 @@ This page collects the practical setup tasks from Day 0 into one place so partic
     git --version
     ```
 
-After installing, set your identity so commits are attributed correctly:
+After installing, check your configurations
+```sh
+git config --list --show-origin
+```
+
+Set your identity so commits are attributed correctly:
 
 ```sh
 git config --global user.name "Your Name"

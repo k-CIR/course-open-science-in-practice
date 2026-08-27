@@ -76,13 +76,12 @@ nav:
   - Lectures:
       - "Overview": lectures/index.md
       - 'Git':
-        - "Git #1 and GitHub": lectures/intro-to-git.md
-        - "Create and share a repository": lectures/git-create-share.md
-        - "SSH and .gitignore": lectures/ssh-gitignore.md
+        - "Git #1 basics": lectures/git-lectures-1.md
+        - "Git #2 branching": lectures/git-lectures-2.md
+        - "Git #3 remote": lectures/git-lectures-3.md
+        - "Git #4 collaboration": lectures/git-lectures-4.md
         - "Documenting your work": lectures/documentation.md
         - "Create your GitHub account": lectures/github.md
-        - "Git #2: Branching, pull request, merge": lectures/branching-pull-request-merge.md
-        - "Branch, merge and make a PR": lectures/branch-merge-and-make-a-pr.md
       - 'Data':
         - "FAIR data and reproducibility": lectures/fair-data-and-code.md
         - "Organise data and projects": lectures/organise-data.md
@@ -95,12 +94,12 @@ nav:
         - "Quality control": lectures/quality-control.md
         - "Data annotation and descriptives": lectures/data-annotation-and-descriptives.md
       - 'Tools':
-        - "Intro to Positron": lectures/intro-to-positron.md
-        - "Intro to R": lectures/intro-to-r.md
+        - "Positron #1 basics": lectures/positron-lectures-1.md
+        - "R #1 basics": lectures/r-lectures-1.md
         - "Markdown and Quarto": lectures/markdown-quarto.md
         - "Use AI in your work": lectures/agentic-coding.md
         - "Copilot (GitHub)": lectures/copilot-github.md
-        - "Positron extended": lectures/positron-features.md
+        - "Positron #2 extended": lectures/positron-lectures-2.md
       - 'Project':
         - "Work with your code buddy's code": lectures/fork-code-swap.md
         - "Contribute to your buddy's repo": lectures/contribute-to-your-buddys-repo.md
@@ -109,6 +108,12 @@ nav:
         - "Examination": lectures/examination.md
         - "Presentation of results": lectures/presentation.md
         - "GitHub repo - send link": lectures/share-repo.md
+  - Exercises:
+    - 'Git #1 basics': 'exercises/git-exercises-1.md'
+    - 'Git #2 branching': 'exercises/git-exercises-2.md'
+    - 'Git #3 safety': 'exercises/git-exercises-3.md'
+    - 'Git #4 safety': 'exercises/git-exercises-4.md'
+    - 'Testing your scripts': exercises/quality-exercises-1.md
   - Glossary: glossary.md
   
 

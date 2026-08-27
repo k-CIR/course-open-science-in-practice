@@ -1,4 +1,3 @@
-
 # Intro to Git
 
 - Format: Lecture 
@@ -52,7 +51,9 @@ You almost never need to look inside `.git` yourself — Git commands are the in
 
 Understanding how Git moves changes from your editor to the permanent history is the single most important conceptual hurdle for new users. Git does not record changes automatically as you save files — it gives you deliberate control over what gets recorded, and when.
 
-The process has three stages:
+The process has three local stages:
+
+![git flow](../assets/git_local_flow.svg)
 
 **1. Working directory**
 This is simply the folder on your computer where your project files live. When you edit a script, add a data file, or delete something, those changes exist only here. Git is aware that something has changed, but has not been asked to do anything about it yet. You can see the current state at any time with `git status`.
