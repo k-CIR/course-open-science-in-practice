@@ -103,7 +103,14 @@ nav:
         - "Use AI in your work": lectures/agentic-coding.md
         - "Copilot (GitHub)": lectures/copilot-github.md
         - "Positron #2 extended": lectures/positron-lectures-2.md
-      - 'Project':
+  - Exercises:
+    - 'Workshops':
+      - 'Git #1 basics': 'exercises/git-exercises-1.md'
+      - 'Git #2 branching': 'exercises/git-exercises-2.md'
+      - 'Git #3 safety': 'exercises/git-exercises-3.md'
+      - 'Git #4 collaboration': 'exercises/git-exercises-4.md'
+      - 'Testing your scripts': exercises/quality-exercises-1.md
+    - 'Project':
         - "Work with your code buddy's code": lectures/fork-code-swap.md
         - "Contribute to your buddy's repo": lectures/contribute-to-your-buddys-repo.md
         - "Work on your project": lectures/work-on-your-project.md
@@ -111,12 +118,6 @@ nav:
         - "Examination": lectures/examination.md
         - "Presentation of results": lectures/presentation.md
         - "GitHub repo - send link": lectures/share-repo.md
-  - Exercises:
-    - 'Git #1 basics': 'exercises/git-exercises-1.md'
-    - 'Git #2 branching': 'exercises/git-exercises-2.md'
-    - 'Git #3 safety': 'exercises/git-exercises-3.md'
-    - 'Git #4 safety': 'exercises/git-exercises-4.md'
-    - 'Testing your scripts': exercises/quality-exercises-1.md
   - Glossary: glossary.md
   
 
