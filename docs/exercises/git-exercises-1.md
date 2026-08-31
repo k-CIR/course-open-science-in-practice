@@ -19,7 +19,15 @@ We will work inside Positron and use the built in terminal but you could run all
 
 1. Open the Positron app. If an recent session opens up, click `File` → `Open New Window`
 2. Click `New folder` → `Empty Project` and select where you want to store your project. Leave `Initialize Git repository` unchecked for now
-3. Select `TERMINAL` in the tab section
+3. Select `TERMINAL` in the tab section. 
+
+??? note "Windows users, use Git bash"
+
+    Open a new terminal session by clicking on the little `arrow` next to the `+` select Git bash.
+
+    If your default terminal is not Git Bash. Open command prompt `Ctrl+Shift+P` and start typing `Terminal default` open `Terminal: Select Default Profile` and select Git bash.
+
+    ![git default profile](../assets/positron_terminal_default.png){width="50%"}
 
 ??? tip "Check your location"
     You see your username and the current folder name. To see full location run `pwd` and to list all files in the folder run `ls`. There should be no files yet.
