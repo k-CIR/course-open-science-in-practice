@@ -108,6 +108,18 @@ Run it to confirm it works:
 
 Both should print a mean around `18.00` and a max of `42`.
 
+??? note "'Rscript' is not recognized?"
+    Installing R on Windows doesn't automatically add R (and the function `Rscript`) to your terminal. Windows users are more tech-savvy than the Unix-people and can manage their own global environment. To add R to your system environment so you can run any `Rscript` directly from terminal:
+
+    0. Find your R installation - it's *probably* something like: `C:\Program Files\R\R-4.5.2\bin` but make sure to use the path valid on **your** computer.
+    1. Press `Win + R`, type `sysdm.cpl`, press Enter.
+    2. Go to Advanced tab → Environment Variables.
+    3. Under User variables (or System variables for all users), select Path → Edit.
+    4. Click New and add **your** R path, something like:
+     `C:\Program Files\R\R-4.5.2\bin`
+    5. Click OK on all dialogs, then open a new terminal (PATH changes don't apply to already-open shells).
+    6. Test by typing `Rscript --version` in a new terminal.
+
 ## The core cycle: status, add, commit
 
 Git does **not** record your files automatically. You decide what becomes part of history in three steps.

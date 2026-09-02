@@ -4,6 +4,8 @@ Research should be reproducible and performed in a transparent manner. To achiev
 
 [:material-file-pdf-box: Download slides (.pdf)](downloads/lecture-1-why-git.pdf){ .md-button download="lecture-1-why-git.pdf" }
 
+## Slides
+
 <div class="slide-gallery" markdown="1">
 
 ![Slide 1](../slides/lecture-1-why-git/slide_001.png)
