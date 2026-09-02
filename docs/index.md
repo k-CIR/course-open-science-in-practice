@@ -1,14 +1,12 @@
 # Open Science in Practice: Collaborative Research with Git
 
-This site is the course handbook for **K8F6106** at Karolinska Institutet in fall 2026. It brings together the schedule, setup guidance, and day-by-day placeholders for the course materials.
+This site is the course handbook for a PhD level course given fall semester 2026 at [Karolinska Institutet](https://ki.se/).
 
-![Course banner](https://github.com/user-attachments/assets/8f1a45e1-1da0-4013-8ae6-80850998a995)
+The site contain setup instructions, slides from lectures and instructions for workshop excersises.
 
-## Course At A Glance
-
-- Official course page: [K8F6106 in FUBAS](https://doctoralcourses.application.ki.se/fubasextern/info?kurs=K8F6106)
-- Application period: `2026-04-15` to `2026-05-05`
 - Study period: `2026-10-12` to `2026-10-23`
+- Syllabus: [Download as PDF](https://fubasdoc.ki.se/fubas-filserver/pdf/FU-kurs/en/K8F6106)
+- Official course page: [K8F6106 in FUBAS](https://doctoralcourses.application.ki.se/fubasextern/info?kurs=K8F6106)
 
 ## Intended Audience
 
