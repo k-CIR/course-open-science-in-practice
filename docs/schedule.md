@@ -3,24 +3,15 @@
 | Day      | Time    | Activity                                                                                            | 
 |----------|---------|-----------------------------------------------------------------------------------------------------|
 | **Day 1**|         |                                                                                                     | 
-|          | 09:00   | [What is FAIR data and reproducibility?](lectures/data-fair.md)                                     |
-|          |         | [Organize data and projects](lectures/data-organise.md)                                             |
-|          |         | [Paths and working directory, file names, folder structure](lectures/data-structure.md)             | 
+|          | 09:00   | [Lecture 1 - Why git?](lectures/lecture-1-why-git.md)                                               |
 |          |         | [Markdown/Quarto](lectures/markdown-quarto.md)                                                      |
-|          | 12:00   | **Lunch**                                                                                           |
+|          | 12:00   | **Lunch**                                                                                           |
 |          | 13:00   | [Git Lecture #1 basics](lectures/git-lectures-1.md)                                                 |
 |          |         | [Git Exercise #1 ](exercises/git-exercises-1.md)                                                    |
 |          |         | [Git Lecture #2 branching](lectures/git-lectures-2.md)                                              | 
 |          |         | [Git Exercise #2 branching](exercises/git-exercises-2.md)                                           | 
-|          |         | [Documenting your work](lectures/documentation.md)                                                  |
 | **Day 2**|         |                                                                                                     | 
-|          | 09:00   | [Walkthrough simulated datasets](lectures/data-simulated.md)                                        |
-|          |         | [Metadata](lectures/data-metadata.md)                                                               |
-|          |         | [Data quality](lectures/data-quality.md)                                                            |
-|          |         | [Data standards](lectures/data-standards.md)                                                        |
-|          |         | [Sharing data](lectures/data-sharing.md)                                                            |
-|          |         | [Data annotation and descriptive](lectures/data-annotation-and-descriptives.md)                     |
-|          | 12:00   | **Lunch**                                                                                           |
+|          | 12:00   | **Lunch**                                                                                           |
 |          | 13:00   | [Git Lecture #3: Remote and GitHub](lectures/git-lectures-3.md)                                     |
 |          |         | [Git Exercise #3: Remote and GitHub](exercises/git-exercises-3.md)                                  |
 |          |         | [Positron](lectures/positron-lectures-1.md)                                                         |

@@ -6,6 +6,8 @@ edit_uri: "edit/main/docs/"
 docs_dir: docs
 extra_css:
   - stylesheets/style.css
+extra_javascript:
+  - javascripts/slide-gallery.js
 
 theme:
   name: material
@@ -56,6 +58,7 @@ theme:
 markdown_extensions:
   - admonition
   - attr_list
+  - md_in_html
   - tables
   - pymdownx.details
   - pymdownx.superfences
@@ -80,22 +83,12 @@ nav:
   - Lectures:
       - "Overview": lectures/index.md
       - 'Git':
+        - "Lecture 1 - Why git?": lectures/lecture-1-why-git.md
         - "Git #1 basics": lectures/git-lectures-1.md
         - "Git #2 branching": lectures/git-lectures-2.md
         - "Git #3 remote": lectures/git-lectures-3.md
         - "Git #4 collaboration": lectures/git-lectures-4.md
-      - 'Data':
-        - "FAIR data and reproducibility": lectures/data-fair.md
-        - "Organise data and projects": lectures/data-organise.md
-        - "Paths, file names, folder structure": lectures/data-structure.md
-        - "Walkthrough simulated datasets": lectures/data-simulated.md
-        - "Metadata": lectures/data-metadata.md
-        - "Data quality": lectures/data-quality.md
-        - "Data standards": lectures/data-standards.md
-        - "Data annotation and descriptives": lectures/data-annotation-and-descriptives.md
-        - "Sharing data": lectures/data-sharing.md
       - 'Tools':
-        - "Documenting your work": lectures/documentation.md
         - "Positron #1 basics": lectures/positron-lectures-1.md
         - "Positron #2 extended": lectures/positron-lectures-2.md
         - "R #1 basics": lectures/r-lectures-1.md
@@ -116,11 +109,13 @@ nav:
       - "Presentation of results": project/project-presentation.md
   - Glossary: glossary.md
   - Resources:
-    - "Overview": resources/index.md
-    - "Simulated dataset 1": resources/simulated-dataset-1.md
-    - "Simulated dataset 2": resources/simulated-dataset-2.md
-    - "Simulated dataset 3": resources/simulated-dataset-3.md
-    - "Simulated dataset 4": resources/simulated-dataset-4.md
+    - "External resources":
+      - "Overview": resources/external-resources.md
+    - "Simulated data":
+      - "Simulated dataset 1": resources/simulated-dataset-1.md
+      - "Simulated dataset 2": resources/simulated-dataset-2.md
+      - "Simulated dataset 3": resources/simulated-dataset-3.md
+      - "Simulated dataset 4": resources/simulated-dataset-4.md
   
 
   # - Days:

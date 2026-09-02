@@ -1,11 +1,13 @@
 """
 export_slides.py
 ----------------
-Convert all .pptx files in the presentations directory into PNG-based slide
-galleries and place them under docs/slides/ so MkDocs can serve them.
+Convert all .pptx and .pdf files in the presentations directory into
+PNG-based slide galleries and place them under docs/slides/ so MkDocs can
+serve them.
 
 Pipeline per file:
-  1. LibreOffice (soffice) converts .pptx → .pdf
+  1. .pptx  -> LibreOffice (soffice) converts .pptx → .pdf
+     .pdf   -> used as-is (step skipped)
   2. Ghostscript (gs) rasterises each PDF page → slide_NNN.png
   3. A self-contained index.html gallery is written with prev/next navigation
 
@@ -16,11 +18,15 @@ Each presentation gets its own subdirectory:
         slide_002.png
         ...
 
+Link to the gallery from a lecture/resource page with a normal markdown
+link, e.g. from docs/lectures/lecture-1-why-git.md:
+    [:material-image-multiple: View slide gallery](../slides/lecture-1-why-git/index.html){ .md-button }
+
 Usage (from the documentation/ repo root):
     .venv/bin/python export_slides.py
 
 Optional arguments:
-    --presentations   Path to the directory containing .pptx files
+    --presentations   Path to the directory containing .pptx/.pdf files
                       (default: ../main/presentations)
     --output          Path to the slides output directory
                       (default: docs/slides)
@@ -177,12 +183,21 @@ GALLERY_HTML = """\
 """
 
 
-def find_tool(name: str) -> Path:
-    path = shutil.which(name)
-    if not path:
-        print(f"ERROR: '{name}' not found on PATH. Install it and retry.", file=sys.stderr)
-        sys.exit(1)
-    return Path(path)
+def find_tool(name: str, alternatives: list[str] | None = None) -> Path:
+    """Look up `name` on PATH, falling back to `alternatives` if not found.
+
+    Needed because the official Windows Ghostscript installer names its
+    executable gswin64c.exe / gswin32c.exe rather than gs (conda-forge's
+    ghostscript package does provide a plain gs, so this only kicks in for
+    non-conda installs).
+    """
+    for candidate in [name, *(alternatives or [])]:
+        path = shutil.which(candidate)
+        if path:
+            return Path(path)
+    tried = ", ".join([name, *(alternatives or [])])
+    print(f"ERROR: none of ({tried}) found on PATH. Install it and retry.", file=sys.stderr)
+    sys.exit(1)
 
 
 def pptx_to_pdf(pptx: Path, out_dir: Path, soffice: Path) -> Path:
@@ -256,8 +271,7 @@ def parse_args() -> argparse.Namespace:
 def main() -> None:
     args = parse_args()
 
-    soffice = find_tool("soffice")
-    gs      = find_tool("gs")
+    gs = find_tool("gs", ["gswin64c", "gswin32c"])
 
     presentations_dir: Path = args.presentations.resolve()
     output_dir: Path        = args.output.resolve()
@@ -271,40 +285,49 @@ def main() -> None:
         p for p in presentations_dir.glob("*.pptx")
         if not p.name.startswith("~$")
     )
+    pdf_files = sorted(presentations_dir.glob("*.pdf"))
+    source_files = sorted(pptx_files + pdf_files)
 
-    if not pptx_files:
-        print(f"No .pptx files found in {presentations_dir}")
+    if not source_files:
+        print(f"No .pptx or .pdf files found in {presentations_dir}")
         sys.exit(0)
+
+    # LibreOffice is only needed to convert .pptx -> .pdf; skip the lookup
+    # (and the dependency) when only raw .pdf sources are being exported.
+    soffice = find_tool("soffice") if pptx_files else None
 
     output_dir.mkdir(parents=True, exist_ok=True)
 
     print(f"Source : {presentations_dir}")
     print(f"Output : {output_dir}")
     print(f"DPI    : {args.dpi}")
-    print(f"Found  : {len(pptx_files)} file(s)\n")
+    print(f"Found  : {len(source_files)} file(s)\n")
 
     ok = skipped = failed = 0
 
-    for pptx in pptx_files:
-        slide_out = output_dir / pptx.stem
+    for source in source_files:
+        slide_out = output_dir / source.stem
 
         if slide_out.exists() and not args.force:
-            print(f"  SKIP  {pptx.name}  (already exported — use --force to overwrite)")
+            print(f"  SKIP  {source.name}  (already exported — use --force to overwrite)")
             skipped += 1
             continue
 
-        print(f"  ...   {pptx.name}", end="", flush=True)
+        print(f"  ...   {source.name}", end="", flush=True)
         try:
             with tempfile.TemporaryDirectory() as tmp:
                 tmp_path = Path(tmp)
-                pdf  = pptx_to_pdf(pptx, tmp_path, soffice)
+                if source.suffix.lower() == ".pptx":
+                    pdf = pptx_to_pdf(source, tmp_path, soffice)
+                else:
+                    pdf = source
                 pngs = pdf_to_pngs(pdf, slide_out, args.dpi, gs)
 
-            write_gallery(slide_out, pptx.stem.replace("_", " ").title(), len(pngs))
+            write_gallery(slide_out, source.stem.replace("_", " ").title(), len(pngs))
             print(f"  ->  {slide_out.relative_to(output_dir.parent.parent)}  ({len(pngs)} slides)")
             ok += 1
         except Exception as exc:
-            print(f"\n  FAIL  {pptx.name}: {exc}", file=sys.stderr)
+            print(f"\n  FAIL  {source.name}: {exc}", file=sys.stderr)
             failed += 1
 
     print(f"\nDone: {ok} exported, {skipped} skipped, {failed} failed.")
