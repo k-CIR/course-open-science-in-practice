@@ -82,8 +82,8 @@ nav:
   - Schedule: schedule.md
   - Lectures:
       - "Overview": lectures/index.md
+      - "Lecture 1 - Why git?": lectures/lecture-1-why-git.md
       - 'Git':
-        - "Lecture 1 - Why git?": lectures/lecture-1-why-git.md
         - "Git #1 basics": lectures/git-lectures-1.md
         - "Git #2 branching": lectures/git-lectures-2.md
         - "Git #3 remote": lectures/git-lectures-3.md
