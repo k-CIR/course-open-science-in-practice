@@ -115,7 +115,12 @@ nav:
       - "Examination": project/project-examination.md
       - "Presentation of results": project/project-presentation.md
   - Glossary: glossary.md
-  - Resources: resources.md
+  - Resources:
+    - "Overview": resources/index.md
+    - "Simulated dataset 1": resources/simulated-dataset-1.md
+    - "Simulated dataset 2": resources/simulated-dataset-2.md
+    - "Simulated dataset 3": resources/simulated-dataset-3.md
+    - "Simulated dataset 4": resources/simulated-dataset-4.md
   
 
   # - Days:
