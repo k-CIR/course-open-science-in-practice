@@ -73,47 +73,47 @@ nav:
   - Home: index.md
   - Setup: 
     - setup/index.md
-    - "Setup Git": setup/git-setup.md
-    - "Setup Positron": setup/positron-setup.md
-    - "Setup GitHub": setup/github-setup.md
+    - 'Setup Git': setup/git-setup.md
+    - 'Setup Positron': setup/positron-setup.md
+    - 'Setup GitHub': setup/github-setup.md
   - Schedule: schedule.md
   - Lectures:
-      - "Overview": lectures/index.md
+      - 'Overview': lectures/index.md
       - 'Git':
-        - "Git #1 basics": lectures/git-lectures-1.md
-        - "Git #2 branching": lectures/git-lectures-2.md
-        - "Git #3 remote": lectures/git-lectures-3.md
-        - "Git #4 collaboration": lectures/git-lectures-4.md
+        - 'Git #1 basics': lectures/git-lectures-basics.md
+        - 'Git #2 remote': lectures/git-lectures-remote.md
+        - 'Git #3 branching': lectures/git-lectures-branching.md
+        - 'Git #4 collaboration': lectures/git-lectures-collaboration.md
       - 'Data':
-        - "FAIR data and reproducibility": lectures/data-fair.md
-        - "Organise data and projects": lectures/data-organise.md
-        - "Paths, file names, folder structure": lectures/data-structure.md
-        - "Walkthrough simulated datasets": lectures/data-simulated.md
-        - "Metadata": lectures/data-metadata.md
-        - "Data quality": lectures/data-quality.md
-        - "Data standards": lectures/data-standards.md
-        - "Data annotation and descriptives": lectures/data-annotation-and-descriptives.md
-        - "Sharing data": lectures/data-sharing.md
+        - 'FAIR data and reproducibility': lectures/data-fair.md
+        - 'Organise data and projects': lectures/data-organise.md
+        - 'Paths, file names, folder structure': lectures/data-structure.md
+        - 'Walkthrough simulated datasets': lectures/data-simulated.md
+        - 'Metadata': lectures/data-metadata.md
+        - 'Data quality': lectures/data-quality.md
+        - 'Data standards': lectures/data-standards.md
+        - 'Data annotation and descriptives': lectures/data-annotation-and-descriptives.md
+        - 'Sharing data': lectures/data-sharing.md
       - 'Tools':
-        - "Documenting your work": lectures/documentation.md
-        - "Positron #1 basics": lectures/positron-lectures-1.md
-        - "Positron #2 extended": lectures/positron-lectures-2.md
-        - "R #1 basics": lectures/r-lectures-1.md
-        - "Markdown and Quarto": lectures/markdown-quarto.md
-        - "Use AI in your work": lectures/agentic-coding.md
+        - 'Documenting your work': lectures/documentation.md
+        - 'Positron #1 basics': lectures/positron-lectures-1.md
+        - 'Positron #2 extended': lectures/positron-lectures-2.md
+        - 'R #1 basics': lectures/r-lectures-1.md
+        - 'Markdown and Quarto': lectures/markdown-quarto.md
+        - 'Use AI in your work': lectures/agentic-coding.md
   - Exercises:
     - 'Workshops':
-      - 'Git #1 basics': 'exercises/git-exercises-1.md'
-      - 'Git #2 branching': 'exercises/git-exercises-2.md'
-      - 'Git #3 safety': 'exercises/git-exercises-3.md'
-      - 'Git #4 collaboration': 'exercises/git-exercises-4.md'
+      - 'Git #1 basics': exercises/git-exercises-basics.md
+      - 'Git #2 remote': exercises/git-exercises-remote.md
+      - 'Git #3 branching': exercises/git-exercises-branching.md
+      - 'Git #4 collaboration': exercises/git-exercises-collaboration.md
       # - 'Testing your scripts': exercises/quality-exercises-1.md
     - 'Project':
-      - "Work on your project": project/project-description.md
-      - "Forking": project/project-fork.md
-      - "Contribute (Pull request)": project/project-contribute.md
-      - "Examination": project/project-examination.md
-      - "Presentation of results": project/project-presentation.md
+      - 'Work on your project': project/project-description.md
+      - 'Forking': project/project-fork.md
+      - 'Contribute (Pull request)': project/project-contribute.md
+      - 'Examination': project/project-examination.md
+      - 'Presentation of results': project/project-presentation.md
   - Glossary: glossary.md
   - Resources: resources.md
   
