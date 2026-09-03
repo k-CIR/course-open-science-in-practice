@@ -3,14 +3,13 @@
 | Day      | Time    | Activity                                                                                            | 
 |----------|---------|-----------------------------------------------------------------------------------------------------|
 | **Day 1**|         |                                                                                                     | 
-|          | 09:00   | [Lecture 1 - Why git?](lectures/lecture-1-why-git.md)                                               |
+|          | 09:00   |                                                                                                     |
 |          |         | [Markdown/Quarto](lectures/markdown-quarto.md)                                                      |
 |          | 12:00   | **Lunch**                                                                                           |
 |          | 13:00   | [Git Lecture #1: basics](lectures/git-lectures-basics.md)                                           |
 |          |         | [Git Exercise #1: basics ](exercises/git-exercises-basics.md)                                       |
 |          | 14:00   | [Git Lecture #2: Remote and GitHub](lectures/git-lectures-remote.md)                                | 
 |          |         | [Git Exercise #2: Remote and GitHub](exercises/git-exercises-remote.md)                             | 
-|          |         | [Documenting your work](lectures/documentation.md)                                                  |
 | **Day 2**|         |                                                                                                     | 
 |          | 09:00   |                                                                                                     |
 |          |         |                                                                                                     |
@@ -24,8 +23,7 @@
 |          |         | [Positron](lectures/positron-lectures-1.md)                                                         |
 |          |         | [Use AI in your work](lectures/agentic-coding.md)                                                   | 
 | **Day 3**|         |                                                                                                     | 
-|          | 09:00   | [Git Lecture #4: Collaborate](lectures/git-lectures-4.md)                                           |
-|          |         | [Git Lecture #4: Collaborate](lectures/git-lectures-4.md)                                           |
+|          | 09:00   | [Git Lecture #4: Collaborate](lectures/git-lectures-collaboration.md)                               |
 |          |         | [Work with your code - buddy's code](project/project-fork.md)                                       |
 |          |         | [Work with your code - buddy's code](project/project-fork.md)                                       |
 |          |         | **Lunch**                                                                                           |
