@@ -1,4 +1,4 @@
-# Simulated dataset 2
+# Simulated dataset 2 - Working memory + EEG
 
 [:material-download: Download dataset 2 (.zip)](https://www.dropbox.com/scl/fi/de0m9vnig7euqewtl149x/simulated-dataset-2.zip?rlkey=wma3oyvzpvlkd3esnh4t3j6si&st=9okj1gg5&dl=1){ .md-button download="simulated-dataset-2.zip" }
 
