@@ -364,15 +364,8 @@
   
     
     
-      
-  
-  
-  
-  
-    
-    
       <li class="md-tabs__item">
-        <a href="../../resources/external-resources/" class="md-tabs__link">
+        <a href="../../resources/" class="md-tabs__link">
           
   
   
@@ -382,9 +375,6 @@
 
         </a>
       </li>
-    
-  
-
     
   
 
@@ -1865,6 +1855,10 @@
     
       
         
+          
+        
+      
+        
       
         
       
@@ -1884,8 +1878,9 @@
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
         
           
-          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
-            
+          <div class="md-nav__link md-nav__container">
+            <a href="../../resources/" class="md-nav__link ">
+              
   
   
   <span class="md-ellipsis">
@@ -1899,8 +1894,14 @@
   
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_7" id="__nav_7_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
         
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_7">
@@ -1913,96 +1914,6 @@
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
-              
-                
-  
-  
-  
-  
-    
-    
-      
-        
-      
-    
-    
-    
-      
-      
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_1" >
-        
-          
-          <label class="md-nav__link" for="__nav_7_1" id="__nav_7_1_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    External resources
-  
-
-    
-  </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_1_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_7_1">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    External resources
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../resources/external-resources/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Overview
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
               
             
               
@@ -2187,6 +2098,128 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_3" id="__nav_7_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    External resources
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    External resources
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/git-resources/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Git
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/positron-resources/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Positron
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -2309,6 +2342,20 @@ git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"
 </div>
 </div>
 <p>Both should print a mean around <code>18.00</code> and a max of <code>42</code>.</p>
+<details class="note">
+<summary>'Rscript' is not recognized?</summary>
+<p>Installing R on Windows doesn't automatically add R (and the function <code>Rscript</code>) to your terminal. Windows users are more tech-savvy than the Unix-people and can manage their own global environment. To add R to your system environment so you can run any <code>Rscript</code> directly from terminal:</p>
+<ol>
+<li>Find your R installation - it's <em>probably</em> something like: <code>C:\Program Files\R\R-4.5.2\bin</code> but make sure to use the path valid on <strong>your</strong> computer.</li>
+<li>Press <code>Win + R</code>, type <code>sysdm.cpl</code>, press Enter.</li>
+<li>Go to Advanced tab → Environment Variables.</li>
+<li>Under User variables (or System variables for all users), select Path → Edit.</li>
+<li>Click New and add <strong>your</strong> R path, something like:
+ <code>C:\Program Files\R\R-4.5.2\bin</code></li>
+<li>Click OK on all dialogs, then open a new terminal (PATH changes don't apply to already-open shells).</li>
+<li>Test by typing <code>Rscript --version</code> in a new terminal.</li>
+</ol>
+</details>
 <h2 id="the-core-cycle-status-add-commit">The core cycle: status, add, commit<a class="headerlink" href="#the-core-cycle-status-add-commit" title="Permanent link">&para;</a></h2>
 <p>Git does <strong>not</strong> record your files automatically. You decide what becomes part of history in three steps.</p>
 <h3 id="1-see-what-changed-git-status">1. See what changed — <code>git status</code><a class="headerlink" href="#1-see-what-changed-git-status" title="Permanent link">&para;</a></h3>
