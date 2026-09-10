@@ -474,6 +474,8 @@
       
         
       
+        
+      
     
     
     
@@ -542,7 +544,7 @@
   <span class="md-ellipsis">
     
   
-    Why Git?
+    Why Git? - Intro and context
   
 
     
@@ -767,6 +769,34 @@
     
   
     Use AI in your work
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lectures/datasets/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview of provided datasets
   
 
     
@@ -1865,6 +1895,24 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Simulated dataset 3
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -1881,6 +1929,75 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Introduction
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Introduction">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#files" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Files
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Variables
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#heart-attack-incidents" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Heart attack incidents
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -2076,12 +2193,35 @@
 
 
 <h1 id="simulated-dataset-3">Simulated dataset 3<a class="headerlink" href="#simulated-dataset-3" title="Permanent link">&para;</a></h1>
-<div class="admonition todo">
-<p class="admonition-title">Content TODO</p>
-<p>This page is a placeholder. Add a description of the dataset,
-download links, and usage notes here.</p>
-</div>
-<p><a class="md-button" download="simulated-dataset-3.zip" href="downloads/simulated-dataset-3.zip"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5 20h14v-2H5m14-9h-4V3H9v6H5l7 7z"/></svg></span> Download dataset 3 (.zip)</a></p>
+<p><a class="md-button" download="simulated-dataset-3.zip" href="https://www.dropbox.com/scl/fi/5abaio8sn2hfwz3fjr3ir/simulated-dataset-3.zip?rlkey=2mbt29dfv1urgpnfiy7qjwsxi&amp;st=twe2hldv&amp;dl=1"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5 20h14v-2H5m14-9h-4V3H9v6H5l7 7z"/></svg></span> Download dataset 3 (.zip)</a></p>
+<h2 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">&para;</a></h2>
+<p>Cardiovascular disease is a leading cause of mortality in Sweden, with myocardial infarction (heart attack) accounting for a substantial proportion of acute hospital admissions. Time from symptom onset to treatment is a well-established predictor of outcome (<a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC2884185/">DeVon et al., 2010</a>). </p>
+<p>This dataset contains individual-level data from a simulated population survey covering all 21 Swedish counties (län) over the period 2023–2025. The sample consists of approximately 19 000 individuals aged 45 and older, with sample sizes proportional to each county's population.</p>
+<h3 id="files">Files<a class="headerlink" href="#files" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong><code>simulated-dataset-3.csv</code></strong> - The dataset is provided as a single CSV file, each row represents one individual. </li>
+<li><strong><code>dataset-3-key-csv</code></strong> - Code key describing the included variables.</li>
+</ul>
+<h3 id="variables">Variables<a class="headerlink" href="#variables" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>county</strong>: Swedish county code (integer), corresponding to the 21 Swedish counties.</li>
+<li><strong>sex</strong>: "Male", "Female", or "Other".</li>
+<li><strong>birthdate</strong>: Date of birth (YYYY-MM-DD). All individuals are 45 or older at the survey start date (2023-01-01).</li>
+<li><strong>height</strong>: Height in centimetres.</li>
+<li><strong>weight</strong>: Weight in kilograms.</li>
+<li><strong>physical_activity</strong>: Self-reported physical activity level on a 1–5 scale (1 = very low, 5 = very high).</li>
+<li><strong>smoking</strong>: Current smoking status ("Yes" or "No").</li>
+<li><strong>alcohol</strong>: Estimated weekly alcohol consumption in grams.</li>
+<li><strong>bloodpressure</strong>: Systolic and diastolic blood pressure reported as a formatted string (e.g. "128/82").</li>
+</ul>
+<h3 id="heart-attack-incidents">Heart attack incidents<a class="headerlink" href="#heart-attack-incidents" title="Permanent link">&para;</a></h3>
+<p>Individuals who experienced a heart attack during the survey period have values for the following variables; all others have <code>NA</code>:</p>
+<ul>
+<li><strong>incident_date</strong>: Date of the heart attack (YYYY-MM-DD).</li>
+<li><strong>time_to_treat</strong>: Time in hours from heart attack to treatment initiation. Right-skewed distribution reflecting real-world variation in emergency response times. Weakly correlated with county population density.</li>
+<li><strong>incident_outcome</strong>: Ordinal severity scale from 1 (minor, full recovery) to 5 (fatal). Correlated with time to treatment, age at incident, BMI, and smoking status.</li>
+<li><strong>death_date</strong>: Date of death (YYYY-MM-DD), populated only for cases with <code>incident_outcome = 5</code>. Most deaths occur within a few days of the incident.</li>
+</ul>
 
 
 

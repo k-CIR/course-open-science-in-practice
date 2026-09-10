@@ -474,6 +474,8 @@
       
         
       
+        
+      
     
     
     
@@ -542,7 +544,7 @@
   <span class="md-ellipsis">
     
   
-    Why Git?
+    Why Git? - Intro and context
   
 
     
@@ -767,6 +769,34 @@
     
   
     Use AI in your work
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lectures/datasets/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview of provided datasets
   
 
     
@@ -1578,10 +1608,21 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#what-is-a-remote" class="md-nav__link">
+  <a href="#remote-options" class="md-nav__link">
     <span class="md-ellipsis">
       
-        What is a remote?
+        Remote options
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-a-remote-really" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What is a remote really?
       
     </span>
   </a>
@@ -2190,18 +2231,27 @@
 
 
 <h1 id="git-safety-and-remote-github">Git safety and remote (GitHub)<a class="headerlink" href="#git-safety-and-remote-github" title="Permanent link">&para;</a></h1>
-<p>So far every commit has lived only on your own machine. That is great for privacy, but it means your work is one spilled coffee away from being lost, and it cannot be shared or collaborated on. A <strong>remote</strong> solves both problems — but it also introduces risk, because whatever you push can be seen by others, and on a public remote it can be seen by <em>everyone</em>. This lecture covers the concepts of remotes, and the safety practices — <code>.gitignore</code>, secret-handling, and SSH — that keep you from sharing what you did not mean to.</p>
-<h2 id="what-is-a-remote">What is a remote?<a class="headerlink" href="#what-is-a-remote" title="Permanent link">&para;</a></h2>
-<p>A <strong>remote</strong> is just a saved reference — a URL — to another copy of your repository. Git stores it under a short name, by convention <code>origin</code>. Adding a remote does not copy anything; it only tells Git <em>where</em> <code>origin</code> points. The actual copying happens later, explicitly, when you <code>push</code> (send your history out) or <code>pull</code>/<code>clone</code> (bring history in).</p>
-<p><img alt="remote" src="../../assets/git_full_flow.svg" /></p>
+<p><img align="right" alt="bots" src="../../assets/bot-remote.png" width="40%" />
+You can work on git completely on your own machine. That is great for privacy and for learning how git works without having to be afraid that sensitive data is put somewhere where it should not be. </p>
+<p>However, it also means your work is one spilled coffee away from being lost, and it cannot be shared or collaborated on. A <strong>remote</strong> solves both problems — but it also introduces risk, because whatever you push can be seen by others, and on a public remote it can be seen by <em>everyone</em>. This lecture covers the concepts of remotes, and the safety practices — <code>.gitignore</code>, secret-handling, and SSH — that keep you from sharing what you did not mean to.</p>
+<h2 id="remote-options">Remote options<a class="headerlink" href="#remote-options" title="Permanent link">&para;</a></h2>
+<p>There are a few options for remote handling of your repository. <a href="https://github.com">GitHub</a> is the most common, but it is owned by Microsoft and not open source. <a href="https://about.gitlab.com">GitLab</a> is open source and can be set up at a local server. <a href="https://staff.ki.se/tools-and-support/it-and-telephony/order-it-and-telephony-services/ki-gitlab-for-managing-source-code">KI ITA offers a GitLab account</a> but it can only be accessed by KI associated.</p>
+<h2 id="what-is-a-remote-really">What is a remote really?<a class="headerlink" href="#what-is-a-remote-really" title="Permanent link">&para;</a></h2>
 <p>Because Git is distributed, every clone is a full repository with its own complete history. A remote is not a "master" server in the traditional sense — it is simply a convenient, shared meeting point that everyone agrees to push to and pull from. This is why GitHub going down does not destroy your history: your local copy is intact.</p>
+<p>A <strong>remote</strong> is just a saved reference — a URL — to another copy of your repository. Git stores it under a short name, by convention <code>origin</code>. Adding a remote does not copy anything; it only tells Git <em>where</em> <code>origin</code> points. The actual copying happens later, explicitly, when you <code>push</code> (send your history out) or <code>pull</code>/<code>clone</code> (bring history in).</p>
+<p><img alt="remote" src="../assets/git_flow_remotegit .svg" /></p>
 <h2 id="the-danger-what-gets-committed-stays-committed">The danger: what gets committed, stays committed<a class="headerlink" href="#the-danger-what-gets-committed-stays-committed" title="Permanent link">&para;</a></h2>
-<p>The single most important safety rule is this: <strong>once a file is committed and pushed, assume it is permanent and, on a public remote, public.</strong> Even if you delete the file in a later commit, the data still exists in earlier commits in the history. This has two consequences:</p>
+<p>The single most important safety rule is this: <strong>once a file is committed and pushed, assume it is permanent and, on a public remote, public.</strong> Even if you delete the file in a later commit, the data still exists in earlier commits in the history. Also if you make a private repository public, its commit history will still be there.</p>
+<p>This has two consequences:</p>
 <ol>
 <li>Be deliberate about what you <code>git add</code> in the first place.</li>
 <li>Never put credentials, tokens, or private data into a commit at all.</li>
 </ol>
 <p>The remedy is not "delete it later" — it is "never let it in." That is the job of <code>.gitignore</code> and good secret-handling habits.</p>
+<div class="admonition info">
+<p class="admonition-title">Tool to rewrite commit history</p>
+<p>If a secret is <em>accidentally</em> committed, the correct response is to <strong>treat it as compromised and rotate/revoke it immediately</strong>. Removing it in a later commit does not remove it from history; truly purging it requires rewriting history (with tools like <a href="https://github.com/newren/git-filter-repo">git-filter-repo</a> or the <a href="https://rtyley.github.io/bfg-repo-cleaner/">BFG Repo-Cleaner</a>) and a force-push. Prevention is dramatically simpler than cleanup.</p>
+</div>
 <h2 id="gitignore-deciding-what-git-never-sees"><code>.gitignore</code>: deciding what Git never sees<a class="headerlink" href="#gitignore-deciding-what-git-never-sees" title="Permanent link">&para;</a></h2>
 <p>A <code>.gitignore</code> file lists patterns for files Git should <strong>not track</strong> — operating-system noise (<code>.DS_Store</code>), editor temp files, generated outputs, and, critically, secrets. It lives in the root of your repository and is committed itself, so the rules travel with the project and apply to everyone who clones it.</p>
 <p>The mental model: <code>.gitignore</code> is a filter at the <em>entry</em> to your repository. Files matching its patterns never reach the staging area, never get committed, and therefore never get pushed. You can always verify a rule with <code>git check-ignore -v &lt;file&gt;</code>, which reports exactly which line caused a file to be ignored.</p>
@@ -2230,7 +2280,6 @@
 </div>
 </div>
 </div>
-<p>If a secret is <em>accidentally</em> committed, the correct response is to <strong>treat it as compromised and rotate/revoke it immediately</strong>. Removing it in a later commit does not remove it from history; truly purging it requires rewriting history (with tools like <code>git filter-repo</code> or the BFG Repo-Cleaner) and a force-push. Prevention is dramatically simpler than cleanup.</p>
 <h2 id="ssh-keys-proving-who-you-are-without-a-password">SSH keys: proving who you are without a password<a class="headerlink" href="#ssh-keys-proving-who-you-are-without-a-password" title="Permanent link">&para;</a></h2>
 <p>To push to GitHub you must prove your identity. HTTPS remotes ask for a username and a personal access token on every push — workable, but tedious. <strong>SSH keys</strong> provide a smoother and more secure alternative.</p>
 <p>An SSH key pair has two parts: a <strong>private key</strong> that stays on your machine and must never be shared, and a <strong>public key</strong> that you register with GitHub. When you push, your machine uses the private key to prove it holds the matching pair; GitHub checks it against the public key you registered. No password is transmitted, and the private key is never sent anywhere.</p>

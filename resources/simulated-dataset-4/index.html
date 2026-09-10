@@ -474,6 +474,8 @@
       
         
       
+        
+      
     
     
     
@@ -542,7 +544,7 @@
   <span class="md-ellipsis">
     
   
-    Why Git?
+    Why Git? - Intro and context
   
 
     
@@ -767,6 +769,34 @@
     
   
     Use AI in your work
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lectures/datasets/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview of provided datasets
   
 
     
@@ -1893,6 +1923,24 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Simulated dataset 4
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -1909,6 +1957,58 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Introduction
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#files" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Files
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Variables
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -2076,12 +2176,31 @@
 
 
 <h1 id="simulated-dataset-4">Simulated dataset 4<a class="headerlink" href="#simulated-dataset-4" title="Permanent link">&para;</a></h1>
-<div class="admonition todo">
-<p class="admonition-title">Content TODO</p>
-<p>This page is a placeholder. Add a description of the dataset,
-download links, and usage notes here.</p>
-</div>
-<p><a class="md-button" download="simulated-dataset-4.zip" href="downloads/simulated-dataset-4.zip"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5 20h14v-2H5m14-9h-4V3H9v6H5l7 7z"/></svg></span> Download dataset 4 (.zip)</a></p>
+<p><a class="md-button" download="simulated-dataset-4.zip" href="https://www.dropbox.com/scl/fi/t79fo64f2guqapi0bngh6/simulated-dataset-4.zip?rlkey=h2dyhy2hon3v1kfemxn8t288y&amp;st=qo6c2dhb&amp;dl=1"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5 20h14v-2H5m14-9h-4V3H9v6H5l7 7z"/></svg></span> Download dataset 4 (.zip)</a></p>
+<h3 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">&para;</a></h3>
+<p>Chronotype is an individual's preference for sleep and activity timing and varies substantially across populations. It is influenced by both biological factors (age, sex) and environmental ones, including latitude and light exposure (<a href="https://pubmed.ncbi.nlm.nih.gov/23604485/">Roenneberg, et al., 2013</a>). Populations living at lower latitudes tend to show a later social timing of sleep, a phenomenon linked to cultural schedules and reduced seasonal variation in daylight (<a href="https://pubmed.ncbi.nlm.nih.gov/33545116/">Taillard, et al., 2021</a>). This dataset contains sleep data (actigraphy-derived sleep efficiency) and chronotype questionnaire scores collected from adults in Sweden and Spain using a similar survey protocol in both locations.</p>
+<p>Tendency to be a morning-person or an evening-person is measured by the Morningness-Eveningsness Questionnaire <a href="https://www.med.upenn.edu/cbti/assets/user-content/documents/Morningness-Eveningness%20Questionnaire.pdf">(MEQ; pdf)</a> developed by <a href="https://pubmed.ncbi.nlm.nih.gov/1027738/">Horne &amp; Östberg, 1976</a>.</p>
+<h3 id="files">Files<a class="headerlink" href="#files" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong><code>simulated-dataset-4-sweden.csv</code></strong> - Data for participants recruited in <a href="https://en.wikipedia.org/wiki/Spain">Spain</a>.</li>
+<li><strong><code>simulated-dataset-4-spain.csv</code></strong> - Data for participants recruited in <a href="https://www.ikea.com/se/sv/">Sweden</a>.</li>
+<li><strong><code>dataset-4-spain-key.csv</code></strong> - Detailed description of variables in Spain dataset.</li>
+<li><strong><code>dataset-4-sweden-key.csv</code></strong> - Detailed description of variables in Sweden dataset.</li>
+</ul>
+<h3 id="variables">Variables<a class="headerlink" href="#variables" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>id / participant_id</strong>: Unique participant identifier.</li>
+<li><strong>age</strong>: Age in years.</li>
+<li><strong>sex / gender</strong>: Biological sex.</li>
+<li><strong>work_schedule / WorkSchedule</strong>: Type of work schedule.</li>
+<li><strong>meq_score</strong>: Total score on the Morningness-Eveningness Questionnaire (<a href="https://pubmed.ncbi.nlm.nih.gov/1027738/">Horne &amp; Östberg, 1976</a>).</li>
+<li><strong>sleep_onset</strong>: Habitual sleep onset time in decimal hours (e.g. 23.5 = 23:30).</li>
+<li><strong>sleep_duration / SleepDuration</strong>: Duration of sleep.</li>
+<li><strong>sleep_efficiency</strong>: Actigraphy-derived sleep efficiency in percent (time asleep / time in bed × 100).</li>
+<li><strong>light_exposure</strong>: Estimated daily light exposure in lux-hours, used as a proxy for outdoor time.</li>
+<li><strong>latitude</strong>: Residential latitude in decimal degrees.</li>
+<li><strong>country</strong>: Country of data collection ("Sweden" or "Spain").</li>
+</ul>
 
 
 
