@@ -1,23 +1,38 @@
 # Git safety and remote (GitHub)
 
-So far every commit has lived only on your own machine. That is great for privacy, but it means your work is one spilled coffee away from being lost, and it cannot be shared or collaborated on. A **remote** solves both problems — but it also introduces risk, because whatever you push can be seen by others, and on a public remote it can be seen by *everyone*. This lecture covers the concepts of remotes, and the safety practices — `.gitignore`, secret-handling, and SSH — that keep you from sharing what you did not mean to.
+![bots](../assets/bot-remote.png){ width=40% align="right"}
+You can work on git completely on your own machine. That is great for privacy and for learning how git works without having to be afraid that sensitive data is put somewhere where it should not be. 
 
-## What is a remote?
+However, it also means your work is one spilled coffee away from being lost, and it cannot be shared or collaborated on. A **remote** solves both problems — but it also introduces risk, because whatever you push can be seen by others, and on a public remote it can be seen by *everyone*. This lecture covers the concepts of remotes, and the safety practices — `.gitignore`, secret-handling, and SSH — that keep you from sharing what you did not mean to.
 
-A **remote** is just a saved reference — a URL — to another copy of your repository. Git stores it under a short name, by convention `origin`. Adding a remote does not copy anything; it only tells Git *where* `origin` points. The actual copying happens later, explicitly, when you `push` (send your history out) or `pull`/`clone` (bring history in).
 
-![remote](../assets/git_full_flow.svg)
+
+## Remote options
+There are a few options for remote handling of your repository. [GitHub](https://github.com) is the most common, but it is owned by Microsoft and not open source. [GitLab](https://about.gitlab.com) is open source and can be set up at a local server. [KI ITA offers a GitLab account](https://staff.ki.se/tools-and-support/it-and-telephony/order-it-and-telephony-services/ki-gitlab-for-managing-source-code) but it can only be accessed by KI associated.
+
+## What is a remote really?
 
 Because Git is distributed, every clone is a full repository with its own complete history. A remote is not a "master" server in the traditional sense — it is simply a convenient, shared meeting point that everyone agrees to push to and pull from. This is why GitHub going down does not destroy your history: your local copy is intact.
 
+A **remote** is just a saved reference — a URL — to another copy of your repository. Git stores it under a short name, by convention `origin`. Adding a remote does not copy anything; it only tells Git *where* `origin` points. The actual copying happens later, explicitly, when you `push` (send your history out) or `pull`/`clone` (bring history in).
+
+![remote](../assets/git_flow_remotegit .svg)
+
+
 ## The danger: what gets committed, stays committed
 
-The single most important safety rule is this: **once a file is committed and pushed, assume it is permanent and, on a public remote, public.** Even if you delete the file in a later commit, the data still exists in earlier commits in the history. This has two consequences:
+The single most important safety rule is this: **once a file is committed and pushed, assume it is permanent and, on a public remote, public.** Even if you delete the file in a later commit, the data still exists in earlier commits in the history. Also if you make a private repository public, its commit history will still be there.
+
+This has two consequences:
 
 1. Be deliberate about what you `git add` in the first place.
 2. Never put credentials, tokens, or private data into a commit at all.
 
 The remedy is not "delete it later" — it is "never let it in." That is the job of `.gitignore` and good secret-handling habits.
+
+!!! info "Tool to rewrite commit history"
+    If a secret is *accidentally* committed, the correct response is to **treat it as compromised and rotate/revoke it immediately**. Removing it in a later commit does not remove it from history; truly purging it requires rewriting history (with tools like [git-filter-repo](https://github.com/newren/git-filter-repo) or the [BFG Repo-Cleaner](https://rtyley.github.io/bfg-repo-cleaner/)) and a force-push. Prevention is dramatically simpler than cleanup.
+    
 
 ## `.gitignore`: deciding what Git never sees
 
@@ -52,8 +67,6 @@ API keys, tokens, and passwords must never enter version control. The safe patte
     if not token:
         raise RuntimeError("Set the GITHUB_TOKEN environment variable")
     ```
-
-If a secret is *accidentally* committed, the correct response is to **treat it as compromised and rotate/revoke it immediately**. Removing it in a later commit does not remove it from history; truly purging it requires rewriting history (with tools like `git filter-repo` or the BFG Repo-Cleaner) and a force-push. Prevention is dramatically simpler than cleanup.
 
 ## SSH keys: proving who you are without a password
 

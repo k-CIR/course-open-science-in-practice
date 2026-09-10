@@ -1,3 +1,10 @@
+# Junk
+.DS_Store
+__pycache__
+.$*
+$*
+
+# Other
 *.json
 *.html
 !docs/slides/*.html
@@ -6,4 +13,3 @@
 .venv
 site/
 .kilo
-$*

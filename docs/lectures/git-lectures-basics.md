@@ -10,4 +10,4 @@ author: "Niklas Edvall & Andreas Gerhardsson"
     This session page is a placeholder. Add learning goals,
     materials, exercises, and links here.
 
-!!! tip "[Learn more git basics](../resources/git-basics.md)"
+!!! tip "[Git basics wiki](../resources/git-basics.md)"

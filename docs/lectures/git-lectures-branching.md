@@ -10,4 +10,4 @@ author: "Niklas Edvall & Andreas Gerhardsson"
     This session page is a placeholder. Add learning goals,
     materials, exercises, and links here.
 
-!!! tip "[Learn more about git branching](../resources/git-branching.md)"
+!!! tip "[Git branching wiki](../resources/git-branching.md)"

@@ -10,4 +10,4 @@ author: "Niklas Edvall & Andreas Gerhardsson"
     This session page is a placeholder. Add learning goals,
     materials, exercises, and links here.
 
-!!! tip "[Learn more git collaboration](../resources/git-collaboration.md)"
+!!! tip "[Git collaboration wiki](../resources/git-collaboration.md)"

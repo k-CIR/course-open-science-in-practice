@@ -10,4 +10,4 @@ author: "Niklas Edvall & Andreas Gerhardsson"
     This session page is a placeholder. Add learning goals,
     materials, exercises, and links here.
 
-!!! tip "[Learn more about git remote](../resources/git-remote.md)"
+!!! tip "[Git remote wiki](../resources/git-remote.md)"
