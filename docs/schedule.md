@@ -35,4 +35,4 @@
 |                   | 16:00   | End of day                                                                                          |          |
 
 
-Download schedule ([ics](../K8F6106-schedule-2026.ics){ download='K8F6106-schedule-2026.ics' })
+Download schedule ([ics](assets/K8F6106-schedule-2026.ics){ download='K8F6106-schedule-2026.ics' })

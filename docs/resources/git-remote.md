@@ -16,7 +16,7 @@ Because Git is distributed, every clone is a full repository with its own comple
 
 A **remote** is just a saved reference — a URL — to another copy of your repository. Git stores it under a short name, by convention `origin`. Adding a remote does not copy anything; it only tells Git *where* `origin` points. The actual copying happens later, explicitly, when you `push` (send your history out) or `pull`/`clone` (bring history in).
 
-![remote](../assets/git_flow_remotegit .svg)
+![remote](../assets/git_flow_remote.svg)
 
 
 ## The danger: what gets committed, stays committed

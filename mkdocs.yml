@@ -102,7 +102,7 @@ nav:
       - 'Presentation of results': project/project-presentation.md
   - Resources:
     - resources/index.md
-    - Glossary: glossary.md
+    - Glossary: resources/glossary.md
     - Git:
       - 'Git setup': setup/git-setup.md
       - 'Setup GitHub': setup/github-setup.md
