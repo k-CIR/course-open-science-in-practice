@@ -1365,7 +1365,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../glossary/" class="md-nav__link">
+      <a href="../glossary/" class="md-nav__link">
         
   
   
@@ -2239,7 +2239,7 @@ You can work on git completely on your own machine. That is great for privacy an
 <h2 id="what-is-a-remote-really">What is a remote really?<a class="headerlink" href="#what-is-a-remote-really" title="Permanent link">&para;</a></h2>
 <p>Because Git is distributed, every clone is a full repository with its own complete history. A remote is not a "master" server in the traditional sense — it is simply a convenient, shared meeting point that everyone agrees to push to and pull from. This is why GitHub going down does not destroy your history: your local copy is intact.</p>
 <p>A <strong>remote</strong> is just a saved reference — a URL — to another copy of your repository. Git stores it under a short name, by convention <code>origin</code>. Adding a remote does not copy anything; it only tells Git <em>where</em> <code>origin</code> points. The actual copying happens later, explicitly, when you <code>push</code> (send your history out) or <code>pull</code>/<code>clone</code> (bring history in).</p>
-<p><img alt="remote" src="../assets/git_flow_remotegit .svg" /></p>
+<p><img alt="remote" src="../../assets/git_flow_remote.svg" /></p>
 <h2 id="the-danger-what-gets-committed-stays-committed">The danger: what gets committed, stays committed<a class="headerlink" href="#the-danger-what-gets-committed-stays-committed" title="Permanent link">&para;</a></h2>
 <p>The single most important safety rule is this: <strong>once a file is committed and pushed, assume it is permanent and, on a public remote, public.</strong> Even if you delete the file in a later commit, the data still exists in earlier commits in the history. Also if you make a private repository public, its commit history will still be there.</p>
 <p>This has two consequences:</p>
