@@ -77,7 +77,7 @@ nav:
   - Schedule: schedule.md
   - Lectures:
       - lectures/index.md
-      - 'Why Git?': lectures/lecture-1-why-git.md
+      - 'Why Git? - Intro and context': lectures/lecture-1-why-git.md
       - 'Git #1 basics': lectures/git-lectures-basics.md
       - 'Git #2 remote': lectures/git-lectures-remote.md
       - 'Git #3 branching': lectures/git-lectures-branching.md
@@ -86,6 +86,7 @@ nav:
       - 'R #1 basics': lectures/r-lectures-1.md
       - 'Markdown and Quarto': lectures/markdown-quarto.md
       - 'Use AI in your work': lectures/agentic-coding.md
+      - 'Overview of provided datasets': lectures/datasets.md
   - Exercises:
     - 'Workshops':
       - 'Git #1 basics': exercises/git-exercises-basics.md
