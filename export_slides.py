@@ -186,15 +186,23 @@ GALLERY_HTML = """\
 def find_tool(name: str, alternatives: list[str] | None = None) -> Path:
     """Look up `name` on PATH, falling back to `alternatives` if not found.
 
-    Needed because the official Windows Ghostscript installer names its
-    executable gswin64c.exe / gswin32c.exe rather than gs (conda-forge's
-    ghostscript package does provide a plain gs, so this only kicks in for
-    non-conda installs).
+    On Windows, conda-forge's Ghostscript places gswin64c.exe in
+    <prefix>/Library/bin/ which is often not on PATH.  We probe that
+    location relative to the running Python interpreter as a fallback.
     """
     for candidate in [name, *(alternatives or [])]:
         path = shutil.which(candidate)
         if path:
             return Path(path)
+    # Conda Library\bin fallback (Windows) — sibling to the Python executable
+    bindir = Path(sys.executable).parent / "Library" / "bin"
+    for candidate in [name, *(alternatives or [])]:
+        path = bindir / candidate
+        if path.is_file():
+            return path
+        path = bindir / (candidate + ".exe")
+        if path.is_file():
+            return path
     tried = ", ".join([name, *(alternatives or [])])
     print(f"ERROR: none of ({tried}) found on PATH. Install it and retry.", file=sys.stderr)
     sys.exit(1)
