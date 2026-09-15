@@ -41,7 +41,7 @@ theme:
     - navigation.tracking
     - navigation.indexes
     - navigation.instant
-    - navigation.instant.preview
+    # - navigation.instant.preview
     - navigation.tabs
     - navigation.tabs.sticky
     - navigation.footer
