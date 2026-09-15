@@ -78,16 +78,17 @@ nav:
   - Schedule: schedule.md
   - Lectures:
       - lectures/index.md
-      - 'Why Git? - Intro and context': lectures/lecture-1-why-git.md
-      - 'Git #1 - Basics': lectures/git-lectures-basics.md
-      - 'Git #2 - Remote': lectures/git-lectures-remote.md
-      - 'Positron #1 basics': lectures/positron-lectures-1.md
+      - '1. Why Git? Intro and context': lectures/lecture-1-why-git.md
+      - '2. Git basics': lectures/git-lectures-basics.md
+      - '3. Git remote': lectures/git-lectures-remote.md
+      - '4. Working in an IDE: Positron': lectures/positron-lectures-1.md
 #      - 'R #1 basics': lectures/r-lectures-1.md
-      - 'Markdown and Quarto': lectures/markdown-quarto.md
-      - 'Mini project and data overview': lectures/lecture-data-overview.md
-      - 'Git #3 - Branching': lectures/git-lectures-branching.md
-      - 'Git #4 - Collaboration': lectures/git-lectures-collaboration.md
-      - 'Use AI in your work': lectures/agentic-coding.md
+      - '5. Markdown and Quarto': lectures/markdown-quarto.md
+      - '6. Use AI in your work': lectures/agentic-coding.md
+      - '7. Mini project and data overview': lectures/lecture-data-overview.md
+      - '8. Git branching': lectures/git-lectures-branching.md
+      - '9. Collaborate by forking': lectures/git-lectures-collaboration.md
+
 
   - Exercises:
     - exercises/index.md
