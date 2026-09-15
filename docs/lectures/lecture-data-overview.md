@@ -1,4 +1,4 @@
-# Lecture: Why Git? - Intro and context
+# Lecture: Overview of provided datasets
 
 Research should be reproducible and performed in a transparent manner. To achieve this version control of your work is super important. This lectures gives an introduction to the course and motivates its contents in a wider context of open science and best practices working in research.
 
