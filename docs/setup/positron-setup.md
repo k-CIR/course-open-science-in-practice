@@ -1,5 +1,10 @@
 # Setup Positron
 
+=== "Windows"
+    1. Go to [positron.posit.co](https://positron.posit.co/) and click **Download**.
+    2. Run the downloaded `.exe` installer and follow the prompts, accepting the defaults.
+    3. Launch **Positron** from the Start menu.
+
 === "Mac"
 
     Again you can use Homebrew to install positron
@@ -32,17 +37,18 @@
 
     3. Launch Positron from your application menu or by running `positron` in a terminal.
 
-=== "Windows"
 
-    1. Go to [positron.posit.co](https://positron.posit.co/) and click **Download**.
-    2. Run the downloaded `.exe` installer and follow the prompts, accepting the defaults.
-    3. Launch **Positron** from the Start menu.
+The first time you start Positron, it may ask you to sign in. You can use your GitHub account to sign in. If you do, you can run version control and push to github directly from Positron.
 
-## Posit Assistant
+Positron should look something like this:
+![Positron](../assets/positron1.png)
 
-For AI assisted coding you can link the Posit Assistant with various providers.
+<br>
+If you are one of us emo-kids, you open the options to switch to dark mode in `File → Preferences → Theme → Color theme`.
 
-![posit assistant](../assets/posit_assistant.png){width="70%"}
+To run R in positron, click "Start session" in the top right corner and select your R version.
+![Positron](../assets/positron3.png)
 
-![posit github copilot](../assets/posit_copilot.png){width="50%" align="right"}
-If you managed to create a GitHub University associated account, you have access a limited amount of tokens per month. Use them wisely.
+That's it for setting up Positron!
+
+Later in the course we have a [lecture](../lectures/positron-lectures-1.md) with some tips and tricks for using Positron.

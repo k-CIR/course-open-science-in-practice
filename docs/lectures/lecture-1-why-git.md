@@ -1,6 +1,6 @@
 # Lecture: Why Git? Intro and context
 
-Research should be reproducible and performed in a transparent manner. To achieve this version control of your work is super important. This lectures gives an introduction to the course and motivates its contents in a wider context of open science and best practices working in research.
+Research should be reproducible and performed in a transparent manner. To achieve this, version control of your work is super important. This lectures gives an introduction to the course and motivates its contents in a wider context of open science and best practices working in research.
 
 [:material-file-pdf-box: Download slides (.pdf)](downloads/1-why-git.pdf){ .md-button download="1-why-git.pdf" }
 
