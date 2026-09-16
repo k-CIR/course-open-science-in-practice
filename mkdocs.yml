@@ -41,7 +41,7 @@ theme:
     - navigation.tracking
     - navigation.indexes
     - navigation.instant
-    - navigation.instant.preview
+    # - navigation.instant.preview
     - navigation.tabs
     - navigation.tabs.sticky
     - navigation.footer
@@ -68,6 +68,7 @@ markdown_extensions:
       alternate_style: true
   - toc:
       permalink: true
+      toc_depth: 2
   - pymdownx.emoji:
       emoji_index: !!python/name:material.extensions.emoji.twemoji
       emoji_generator: !!python/name:material.extensions.emoji.to_svg
@@ -77,48 +78,54 @@ nav:
   - Schedule: schedule.md
   - Lectures:
       - lectures/index.md
-      - 'Why Git? - Intro and context': lectures/lecture-1-why-git.md
-      - 'Git #1 basics': lectures/git-lectures-basics.md
-      - 'Git #2 remote': lectures/git-lectures-remote.md
-      - 'Git #3 branching': lectures/git-lectures-branching.md
-      - 'Git #4 collaboration': lectures/git-lectures-collaboration.md
-      - 'Positron #1 basics': lectures/positron-lectures-1.md
-      - 'R #1 basics': lectures/r-lectures-1.md
-      - 'Markdown and Quarto': lectures/markdown-quarto.md
-      - 'Use AI in your work': lectures/agentic-coding.md
-      - 'Overview of provided datasets': lectures/datasets.md
+      - '1. Why Git? Intro and context': lectures/lecture-1-why-git.md
+      - '2. Git basics': lectures/git-lectures-basics.md
+      - '3. Git remote': lectures/git-lectures-remote.md
+      - '4. Working in an IDE: Positron': lectures/positron-lectures-1.md
+#      - 'R #1 basics': lectures/r-lectures-1.md
+      - '5. Markdown and Quarto': lectures/markdown-quarto.md
+      - '6. Use AI in your work': lectures/agentic-coding.md
+      - '7. Mini project and data overview': lectures/lecture-data-overview.md
+      - '8. Git branching': lectures/git-lectures-branching.md
+      - '9. Collaborate by forking': lectures/git-lectures-collaboration.md
+
+
   - Exercises:
+    - exercises/index.md
     - 'Workshops':
-      - 'Git #1 basics': exercises/git-exercises-basics.md
-      - 'Git #2 remote': exercises/git-exercises-remote.md
-      - 'Git #3 branching': exercises/git-exercises-branching.md
-      - 'Git #4 collaboration': exercises/git-exercises-collaboration.md
+      - 'Git #1 - Basics': exercises/git-exercises-basics.md
+      - 'Git #2 - Remote': exercises/git-exercises-remote.md
+      - 'Git #3 - Branching': exercises/git-exercises-branching.md
+      - 'Git #4 - Collaboration': exercises/git-exercises-collaboration.md
       # - 'Testing your scripts': exercises/quality-exercises-1.md
-    - 'Project':
-      - 'Work on your project': project/project-description.md
-      - 'Forking': project/project-fork.md
-      - 'Contribute (Pull request)': project/project-contribute.md
-      - 'Examination': project/project-examination.md
-      - 'Presentation of results': project/project-presentation.md
+    - 'Project and Examination':
+      - 'Your mini-project': project/project-description.md
+#      - 'Forking': project/project-fork.md
+#      - 'Contribute (Pull request)': project/project-contribute.md
+      - 'Examination seminar': project/project-examination.md
+#      - 'Presentation of results': project/project-presentation.md
   - Resources:
-    - resources/index.md
-    - Glossary: resources/glossary.md
-    - Git:
-      - 'Git setup': setup/git-setup.md
+#    - Glossary: resources/glossary.md
+    - Before course starts:
+      - setup/index.md
+      - 'Install Git': setup/git-setup.md
       - 'Setup GitHub': setup/github-setup.md
-      - 'Git basics': resources/git-basics.md
-      - 'Git remote': resources/git-remote.md
-      - 'Git branching': resources/git-branching.md
-      - 'Git collaboration': resources/git-collaboration.md
-    - Positron:
       - 'Setup Positron': setup/positron-setup.md
-      - 'Positron basics': resources/positron-basics.md
+      - 'Optional: R primer': setup/R-primer.md
     - Simulated data:
       - "Simulated dataset 1": resources/simulated-dataset-1.md
       - "Simulated dataset 2": resources/simulated-dataset-2.md
       - "Simulated dataset 3": resources/simulated-dataset-3.md
       - "Simulated dataset 4": resources/simulated-dataset-4.md
-    - External resources:
-      - "Git": resources/git-resources.md
-      - "Positron": resources/positron-resources.md
+#    - Git:
+#      - 'Git basics': resources/git-basics.md
+#      - 'Git remote': resources/git-remote.md
+#      - 'Git branching': resources/git-branching.md
+#      - 'Git collaboration': resources/git-collaboration.md
+#    - Positron:
+#      - 'Positron basics': resources/positron-basics.md
+
+#    - External resources:
+#      - "Git": resources/git-resources.md
+#      - "Positron": resources/positron-resources.md
   

@@ -1,4 +1,4 @@
-# Resources
+# Before course start
 
 This section collects material that supports the course beyond the lectures and workshops.
 

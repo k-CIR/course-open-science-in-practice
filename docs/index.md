@@ -10,15 +10,9 @@ The site contain setup instructions, slides from lectures and instructions for w
 
 ## Intended Audience
 
-This course is intended for PhD students who:
+The course is intended for PhD students who:
 
 - have an interest in script-based analysis methods with R or Python, have learned the basics, but are unsure how to move forward to a finished, structured analysis
 - started working with analysis in R or Python but noticed it is increasingly difficult to navigate, update, and share with colleagues as the project grows and evolves
 - have an interest in open science, sharing their work with others, and benefiting from open collaboration
 - benefit from a workflow where structure and documentation lead to transparency and reproducibility
-
-## Quick Links
-
-- [Full schedule](schedule.md)
-- [Before the course setup guide](setup/index.md)
-- [Lecture and workshop material by theme](lectures/index.md)

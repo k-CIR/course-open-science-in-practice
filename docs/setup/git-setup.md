@@ -1,4 +1,4 @@
-# Setup Git
+# Install Git
 
 === "Mac"
 
