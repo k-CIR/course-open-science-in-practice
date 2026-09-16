@@ -58,14 +58,18 @@
     git --version
     ```
 
-After installing, check your configurations
-```sh
-git config --list --show-origin
-```
-
-Set your identity so commits are attributed correctly:
+## Git Configuration
+You need to tell git who you are so that your commits will be properly labeled. Run the following commands in your terminal, replacing the placeholders with your own information:
 
 ```sh
 git config --global user.name "Your Name"
 git config --global user.email "you@example.org"
 ```
+
+After installing, check your configurations
+```sh
+git config --list --show-origin
+```
+
+You should see your name and email listed the last two lines of the output like this:
+![git config screenshot](../assets/git-config-screenshot.png)

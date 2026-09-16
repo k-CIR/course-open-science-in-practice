@@ -110,6 +110,7 @@ nav:
       - setup/index.md
       - 'Install Git': setup/git-setup.md
       - 'Setup GitHub': setup/github-setup.md
+      - 'Install R': setup/install-r.md
       - 'Setup Positron': setup/positron-setup.md
       - 'Optional: R primer': setup/R-primer.md
     - Simulated data:

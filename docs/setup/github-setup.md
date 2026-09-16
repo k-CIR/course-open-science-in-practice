@@ -41,31 +41,15 @@ If GitHub asks for additional proof, upload a photo or scan of your student ID o
 - Cloud credits from major providers
 - Developer tools and learning platforms
 
-## Configure your Git identity
-
-Make sure Git knows your name and email. Use the same email you used for GitHub so commits are linked to your account.
-
-```sh
-git config --global user.name "Your Name"
-git config --global user.email "you@example.org"
-```
-
-You can verify the settings with:
-
-```sh
-git config --list --show-origin
-```
-
 ## Connect Git to GitHub
 
+You can set up an SSH key pair on your computer and connect it to your github account. That way Github automatically knows your computer is you and allows you to push and pull from your repositories, without having to enter your password every time you connect. 
+
+To do this, you need to generate an SSH key pair (one private and one public key) on your local machine. These are created as two separate files. You then add the public key to your GitHub account. The private key should stay on your computer, be kept secret and never shared with anyone.
+
+It's called a key-pair, but really you can think of it as a lock (public key) and a key (private key). You generate a key pair, put the lock (public key) on the service you want to access and keep the key (private key) on your local machine. When you connect, the service checks if you have the right key to unlock the lock.
+
 GitHub supports two main ways to authenticate:
-
-- **SSH** — recommended for daily use. No password prompts after setup.
-- **HTTPS** — simpler for beginners, but you will authenticate on every push unless you use a credential helper.
-
-### Option A — SSH (recommended)
-
-SSH lets Git talk to GitHub without typing your password every time. It uses a key pair stored on your machine.
 
 #### 1. Generate an SSH key
 
@@ -78,7 +62,7 @@ SSH lets Git talk to GitHub without typing your password every time. It uses a k
     ```
 
     Press **Enter** to accept the default file location (`~/.ssh/id_ed25519`).
-    Optionally set a passphrase for extra security.
+    Optionally set a passphrase for extra security, but this kind of defeates the purpose of using SSH keys as you will have to type it in every time you use the key.
 
     If your system does not support `ed25519`, use:
 
@@ -122,6 +106,8 @@ SSH lets Git talk to GitHub without typing your password every time. It uses a k
 
 #### 2. Add the SSH key to the ssh-agent
 
+Your computer runs an "SSH agent" that manages your keys in the background. You need to add your private key to the agent so it can be used for authentication.
+
 === "Mac"
 
     ```sh
@@ -146,6 +132,11 @@ SSH lets Git talk to GitHub without typing your password every time. It uses a k
     ```
 
 #### 3. Copy the public key to your clipboard
+
+Copy your public key to your clipboard so you can add (paste) it to GitHub.
+
+It will look something like: <br>
+`ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIK0wmN/Cr3JXqmLW7u+g9pTh+wyqDHpSQEIQczXkVx9q email.address@internet.com`
 
 === "Mac"
 
@@ -173,60 +164,25 @@ SSH lets Git talk to GitHub without typing your password every time. It uses a k
 
 === "Windows"
 
-    In Git Bash:
+    In Git Bash, print your public in the terminal:
 
     ```sh
     cat ~/.ssh/id_ed25519.pub
     ```
 
-    Select the output and copy it with **Ctrl+Shift+C**, or open the file in Notepad:
-
-    ```sh
-    notepad ~/.ssh/id_ed25519.pub
-    ```
+    Select the output and copy it. 
+    
+    Alternatively, you can open the public key file (`~/.ssh/id_ed25519.pub`) in a text editor and copy it from there. Where your home directory is located is sometimes a mystery on windows, but it is usually in `C:\Users\<YourName>\.ssh\`.
 
 #### 4. Add the key to GitHub
 
-1. In GitHub, click your avatar → **Settings**.
+1. In GitHub, click your avatar/portrait in the top right corner → **Settings**.
 2. In the left sidebar, click **SSH and GPG keys**.
 3. Click **New SSH key**.
 4. Paste your key into the **Key** field.
 5. Give it a title like `Work laptop`.
 6. Click **Add SSH key**.
-
-### Option B — HTTPS
-
-If you prefer HTTPS, use the repository URL that starts with `https://github.com/...`.
-
-#### Use a credential helper
-
-So you do not have to type your username and password on every push.
-
-=== "Mac"
-
-    ```sh
-    git config --global credential.helper osxkeychain
-    ```
-
-=== "Linux"
-
-    ```sh
-    git config --global credential.helper cache
-    ```
-
-    Or for longer caching:
-
-    ```sh
-    git config --global credential.helper 'cache --timeout=3600'
-    ```
-
-=== "Windows"
-
-    ```sh
-    git config --global credential.helper manager-core
-    ```
-
-Git Credential Manager will prompt for credentials once and store them securely.
+7. You will have to authenticate with your GitHub password to confirm.
 
 ## Verify the connection
 
@@ -242,33 +198,19 @@ Hi <username>! You've successfully authenticated, but GitHub does not provide sh
 
 If you see a warning about the host fingerprint, that is expected on first use. Type `yes` to continue.
 
-## Test with a real repository
-
-### Clone an existing repository
-
-```sh
-git clone git@github.com:<owner>/<repo>.git
-```
-
-Replace `<owner>` and `<repo>` with a real GitHub repository path. If you do not have one yet, create a new empty repository on GitHub and clone it.
-
-## Troubleshooting
-
-- **Permission denied (publickey)**  
-  Make sure you added the correct public key to GitHub and that the ssh-agent is running with the private key loaded.
-
-- **Host key verification failed**  
-  Remove stale GitHub entries from `~/.ssh/known_hosts` and try the `ssh -T` test again.
-
-- **HTTPS keeps asking for a password**  
-  Enable the credential helper for your OS above, or switch to SSH.
-
-- **Commits show the wrong author on GitHub**  
-  Double-check that `git config user.email` matches the email on your GitHub account.
-
 ## Checklist
 
-- [ ] You have a GitHub account with a verified email.
-- [ ] Your global Git `user.name` and `user.email` are configured.
-- [ ] You can run `ssh -T git@github.com` successfully.
-- [ ] You can clone or push to a GitHub repository.
+- [x] You have a GitHub account with a verified email.
+- [x] You have an ssh key-pair generated and with the public key added to your GitHub account.
+- [x] You can run `ssh -T git@github.com` successfully.
+
+.. now make sure you have [R installed](./install-r.md), go [setup Positron](./positron-setup.md) and you'll be ready to start the course!
+
+## Bonus: Clone a public repository
+You can try to clone a public repository from GitHub to your local machine to make sure everything is working. For example, running this command in your terminal:
+
+```sh
+git clone git@github.com:NiklasEdvall/an-approved-repo.git
+```
+
+.. will clone [this example repository](https://github.com/NiklasEdvall/an-approved-repo) to your local machine. You can then navigate into the directory and check the files.
