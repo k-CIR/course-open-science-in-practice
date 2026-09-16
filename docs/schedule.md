@@ -17,7 +17,7 @@ Download schedule: [ICS](assets/K8F6106-schedule-2026.ics){ download='K8F6106-sc
 | **Tuesday 13/10** |         |                 |                                                                                                        |  **[215](https://medarbetare.ki.se/campus-hus-och-miljoer/bokningsbara-lokaler/bokningsbara-lokaler-pa-campus-solna/215)** |
 |                   | 09:00   | Lecture         | [Working in an IDE: Positron](lectures/positron-lectures-1.md)                                                           |          |
 |                   | 10:00   | Lecture         | [Markdown and Quarto](lectures/markdown-quarto.md)                                                    |          |
-|                   | 11:00   | Lecture         | [Agentic coding](lectures/agentic-coding.md)                                      |          |
+|                   | 11:00   | Lecture         | [Using AI assistance](lectures/ai-assistance.md)                                      |          |
 |                   | 12:00   | Lunch           | [Lunch places around campus](https://medarbetare.ki.se/dagens-lunch)                                                                                             |          |
 |                   | 13:00   | Lecture         | [Mini project and data overview](lectures/lecture-data-overview.md)                                      |          |
 |                   | 14:00   | Independent work| [Work on you mini project](project/project-description.md)                                            |          |
