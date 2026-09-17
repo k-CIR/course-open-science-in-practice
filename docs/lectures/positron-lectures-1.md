@@ -3,9 +3,9 @@ title: Positron features
 author: "Niklas Edvall & Andreas Gerhardsson"
 ---
 
+## Summary
 
-
-## Why Positron?
+### Why Positron?
 
 For many researchers, R has meant RStudio — a dedicated environment that has served the R community well for over a decade. Positron is a new code editor developed by Posit (the company behind RStudio) that takes a different approach: rather than building a separate application for each language, it extends **Visual Studio Code** — the most widely used code editor in the world — with first-class, deeply integrated support for both R and Python.
 
@@ -13,7 +13,7 @@ The result is an editor that feels immediately familiar to anyone who has used V
 
 For this course, Positron matters for two reasons. First, it integrates tightly with Git, making the version control operations you will learn — staging, committing, branching — available directly in the editor without switching to a terminal. Second, it supports Quarto natively, which you will use to write reproducible documents that mix prose, code, and output.
 
-## What is Positron?
+### What is Positron?
 
 Positron is a free, open-source code editor released by Posit in 2024. It is built on the **VS Code engine** (the same foundation used by GitHub Codespaces, Cursor, and many other tools), which means it inherits VS Code's extension ecosystem, keyboard shortcuts, settings format, and terminal integration.
 
@@ -28,7 +28,7 @@ On top of that foundation, Posit has added:
 
 Because it is built on VS Code, Positron also inherits the Source Control panel — a graphical interface for the most common Git operations — and the integrated terminal, which gives you full shell access without leaving the editor.
 
-## The Positron interface
+### The Positron interface
 
 The Positron window is divided into several areas that you will use throughout the course.
 
@@ -47,7 +47,7 @@ The lower panel holds several tabs. The R console runs your R code interactively
 **Secondary sidebar** (right, optional)
 Positron adds a second sidebar on the right that hosts the Environment pane (showing your R variables), the Plots pane, and the Connections pane. This layout mirrors the familiar RStudio four-pane design while keeping the editor at the centre.
 
-## Workspaces and projects
+### Workspaces and projects
 
 In Positron, a **workspace** is a folder you open with **File → Open Folder**. Everything — the terminal working directory, relative file paths in your scripts, Git operations, and extension settings — is anchored to that folder. This is the equivalent of an RStudio project (`.Rproj`).
 
@@ -60,7 +60,7 @@ The recommended workflow for this course is:
 
 Keeping all project files under one workspace folder, and that folder under Git version control, is the foundation of a reproducible and shareable analysis.
 
-## Extensions
+### Extensions
 
 One of Positron's greatest strengths is its extension ecosystem, inherited from VS Code. Extensions add new capabilities to the editor — language support, linters, formatters, AI assistants, database connectors, and more. They are installed from the built-in marketplace (the puzzle-piece icon in the activity bar) and activated automatically when the editor starts.
 
@@ -74,7 +74,7 @@ Extensions relevant to this course:
 
 You do not need to install all of these immediately. The R and Quarto extensions are the ones to have from the start; the others can be added as the course progresses.
 
-## Git integration in Positron
+### Git integration in Positron
 
 Because Positron is built on VS Code, the Git integration is built in — no additional extension is required for basic operations. The **Source Control panel** (branch icon in the activity bar) shows:
 
@@ -86,7 +86,7 @@ Clicking the `+` icon next to a file stages it. Filling in the message box and c
 
 For learning purposes, it is worth doing these operations in the terminal at least a few times first so that you understand what each command does. Once the concepts are clear, the graphical panel is a convenient shortcut for the day-to-day workflow.
 
-## Quarto in Positron
+### Quarto in Positron
 
 Quarto is a document system that lets you write prose and executable code in the same file. In Positron, `.qmd` files open with full syntax highlighting and a **Preview** button in the top-right corner of the editor that renders the document and displays the result alongside the source.
 
@@ -98,16 +98,20 @@ title: "My analysis"
 format: html
 ---
 
-## Data preparation
+### Data preparation
 
 ```{{r}}
 library(dplyr)
 data <- read.csv("data/input.csv")
 ```
 
-Some text describing the next step.
-```
-
 Running the Preview renders all code chunks and weaves the output — tables, plots, printed values — directly into the document. The rendered file is a single self-contained HTML (or PDF) that can be shared with collaborators or published online without them needing to install R.
 
 Quarto documents committed to a Git repository give you a complete record of both the analysis code and its output at each point in time — which is the closest practical equivalent to a lab notebook for computational research.
+
+??? tip "More about Positron"
+    Positron's own website has a few [tutorials](https://positron.posit.co/tutorials.html) about the basic setup to get started started. Then even more [guides](https://positron.posit.co/welcome.html) to keep going. 
+
+    In this course we chose Positron since it is built for data science and is setup with the most useful extensions for that, including a nice R + Python configurations, that can be a bit tricky to setup manually. 
+
+    Since Positron is built on [Code OSS](https://github.com/microsoft/vscode), the open-source foundation of Visual Studio Code. For general editor features like commands, settings, and source control, you can use check out the [VS Code documentation](https://code.visualstudio.com/docs).

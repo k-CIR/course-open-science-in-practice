@@ -81,13 +81,12 @@ nav:
       - '1. Why Git? Intro and context': lectures/lecture-1-why-git.md
       - '2. Git basics': lectures/git-lectures-basics.md
       - '3. Git remote': lectures/git-lectures-remote.md
-      - '4. Working in an IDE: Positron': lectures/positron-lectures-1.md
-#      - 'R #1 basics': lectures/r-lectures-1.md
-      - '5. Markdown and Quarto': lectures/markdown-quarto.md
-      - '6. Use AI in your work': lectures/agentic-coding.md
-      - '7. Mini project and data overview': lectures/lecture-data-overview.md
-      - '8. Git branching': lectures/git-lectures-branching.md
-      - '9. Collaborate by forking': lectures/git-lectures-collaboration.md
+      - '4. Git branching': lectures/git-lectures-branching.md
+      - '5. Working in an IDE: Positron': lectures/positron-lectures-1.md
+      - '6. Markdown and Quarto': lectures/markdown-quarto.md
+      - '7. Use AI in your work': lectures/ai-assistance.md
+      - '8. Mini project and data overview': lectures/lecture-data-overview.md
+      - '9. Git collaboration': lectures/git-lectures-collaboration.md
 
 
   - Exercises:
@@ -100,12 +99,9 @@ nav:
       # - 'Testing your scripts': exercises/quality-exercises-1.md
     - 'Project and Examination':
       - 'Your mini-project': project/project-description.md
-#      - 'Forking': project/project-fork.md
-#      - 'Contribute (Pull request)': project/project-contribute.md
       - 'Examination seminar': project/project-examination.md
 #      - 'Presentation of results': project/project-presentation.md
   - Resources:
-#    - Glossary: resources/glossary.md
     - Before course starts:
       - setup/index.md
       - 'Install Git': setup/git-setup.md
@@ -118,6 +114,7 @@ nav:
       - "Simulated dataset 2": resources/simulated-dataset-2.md
       - "Simulated dataset 3": resources/simulated-dataset-3.md
       - "Simulated dataset 4": resources/simulated-dataset-4.md
+    - Glossary: resources/glossary.md
 #    - Git:
 #      - 'Git basics': resources/git-basics.md
 #      - 'Git remote': resources/git-remote.md
