@@ -1257,6 +1257,8 @@
       
         
       
+        
+      
     
     
     
@@ -1330,6 +1332,24 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Install Git
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -1346,6 +1366,36 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#git-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Git Configuration
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1367,6 +1417,34 @@
     
   
     Setup GitHub
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../install-r/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Install R
   
 
     
@@ -1700,13 +1778,16 @@ sudo<span class="w"> </span>pacman<span class="w"> </span>-S<span class="w"> </s
 </div>
 </div>
 </div>
+<h2 id="git-configuration">Git Configuration<a class="headerlink" href="#git-configuration" title="Permanent link">&para;</a></h2>
+<p>You need to tell git who you are so that your commits will be properly labeled. Run the following commands in your terminal, replacing the placeholders with your own information:</p>
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>user.name<span class="w"> </span><span class="s2">&quot;Your Name&quot;</span>
+git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>user.email<span class="w"> </span><span class="s2">&quot;you@example.org&quot;</span>
+</code></pre></div>
 <p>After installing, check your configurations
 <div class="highlight"><pre><span></span><code>git<span class="w"> </span>config<span class="w"> </span>--list<span class="w"> </span>--show-origin
 </code></pre></div></p>
-<p>Set your identity so commits are attributed correctly:</p>
-<div class="highlight"><pre><span></span><code>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>user.name<span class="w"> </span><span class="s2">"Your Name"</span>
-git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>user.email<span class="w"> </span><span class="s2">"you@example.org"</span>
-</code></pre></div>
+<p>You should see your name and email listed the last two lines of the output like this:
+<img alt="git config screenshot" src="../../assets/git-config-screenshot.png" /></p>
 
 
 

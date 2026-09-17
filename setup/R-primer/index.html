@@ -1257,6 +1257,8 @@
       
         
       
+        
+      
     
     
     
@@ -1357,6 +1359,34 @@
     
   
     Setup GitHub
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../install-r/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Install R
   
 
     
@@ -1770,7 +1800,7 @@
 <p><strong>Objects and assignment</strong>
 Everything in R is an object. You create an object by assigning a value to a name using the <code>&lt;-</code> operator:</p>
 <div class="highlight"><pre><span></span><code><span class="n">age</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="m">42</span>
-<span class="n">name</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="s">"Ada"</span>
+<span class="n">name</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="s">&quot;Ada&quot;</span>
 <span class="n">scores</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">87</span><span class="p">,</span><span class="w"> </span><span class="m">91</span><span class="p">,</span><span class="w"> </span><span class="m">74</span><span class="p">,</span><span class="w"> </span><span class="m">88</span><span class="p">)</span>
 </code></pre></div>
 <p>Object names are case-sensitive (<code>Age</code> and <code>age</code> are different objects) and should be descriptive. The convention in R is to use <code>snake_case</code> — words separated by underscores — for readability.</p>
@@ -1785,7 +1815,7 @@ The fundamental data structure in R is the vector — an ordered collection of v
 R provides thousands of built-in functions, and packages add many more. A function takes one or more inputs (arguments) and returns an output:</p>
 <div class="highlight"><pre><span></span><code><span class="nf">sqrt</span><span class="p">(</span><span class="m">16</span><span class="p">)</span><span class="w">              </span><span class="c1"># returns 4</span>
 <span class="nf">round</span><span class="p">(</span><span class="m">3.14159</span><span class="p">,</span><span class="w"> </span><span class="m">2</span><span class="p">)</span><span class="w">     </span><span class="c1"># returns 3.14</span>
-<span class="nf">nchar</span><span class="p">(</span><span class="s">"hello"</span><span class="p">)</span><span class="w">        </span><span class="c1"># returns 5</span>
+<span class="nf">nchar</span><span class="p">(</span><span class="s">&quot;hello&quot;</span><span class="p">)</span><span class="w">        </span><span class="c1"># returns 5</span>
 </code></pre></div>
 <p>You can write your own functions to encapsulate repeated logic:</p>
 <div class="highlight"><pre><span></span><code><span class="n">z_score</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="kr">function</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
@@ -1797,22 +1827,22 @@ R provides thousands of built-in functions, and packages add many more. A functi
 The data structure you will work with most is the <strong>data frame</strong> — a rectangular table where each column is a vector and each row is an observation. Data frames map directly onto the kind of datasets researchers work with: one row per subject or sample, one column per variable.</p>
 <div class="highlight"><pre><span></span><code><span class="n">df</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">data.frame</span><span class="p">(</span>
 <span class="w">  </span><span class="n">id</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="m">2</span><span class="p">,</span><span class="w"> </span><span class="m">3</span><span class="p">),</span>
-<span class="w">  </span><span class="n">group</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s">"A"</span><span class="p">,</span><span class="w"> </span><span class="s">"B"</span><span class="p">,</span><span class="w"> </span><span class="s">"A"</span><span class="p">),</span>
+<span class="w">  </span><span class="n">group</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;A&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;B&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;A&quot;</span><span class="p">),</span>
 <span class="w">  </span><span class="n">score</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">87</span><span class="p">,</span><span class="w"> </span><span class="m">91</span><span class="p">,</span><span class="w"> </span><span class="m">74</span><span class="p">)</span>
 <span class="p">)</span>
 <span class="n">df</span><span class="o">$</span><span class="n">score</span><span class="w">          </span><span class="c1"># access the score column</span>
-<span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="o">$</span><span class="n">group</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">"A"</span><span class="p">,</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="c1"># filter to group A</span>
+<span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="o">$</span><span class="n">group</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&quot;A&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="c1"># filter to group A</span>
 </code></pre></div>
 <h2 id="packages">Packages<a class="headerlink" href="#packages" title="Permanent link">&para;</a></h2>
 <p>Base R is powerful, but much of what makes R practical for research is the package ecosystem. A package is a collection of functions, datasets, and documentation bundled together and published to CRAN (the Comprehensive R Archive Network) or GitHub.</p>
 <p>Packages are installed once and then loaded at the start of each session:</p>
-<div class="highlight"><pre><span></span><code><span class="nf">install.packages</span><span class="p">(</span><span class="s">"dplyr"</span><span class="p">)</span><span class="w">   </span><span class="c1"># run once to install</span>
+<div class="highlight"><pre><span></span><code><span class="nf">install.packages</span><span class="p">(</span><span class="s">&quot;dplyr&quot;</span><span class="p">)</span><span class="w">   </span><span class="c1"># run once to install</span>
 <span class="nf">library</span><span class="p">(</span><span class="n">dplyr</span><span class="p">)</span><span class="w">               </span><span class="c1"># run at the top of every script that uses it</span>
 </code></pre></div>
 <p>Three packages you will encounter frequently in this course:</p>
 <p><strong>dplyr</strong> — a grammar of data manipulation. It provides a consistent set of verbs — <code>filter()</code>, <code>select()</code>, <code>mutate()</code>, <code>summarise()</code>, <code>group_by()</code> — that cover the majority of data wrangling tasks and chain together cleanly using the pipe operator (<code>|&gt;</code>):</p>
 <div class="highlight"><pre><span></span><code><span class="n">df</span><span class="w"> </span><span class="o">|&gt;</span>
-<span class="w">  </span><span class="nf">filter</span><span class="p">(</span><span class="n">group</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">"A"</span><span class="p">)</span><span class="w"> </span><span class="o">|&gt;</span>
+<span class="w">  </span><span class="nf">filter</span><span class="p">(</span><span class="n">group</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&quot;A&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">|&gt;</span>
 <span class="w">  </span><span class="nf">mutate</span><span class="p">(</span><span class="n">score_scaled</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">scale</span><span class="p">(</span><span class="n">score</span><span class="p">))</span><span class="w"> </span><span class="o">|&gt;</span>
 <span class="w">  </span><span class="nf">summarise</span><span class="p">(</span><span class="n">mean_score</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">mean</span><span class="p">(</span><span class="n">score_scaled</span><span class="p">))</span>
 </code></pre></div>
@@ -1825,26 +1855,26 @@ The data structure you will work with most is the <strong>data frame</strong> �
 </code></pre></div>
 <p><strong>tidyr</strong> — tools for reshaping data between wide and long formats, which is often a necessary step before plotting or modelling:</p>
 <div class="highlight"><pre><span></span><code><span class="nf">library</span><span class="p">(</span><span class="n">tidyr</span><span class="p">)</span>
-<span class="n">df_long</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">pivot_longer</span><span class="p">(</span><span class="n">df</span><span class="p">,</span><span class="w"> </span><span class="n">cols</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">starts_with</span><span class="p">(</span><span class="s">"score"</span><span class="p">),</span>
-<span class="w">                         </span><span class="n">names_to</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"measure"</span><span class="p">,</span><span class="w"> </span><span class="n">values_to</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"value"</span><span class="p">)</span>
+<span class="n">df_long</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">pivot_longer</span><span class="p">(</span><span class="n">df</span><span class="p">,</span><span class="w"> </span><span class="n">cols</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">starts_with</span><span class="p">(</span><span class="s">&quot;score&quot;</span><span class="p">),</span>
+<span class="w">                         </span><span class="n">names_to</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;measure&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">values_to</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;value&quot;</span><span class="p">)</span>
 </code></pre></div>
 <p>These three packages, along with a handful of others, form the <strong>tidyverse</strong> — a collection of packages that share a common design philosophy and work well together. Loading the tidyverse meta-package (<code>library(tidyverse)</code>) brings all of them in at once.</p>
 <h2 id="reading-and-writing-data">Reading and writing data<a class="headerlink" href="#reading-and-writing-data" title="Permanent link">&para;</a></h2>
 <p>Most analyses begin by reading data from a file. R can read from almost any format; the most common in research contexts are CSV files and Excel spreadsheets.</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># Read a CSV file</span>
-<span class="n">data</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">read.csv</span><span class="p">(</span><span class="s">"data/raw/participants.csv"</span><span class="p">)</span>
+<span class="n">data</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">read.csv</span><span class="p">(</span><span class="s">&quot;data/raw/participants.csv&quot;</span><span class="p">)</span>
 
 <span class="c1"># Read an Excel file (requires the readxl package)</span>
 <span class="nf">library</span><span class="p">(</span><span class="n">readxl</span><span class="p">)</span>
-<span class="n">data</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">read_excel</span><span class="p">(</span><span class="s">"data/raw/participants.xlsx"</span><span class="p">,</span><span class="w"> </span><span class="n">sheet</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"Sheet1"</span><span class="p">)</span>
+<span class="n">data</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">read_excel</span><span class="p">(</span><span class="s">&quot;data/raw/participants.xlsx&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">sheet</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Sheet1&quot;</span><span class="p">)</span>
 
 <span class="c1"># Write results to a CSV</span>
-<span class="nf">write.csv</span><span class="p">(</span><span class="n">results</span><span class="p">,</span><span class="w"> </span><span class="s">"data/processed/results.csv"</span><span class="p">,</span><span class="w"> </span><span class="n">row.names</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">FALSE</span><span class="p">)</span>
+<span class="nf">write.csv</span><span class="p">(</span><span class="n">results</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;data/processed/results.csv&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">row.names</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">FALSE</span><span class="p">)</span>
 </code></pre></div>
 <p>One important habit is to use <strong>relative paths</strong> rather than absolute paths in your scripts. An absolute path such as <code>/Users/ada/projects/study/data/participants.csv</code> works only on your machine. A relative path such as <code>data/participants.csv</code> works for anyone who opens the project from its root folder — which is exactly what happens when you share a Git repository and a collaborator clones it.</p>
 <p>The <code>here</code> package makes relative paths robust and explicit even when scripts are run from different working directories:</p>
 <div class="highlight"><pre><span></span><code><span class="nf">library</span><span class="p">(</span><span class="n">here</span><span class="p">)</span>
-<span class="n">data</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">read.csv</span><span class="p">(</span><span class="nf">here</span><span class="p">(</span><span class="s">"data"</span><span class="p">,</span><span class="w"> </span><span class="s">"raw"</span><span class="p">,</span><span class="w"> </span><span class="s">"participants.csv"</span><span class="p">))</span>
+<span class="n">data</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">read.csv</span><span class="p">(</span><span class="nf">here</span><span class="p">(</span><span class="s">&quot;data&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;raw&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;participants.csv&quot;</span><span class="p">))</span>
 </code></pre></div>
 <h2 id="reproducibility-in-practice">Reproducibility in practice<a class="headerlink" href="#reproducibility-in-practice" title="Permanent link">&para;</a></h2>
 <p>A reproducible R analysis is one where running the script from top to bottom, on a fresh R session, produces the same results every time. A few habits make this achievable:</p>

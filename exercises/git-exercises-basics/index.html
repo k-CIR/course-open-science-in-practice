@@ -1418,6 +1418,8 @@
       
         
       
+        
+      
     
     
     
@@ -1515,6 +1517,34 @@
     
   
     Setup GitHub
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../setup/install-r/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Install R
   
 
     
@@ -1842,8 +1872,8 @@
 </div>
 <h2 id="configure-git-once-per-machine">Configure Git once per machine<a class="headerlink" href="#configure-git-once-per-machine" title="Permanent link">&para;</a></h2>
 <p>Before your first commit, tell Git who you are. This information is written into every commit so the history can show who did what.</p>
-<div class="highlight"><pre><span></span><code>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>user.name<span class="w">  </span><span class="s2">"Your Name"</span>
-git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>user.email<span class="w"> </span><span class="s2">"you@example.com"</span>
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>user.name<span class="w">  </span><span class="s2">&quot;Your Name&quot;</span>
+git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>user.email<span class="w"> </span><span class="s2">&quot;you@example.com&quot;</span>
 </code></pre></div>
 <p>Use the same email you will later use for GitHub so your commits are attributed correctly. The <code>--global</code> flag saves this for every repository on your machine; omit it to set it only for the current project.</p>
 <details class="note">
@@ -1863,8 +1893,8 @@ git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"
 <span class="n">mean_value</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">mean</span><span class="p">(</span><span class="n">values</span><span class="p">)</span>
 <span class="n">max_value</span><span class="w">  </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">max</span><span class="p">(</span><span class="n">values</span><span class="p">)</span>
 
-<span class="nf">cat</span><span class="p">(</span><span class="nf">sprintf</span><span class="p">(</span><span class="s">"Mean: %.2f\n"</span><span class="p">,</span><span class="w"> </span><span class="n">mean_value</span><span class="p">))</span>
-<span class="nf">cat</span><span class="p">(</span><span class="nf">sprintf</span><span class="p">(</span><span class="s">"Max:  %d\n"</span><span class="p">,</span><span class="w">   </span><span class="n">max_value</span><span class="p">))</span>
+<span class="nf">cat</span><span class="p">(</span><span class="nf">sprintf</span><span class="p">(</span><span class="s">&quot;Mean: %.2f\n&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">mean_value</span><span class="p">))</span>
+<span class="nf">cat</span><span class="p">(</span><span class="nf">sprintf</span><span class="p">(</span><span class="s">&quot;Max:  %d\n&quot;</span><span class="p">,</span><span class="w">   </span><span class="n">max_value</span><span class="p">))</span>
 </code></pre></div>
 </div>
 <div class="tabbed-block">
@@ -1876,8 +1906,8 @@ git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"
 <span class="n">mean_value</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">values</span><span class="p">)</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">values</span><span class="p">)</span>
 <span class="n">max_value</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">values</span><span class="p">)</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Mean: </span><span class="si">{</span><span class="n">mean_value</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Max:  </span><span class="si">{</span><span class="n">max_value</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Mean: </span><span class="si">{</span><span class="n">mean_value</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Max:  </span><span class="si">{</span><span class="n">max_value</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </code></pre></div>
 </div>
 </div>
@@ -1952,7 +1982,7 @@ git<span class="w"> </span>add<span class="w"> </span>analysis.R
 </details>
 <p>After staging, run <code>git status</code> again — the file now appears under <em>Changes to be committed</em>.</p>
 <h3 id="3-record-a-snapshot-git-commit">3. Record a snapshot — <code>git commit</code><a class="headerlink" href="#3-record-a-snapshot-git-commit" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">"Add first descriptive-stats script"</span>
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Add first descriptive-stats script&quot;</span>
 </code></pre></div>
 <p>The <code>-m</code> flag lets you write the commit message directly. Write messages in the <strong>imperative mood</strong> describing what the commit <em>does</em> (e.g. "Add…", "Fix…", "Remove…").</p>
 <details class="tip">
@@ -1990,7 +2020,7 @@ git<span class="w"> </span>add<span class="w"> </span>analysis.R
 <li>Stage and commit the change:</li>
 </ol>
 <div class="highlight"><pre><span></span><code>git<span class="w"> </span>add<span class="w"> </span>analysis.R
-git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">"Report minimum value in summary"</span>
+git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Report minimum value in summary&quot;</span>
 </code></pre></div>
 <p>Confirm there are now two commits (see next section).</p>
 <h2 id="reading-back-your-history">Reading back your history<a class="headerlink" href="#reading-back-your-history" title="Permanent link">&para;</a></h2>
@@ -2081,7 +2111,7 @@ git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </sp
 <li>Stage and commit:</li>
 </ol>
 <div class="highlight"><pre><span></span><code>git<span class="w"> </span>add<span class="w"> </span>analysis.R<span class="w">            </span><span class="c1"># or analysis.py</span>
-git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">"Fix mean calculation and restore tests"</span>
+git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Fix mean calculation and restore tests&quot;</span>
 </code></pre></div>
 <p>This edit → test → commit loop is the everyday rhythm of version-controlled, reproducible analysis.</p>
 <h2 id="recap-of-the-commands-you-learned">Recap of the commands you learned<a class="headerlink" href="#recap-of-the-commands-you-learned" title="Permanent link">&para;</a></h2>

@@ -1375,6 +1375,8 @@
       
         
       
+        
+      
     
     
     
@@ -1472,6 +1474,34 @@
     
   
     Setup GitHub
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../setup/install-r/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Install R
   
 
     
@@ -1822,7 +1852,7 @@ Positron adds a second sidebar on the right that hosts the Environment pane (sho
 <p>Quarto is a document system that lets you write prose and executable code in the same file. In Positron, <code>.qmd</code> files open with full syntax highlighting and a <strong>Preview</strong> button in the top-right corner of the editor that renders the document and displays the result alongside the source.</p>
 <p>The typical Quarto document structure looks like this:</p>
 <div class="highlight"><pre><span></span><code>---
-title: "My analysis"
+title: &quot;My analysis&quot;
 <span class="gu">format: html</span>
 <span class="gu">---</span>
 
@@ -1830,7 +1860,7 @@ title: "My analysis"
 
 ```{{r}}
 library(dplyr)
-data &lt;- read.csv("data/input.csv")
+data &lt;- read.csv(&quot;data/input.csv&quot;)
 </code></pre></div>
 <p>Some text describing the next step.
 ```</p>
