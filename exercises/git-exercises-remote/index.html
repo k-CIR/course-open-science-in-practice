@@ -619,6 +619,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../../lectures/git-lectures-branching/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4. Git branching
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../lectures/positron-lectures-1/" class="md-nav__link">
         
   
@@ -626,7 +654,7 @@
   <span class="md-ellipsis">
     
   
-    4. Working in an IDE: Positron
+    5. Working in an IDE: Positron
   
 
     
@@ -654,7 +682,7 @@
   <span class="md-ellipsis">
     
   
-    5. Markdown and Quarto
+    6. Markdown and Quarto
   
 
     
@@ -675,14 +703,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../lectures/agentic-coding/" class="md-nav__link">
+      <a href="../../lectures/ai-assistance/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    6. Use AI in your work
+    7. Use AI in your work
   
 
     
@@ -710,35 +738,7 @@
   <span class="md-ellipsis">
     
   
-    7. Mini project and data overview
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../lectures/git-lectures-branching/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    8. Git branching
+    8. Mini project and data overview
   
 
     
@@ -766,7 +766,7 @@
   <span class="md-ellipsis">
     
   
-    9. Collaborate by forking
+    9. Git collaboration
   
 
     
@@ -1363,6 +1363,8 @@
       
         
       
+        
+      
     
     
     
@@ -1815,6 +1817,34 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/glossary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Glossary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1967,7 +1997,7 @@ credentials.json
 </table>
 <p>Commit your <code>.gitignore</code> so the rules travel with the project:</p>
 <div class="highlight"><pre><span></span><code>git<span class="w"> </span>add<span class="w"> </span>.gitignore
-git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Add .gitignore for outputs, OS noise, and secrets&quot;</span>
+git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">"Add .gitignore for outputs, OS noise, and secrets"</span>
 </code></pre></div>
 <h2 id="exercise-1-ignore-the-right-things">Exercise 1 — Ignore the right things<a class="headerlink" href="#exercise-1-ignore-the-right-things" title="Permanent link">&para;</a></h2>
 <ol>
@@ -1992,16 +2022,16 @@ git<span class="w"> </span>status<span class="w"> </span>--ignored
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><span class="c1"># Read a token from the environment, never hard-code it</span>
-<span class="n">token</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">Sys.getenv</span><span class="p">(</span><span class="s">&quot;GITHUB_TOKEN&quot;</span><span class="p">)</span>
-<span class="kr">if</span><span class="w"> </span><span class="p">(</span><span class="n">token</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="p">)</span><span class="w"> </span><span class="nf">stop</span><span class="p">(</span><span class="s">&quot;Set the GITHUB_TOKEN environment variable&quot;</span><span class="p">)</span>
+<span class="n">token</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">Sys.getenv</span><span class="p">(</span><span class="s">"GITHUB_TOKEN"</span><span class="p">)</span>
+<span class="kr">if</span><span class="w"> </span><span class="p">(</span><span class="n">token</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">""</span><span class="p">)</span><span class="w"> </span><span class="nf">stop</span><span class="p">(</span><span class="s">"Set the GITHUB_TOKEN environment variable"</span><span class="p">)</span>
 </code></pre></div>
 </div>
 <div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
 
-<span class="n">token</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;GITHUB_TOKEN&quot;</span><span class="p">)</span>
+<span class="n">token</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"GITHUB_TOKEN"</span><span class="p">)</span>
 <span class="k">if</span> <span class="ow">not</span> <span class="n">token</span><span class="p">:</span>
-    <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="s2">&quot;Set the GITHUB_TOKEN environment variable&quot;</span><span class="p">)</span>
+    <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="s2">"Set the GITHUB_TOKEN environment variable"</span><span class="p">)</span>
 </code></pre></div>
 </div>
 </div>
@@ -2017,11 +2047,11 @@ git<span class="w"> </span>status<span class="w"> </span>--ignored
 <h2 id="ssh-keys-push-without-a-password">SSH keys — push without a password<a class="headerlink" href="#ssh-keys-push-without-a-password" title="Permanent link">&para;</a></h2>
 <p>HTTPS remotes ask for your username/password (or a token) on every push. SSH keys let your machine prove its identity to GitHub automatically and securely.</p>
 <h3 id="1-generate-a-key-pair">1. Generate a key pair<a class="headerlink" href="#1-generate-a-key-pair" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code>ssh-keygen<span class="w"> </span>-t<span class="w"> </span>ed25519<span class="w"> </span>-C<span class="w"> </span><span class="s2">&quot;you@example.com&quot;</span>
+<div class="highlight"><pre><span></span><code>ssh-keygen<span class="w"> </span>-t<span class="w"> </span>ed25519<span class="w"> </span>-C<span class="w"> </span><span class="s2">"you@example.com"</span>
 </code></pre></div>
 <p>Press Enter to accept the default location (<code>~/.ssh/id_ed25519</code>). You may add a passphrase for extra safety.</p>
 <h3 id="2-start-the-agent-and-add-the-key">2. Start the agent and add the key<a class="headerlink" href="#2-start-the-agent-and-add-the-key" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><span class="nb">eval</span><span class="w"> </span><span class="s2">&quot;</span><span class="k">$(</span>ssh-agent<span class="w"> </span>-s<span class="k">)</span><span class="s2">&quot;</span>
+<div class="highlight"><pre><span></span><code><span class="nb">eval</span><span class="w"> </span><span class="s2">"</span><span class="k">$(</span>ssh-agent<span class="w"> </span>-s<span class="k">)</span><span class="s2">"</span>
 ssh-add<span class="w"> </span>~/.ssh/id_ed25519
 </code></pre></div>
 <h3 id="3-add-the-public-key-to-github">3. Add the <strong>public</strong> key to GitHub<a class="headerlink" href="#3-add-the-public-key-to-github" title="Permanent link">&para;</a></h3>

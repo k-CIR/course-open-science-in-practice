@@ -619,6 +619,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../../lectures/git-lectures-branching/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4. Git branching
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../lectures/positron-lectures-1/" class="md-nav__link">
         
   
@@ -626,7 +654,7 @@
   <span class="md-ellipsis">
     
   
-    4. Working in an IDE: Positron
+    5. Working in an IDE: Positron
   
 
     
@@ -654,7 +682,7 @@
   <span class="md-ellipsis">
     
   
-    5. Markdown and Quarto
+    6. Markdown and Quarto
   
 
     
@@ -675,14 +703,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../lectures/agentic-coding/" class="md-nav__link">
+      <a href="../../lectures/ai-assistance/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    6. Use AI in your work
+    7. Use AI in your work
   
 
     
@@ -710,35 +738,7 @@
   <span class="md-ellipsis">
     
   
-    7. Mini project and data overview
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../lectures/git-lectures-branching/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    8. Git branching
+    8. Mini project and data overview
   
 
     
@@ -766,7 +766,7 @@
   <span class="md-ellipsis">
     
   
-    9. Collaborate by forking
+    9. Git collaboration
   
 
     
@@ -1330,6 +1330,8 @@
       
         
       
+        
+      
     
     
     
@@ -1782,6 +1784,34 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/glossary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Glossary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1891,7 +1921,7 @@
 <details class="tip">
 <summary>Commit the change</summary>
 <div class="highlight"><pre><span></span><code>git<span class="w"> </span>add<span class="w"> </span>analysis.R<span class="w">          </span><span class="c1"># or analysis.py</span>
-git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Report median in summary&quot;</span>
+git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">"Report median in summary"</span>
 </code></pre></div>
 </details>
 <details class="tip">
@@ -1967,9 +1997,9 @@ git<span class="w"> </span>merge<span class="w"> </span>change-value
 <h3 id="resolve-the-conflict">Resolve the conflict<a class="headerlink" href="#resolve-the-conflict" title="Permanent link">&para;</a></h3>
 <p>Open the conflicted file. Git marks the conflicting region like this:</p>
 <div class="highlight"><pre><span></span><code>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
-cat(sprintf(&quot;Mean value: %.2f\n&quot;, mean_value))
+cat(sprintf("Mean value: %.2f\n", mean_value))
 =======
-cat(sprintf(&quot;Average: %.2f\n&quot;, mean_value))
+cat(sprintf("Average: %.2f\n", mean_value))
 &gt;&gt;&gt;&gt;&gt;&gt;&gt; change-value
 </code></pre></div>
 <ul>
@@ -1979,7 +2009,7 @@ cat(sprintf(&quot;Average: %.2f\n&quot;, mean_value))
 <p>Edit the file so it contains <strong>only the version you want</strong> (delete the marker lines), or try the <code>Resolve in Merge Editor</code> if that is available. This tool can be helpful especially when there are larger conflicts.</p>
 <p>then stage and commit:</p>
 <div class="highlight"><pre><span></span><code>git<span class="w"> </span>add<span class="w"> </span>analysis.R<span class="w">          </span><span class="c1"># or analysis.py</span>
-git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Resolve label conflict, keep &#39;Mean value&#39;&quot;</span>
+git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">"Resolve label conflict, keep 'Mean value'"</span>
 </code></pre></div>
 <div class="admonition tip">
 <p class="admonition-title">Abort a messy merge</p>

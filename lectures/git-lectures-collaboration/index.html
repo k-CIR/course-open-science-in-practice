@@ -13,7 +13,7 @@
       
       
       
-        <link rel="prev" href="../git-lectures-branching/">
+        <link rel="prev" href="../lecture-data-overview/">
       
       
         <link rel="next" href="../../exercises/">
@@ -78,6 +78,11 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
+      
+        
+        <a href="#summary" class="md-skip">
+          Skip to content
+        </a>
       
     </div>
     <div data-md-component="announce">
@@ -621,6 +626,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../git-lectures-branching/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4. Git branching
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../positron-lectures-1/" class="md-nav__link">
         
   
@@ -628,7 +661,7 @@
   <span class="md-ellipsis">
     
   
-    4. Working in an IDE: Positron
+    5. Working in an IDE: Positron
   
 
     
@@ -656,7 +689,7 @@
   <span class="md-ellipsis">
     
   
-    5. Markdown and Quarto
+    6. Markdown and Quarto
   
 
     
@@ -677,14 +710,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../agentic-coding/" class="md-nav__link">
+      <a href="../ai-assistance/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    6. Use AI in your work
+    7. Use AI in your work
   
 
     
@@ -712,35 +745,7 @@
   <span class="md-ellipsis">
     
   
-    7. Mini project and data overview
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../git-lectures-branching/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    8. Git branching
+    8. Mini project and data overview
   
 
     
@@ -768,6 +773,24 @@
       
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9. Git collaboration
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -775,7 +798,7 @@
   <span class="md-ellipsis">
     
   
-    9. Collaborate by forking
+    9. Git collaboration
   
 
     
@@ -784,6 +807,133 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#two-ways-to-collaborate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Two ways to collaborate
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cloning-a-full-copy-remote-included" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cloning: a full copy, remote included
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fetch-pull-and-clone-are-not-the-same-operation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fetch, pull, and clone are not the same operation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#forking-your-own-remote-copy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Forking: your own remote copy
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#adding-a-second-remote-upstream" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Adding a second remote: upstream
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pushing-your-branch-and-opening-a-pull-request" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pushing your branch and opening a pull request
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#when-your-push-is-rejected" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        When your push is rejected
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#merging-a-pull-request" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Merging a pull request
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1187,6 +1337,8 @@
   
     
     
+      
+        
       
         
       
@@ -1644,6 +1796,34 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/glossary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Glossary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1671,20 +1851,136 @@
   
 
 
-  <h1>9. Collaborate by forking</h1>
+  <h1>9. Git collaboration</h1>
 
 <ul>
 <li>Format: Lecture</li>
 <li>Teacher: Andreas</li>
 </ul>
-<div class="admonition todo">
-<p class="admonition-title">Content TODO <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M0 4.75C0 3.784.784 3 1.75 3h20.5c.966 0 1.75.784 1.75 1.75v14.5A1.75 1.75 0 0 1 22.25 21H1.75A1.75 1.75 0 0 1 0 19.25Zm1.75-.25a.25.25 0 0 0-.25.25v14.5c0 .138.112.25.25.25h20.5a.25.25 0 0 0 .25-.25V4.75a.25.25 0 0 0-.25-.25Z"/><path d="M9 15.584V8.416a.5.5 0 0 1 .77-.42l5.576 3.583a.5.5 0 0 1 0 .842L9.77 16.005a.5.5 0 0 1-.77-.42Z"/></svg></span></p>
-<p>This session page is a placeholder. Add learning goals,
-materials, exercises, and links here.</p>
+<h2 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">&para;</a></h2>
+<p>So far every remote you have touched has been one you created yourself: you pushed, and only you pulled. Real collaboration means several people push to and pull from the <em>same</em> shared history, often without ever talking to each other about who does what first. This lecture closes that gap. It covers <strong>cloning</strong> (getting a full, working copy of someone else's repository), <strong>forking</strong> (getting your own remote copy of it on GitHub), and the <strong>pull request</strong> — the mechanism that lets your work travel back into a project you do not have direct write access to.</p>
+<h2 id="two-ways-to-collaborate">Two ways to collaborate<a class="headerlink" href="#two-ways-to-collaborate" title="Permanent link">&para;</a></h2>
+<p>There are two common shapes of collaboration, and the difference is about <em>who can push where</em>:</p>
+<ul>
+<li><strong>Shared repository.</strong> Everyone has write access to the same repository. Each person clones it, works on their own branch, and pushes that branch back to the same remote. This is typical inside a small team or a course group.</li>
+<li><strong>Fork and pull request.</strong> You do <em>not</em> have write access to the original ("upstream") repository — think of an open-source project, or your course buddy's project. Instead you create your own copy on GitHub (a <strong>fork</strong>), push your branch there, and then ask the upstream project to pull your changes in via a <strong>pull request</strong>.</li>
+</ul>
+<p>Both shapes end the same way — a maintainer merges a branch into <code>main</code> — they just differ in <em>whose remote</em> your branch lives on before that happens.</p>
+<h2 id="cloning-a-full-copy-remote-included">Cloning: a full copy, remote included<a class="headerlink" href="#cloning-a-full-copy-remote-included" title="Permanent link">&para;</a></h2>
+<p><code>git clone</code> does more than copy files. It initialises a new local repository, copies the <em>entire</em> history (every commit, every branch you have access to), and — critically — automatically wires up a remote called <code>origin</code> pointing back at wherever you cloned from:</p>
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>clone<span class="w"> </span>git@github.com:some-user/some-repo.git
+<span class="nb">cd</span><span class="w"> </span>some-repo
+git<span class="w"> </span>remote<span class="w"> </span>-v
+<span class="c1"># origin  git@github.com:some-user/some-repo.git (fetch)</span>
+<span class="c1"># origin  git@github.com:some-user/some-repo.git (push)</span>
+</code></pre></div>
+<p>Compare that to starting a project from scratch with <code>git init</code>, where there is no remote at all until you explicitly <code>git remote add origin &lt;url&gt;</code> yourself (as you did in the remote session). Cloning <em>inherits</em> the remote for you as part of the same command — one less thing to configure, and one less thing to get wrong.</p>
+<h2 id="fetch-pull-and-clone-are-not-the-same-operation">Fetch, pull, and clone are not the same operation<a class="headerlink" href="#fetch-pull-and-clone-are-not-the-same-operation" title="Permanent link">&para;</a></h2>
+<p>These three commands all bring history from a remote into your machine, but they do different amounts of work:</p>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>What it downloads</th>
+<th>Does it touch your working files / branches?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>git clone &lt;url&gt;</code></td>
+<td>Everything, for the first time</td>
+<td>Creates a brand-new local repository and checks out the default branch</td>
+</tr>
+<tr>
+<td><code>git fetch &lt;remote&gt;</code></td>
+<td>New commits and branches from the remote</td>
+<td><strong>No.</strong> Updates remote-tracking branches (e.g. <code>origin/main</code>) only; your <code>main</code> and working directory are untouched</td>
+</tr>
+<tr>
+<td><code>git pull &lt;remote&gt; &lt;branch&gt;</code></td>
+<td>New commits from the remote</td>
+<td><strong>Yes.</strong> Runs <code>git fetch</code>, then immediately merges (or rebases) the fetched commits into your current branch</td>
+</tr>
+</tbody>
+</table>
+<p><code>git fetch</code> is the "look before you leap" option: it lets you inspect what changed (<code>git log main..origin/main</code>) before deciding whether and how to bring it in. <code>git pull</code> skips the inspection step and merges right away — convenient, but it is exactly <code>fetch</code> + <code>merge</code> bundled together, so a pull can produce a merge commit or a conflict just like any other merge.</p>
+<div class="admonition info">
+<p class="admonition-title"><code>origin/main</code> vs <code>main</code></p>
+<p><code>origin/main</code> is a <strong>remote-tracking branch</strong> — a read-only bookmark recording where <code>origin</code>'s <code>main</code> was as of your last fetch. Your own <code>main</code> only moves when <em>you</em> commit or merge into it. This is why <code>git fetch</code> is always safe to run: it can update <code>origin/main</code>, but it can never change <code>main</code> or your files out from under you.</p>
 </div>
-<div class="admonition tip">
-<p class="admonition-title"><a href="../../resources/git-collaboration/">Git collaboration wiki</a></p>
+<h2 id="forking-your-own-remote-copy">Forking: your own remote copy<a class="headerlink" href="#forking-your-own-remote-copy" title="Permanent link">&para;</a></h2>
+<p>A <strong>fork</strong> is a copy of someone else's repository, created on GitHub itself, that lives under your own account. It has its own independent history and its own remote URL, but GitHub remembers where it was forked from so it can offer you a pull request later.</p>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M5 5.372v.878c0 .414.336.75.75.75h4.5a.75.75 0 0 0 .75-.75v-.878a2.25 2.25 0 1 1 1.5 0v.878a2.25 2.25 0 0 1-2.25 2.25h-1.5v2.128a2.251 2.251 0 1 1-1.5 0V8.5h-1.5A2.25 2.25 0 0 1 3.5 6.25v-.878a2.25 2.25 0 1 1 1.5 0M5 3.25a.75.75 0 1 0-1.5 0 .75.75 0 0 0 1.5 0m6.75.75a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5m-3 8.75a.75.75 0 1 0-1.5 0 .75.75 0 0 0 1.5 0"/></svg></span> The workflow, in order:</p>
+<ol>
+<li>On GitHub, click <strong>Fork</strong> on the upstream project. GitHub creates <code>you/some-repo</code>, a full copy, under your account.</li>
+<li>Clone <em>your fork</em> — not the original — to your machine. Because you cloned your fork, <code>origin</code> now points at <code>you/some-repo</code>, and you have push access to it.</li>
+</ol>
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>clone<span class="w"> </span>git@github.com:you/some-repo.git
+<span class="nb">cd</span><span class="w"> </span>some-repo
+git<span class="w"> </span>remote<span class="w"> </span>-v
+<span class="c1"># origin  git@github.com:you/some-repo.git (fetch)</span>
+<span class="c1"># origin  git@github.com:you/some-repo.git (push)</span>
+</code></pre></div>
+<p>You can push to <code>origin</code> freely — it is your copy — but you have no write access to the original project yet.</p>
+<h2 id="adding-a-second-remote-upstream">Adding a second remote: <code>upstream</code><a class="headerlink" href="#adding-a-second-remote-upstream" title="Permanent link">&para;</a></h2>
+<p>A single repository is not limited to one remote. To stay in sync with the project you forked from, add it as a second remote — by convention named <code>upstream</code>:</p>
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>remote<span class="w"> </span>add<span class="w"> </span>upstream<span class="w"> </span>git@github.com:original-owner/some-repo.git
+git<span class="w"> </span>remote<span class="w"> </span>-v
+<span class="c1"># origin    git@github.com:you/some-repo.git (fetch)</span>
+<span class="c1"># origin    git@github.com:you/some-repo.git (push)</span>
+<span class="c1"># upstream  git@github.com:original-owner/some-repo.git (fetch)</span>
+<span class="c1"># upstream  git@github.com:original-owner/some-repo.git (push)</span>
+</code></pre></div>
+<p>Now <code>fetch</code>, <code>pull</code>, and <code>push</code> all take an explicit remote name, so you control which direction data moves:</p>
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>fetch<span class="w"> </span>upstream<span class="w">          </span><span class="c1"># see what changed in the original project</span>
+git<span class="w"> </span>merge<span class="w"> </span>upstream/main<span class="w">     </span><span class="c1"># bring those changes into your local main</span>
+git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </span>main<span class="w">        </span><span class="c1"># update your fork with them too</span>
+</code></pre></div>
+<p><code>origin</code> is where <em>your</em> work goes; <code>upstream</code> is where the <em>project's</em> work comes from. Mixing the two up is the most common source of confusion when working with forks — always double-check which remote a command targets.</p>
+<div class="admonition info">
+<p class="admonition-title">Naming is a convention, not a rule</p>
+<p><code>origin</code> and <code>upstream</code> are just labels — Git does not treat them specially. Everyone uses these two names by convention because it makes every collaboration guide (including this one) predictable to follow.</p>
 </div>
+<h2 id="pushing-your-branch-and-opening-a-pull-request">Pushing your branch and opening a pull request<a class="headerlink" href="#pushing-your-branch-and-opening-a-pull-request" title="Permanent link">&para;</a></h2>
+<p>Whether you are working in a shared repository or a fork, the shape of contributing a change is the same: branch, commit, push, then ask for a review.</p>
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>switch<span class="w"> </span>-c<span class="w"> </span>fix-typo
+<span class="c1"># ... edit and commit ...</span>
+git<span class="w"> </span>push<span class="w"> </span>-u<span class="w"> </span>origin<span class="w"> </span>fix-typo
+</code></pre></div>
+<p>Pushing a <em>new</em> branch does not touch <code>main</code> at all — it simply uploads the branch to the remote, ready to be reviewed. On GitHub, this shows up as an option to open a <strong>pull request (PR)</strong>: a formal request that says <em>"please merge my branch into your <code>main</code>"</em>. A PR is not a Git concept — Git only has branches and commits — it is a GitHub feature layered on top that adds discussion, review comments, and required checks before a merge happens.</p>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M1.5 3.25a2.25 2.25 0 1 1 3 2.122v5.256a2.251 2.251 0 1 1-1.5 0V5.372A2.25 2.25 0 0 1 1.5 3.25m5.677-.177L9.573.677A.25.25 0 0 1 10 .854V2.5h1A2.5 2.5 0 0 1 13.5 5v5.628a2.251 2.251 0 1 1-1.5 0V5a1 1 0 0 0-1-1h-1v1.646a.25.25 0 0 1-.427.177L7.177 3.427a.25.25 0 0 1 0-.354M3.75 2.5a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5m0 9.5a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5m8.25.75a.75.75 0 1 0 1.5 0 .75.75 0 0 0-1.5 0"/></svg></span> A pull request against a <strong>fork</strong> targets the upstream repository directly, even though your branch lives on <code>origin</code>; GitHub handles finding it because it remembers the fork relationship.</p>
+<h2 id="when-your-push-is-rejected">When your push is rejected<a class="headerlink" href="#when-your-push-is-rejected" title="Permanent link">&para;</a></h2>
+<p>If a teammate (or you, from another machine) already pushed new commits to <code>main</code> since you last fetched, your own push is <strong>rejected</strong>, not overwritten:</p>
+<div class="highlight"><pre><span></span><code>! [rejected]        main -&gt; main (fetch first)
+error: failed to push some refs
+</code></pre></div>
+<p>Git refuses to push because doing so would silently discard commits it does not know about — the same protective instinct as a merge conflict. The fix is the same shape every time: fetch, integrate, then push.</p>
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>pull<span class="w"> </span>origin<span class="w"> </span>main<span class="w">   </span><span class="c1"># fetch + merge the commits you were missing</span>
+<span class="c1"># resolve any conflicts, exactly as in the branching session</span>
+git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </span>main<span class="w">   </span><span class="c1"># now it is a fast-forward from the remote's point of view</span>
+</code></pre></div>
+<div class="admonition info">
+<p class="admonition-title">A rejected push is not a conflict — yet</p>
+<p>Rejection just means the remote moved. Whether resolving it actually produces a merge conflict depends on whether the same lines were touched — most of the time <code>git pull</code> merges cleanly and you push again immediately.</p>
+</div>
+<h2 id="merging-a-pull-request">Merging a pull request<a class="headerlink" href="#merging-a-pull-request" title="Permanent link">&para;</a></h2>
+<p>Once a reviewer approves a pull request, merging it on GitHub does exactly what <code>git merge</code> does locally — fast-forward if possible, or a merge commit if both sides moved — it is just triggered through the web interface instead of your terminal. After the merge:</p>
+<ol>
+<li>The branch's commits become part of upstream's <code>main</code>.</li>
+<li>You can delete the now-merged branch (locally with <code>git branch -d</code>, and on the remote with <code>git push origin --delete fix-typo</code>).</li>
+<li>Everyone — including you — needs to <code>git pull</code> to bring that merged <code>main</code> down to their own machine.</li>
+</ol>
+<p>That last step trips people up: merging a PR only changes the remote. Your local <code>main</code> only catches up once you explicitly pull it.</p>
+<h2 id="summary_1">Summary<a class="headerlink" href="#summary_1" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Cloning inherits the remote for you: <code>origin</code> is wired up automatically, unlike <code>git init</code> where you add it by hand.</li>
+<li><code>fetch</code> downloads without touching your files; <code>pull</code> is <code>fetch</code> + <code>merge</code> in one step.</li>
+<li>Forking makes your own remote copy on GitHub; you clone the fork, so <code>origin</code> is <em>yours</em>.</li>
+<li><code>upstream</code> is the conventional name for the original project's remote, added with <code>git remote add</code>.</li>
+<li>A rejected push means the remote moved on — pull (fetch + merge/resolve), then push again.</li>
+<li>A pull request asks a project to merge your branch; merging it is a normal Git merge triggered from GitHub, and you still need to <code>pull</code> afterwards to see it locally.</li>
+</ul>
+<p>The workshop puts this into practice: you will clone, fork, add an <code>upstream</code> remote, push a branch, and open (and merge) a pull request end to end.</p>
 
 
 
@@ -1723,7 +2019,7 @@ materials, exercises, and links here.</p>
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../git-lectures-branching/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 8. Git branching">
+          <a href="../lecture-data-overview/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 8. Mini project and data overview">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -1733,20 +2029,20 @@ materials, exercises, and links here.</p>
                 Previous
               </span>
               <div class="md-ellipsis">
-                8. Git branching
+                8. Mini project and data overview
               </div>
             </div>
           </a>
         
         
           
-          <a href="../../exercises/" class="md-footer__link md-footer__link--next" aria-label="Next: Excercises">
+          <a href="../../exercises/" class="md-footer__link md-footer__link--next" aria-label="Next: Exercises">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Excercises
+                Exercises
               </div>
             </div>
             <div class="md-footer__button md-icon">

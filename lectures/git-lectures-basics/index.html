@@ -80,7 +80,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#summary" class="md-skip">
+        <a href="#slides" class="md-skip">
           Skip to content
         </a>
       
@@ -626,6 +626,17 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#slides" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Slides
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#summary" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -680,6 +691,28 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#writing-good-commit-messages" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Writing good commit messages
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-often-should-you-commit" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How often should you commit?
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -724,6 +757,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../git-lectures-branching/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4. Git branching
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../positron-lectures-1/" class="md-nav__link">
         
   
@@ -731,7 +792,7 @@
   <span class="md-ellipsis">
     
   
-    4. Working in an IDE: Positron
+    5. Working in an IDE: Positron
   
 
     
@@ -759,7 +820,7 @@
   <span class="md-ellipsis">
     
   
-    5. Markdown and Quarto
+    6. Markdown and Quarto
   
 
     
@@ -780,14 +841,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../agentic-coding/" class="md-nav__link">
+      <a href="../ai-assistance/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    6. Use AI in your work
+    7. Use AI in your work
   
 
     
@@ -815,35 +876,7 @@
   <span class="md-ellipsis">
     
   
-    7. Mini project and data overview
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../git-lectures-branching/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    8. Git branching
+    8. Mini project and data overview
   
 
     
@@ -871,7 +904,7 @@
   <span class="md-ellipsis">
     
   
-    9. Collaborate by forking
+    9. Git collaboration
   
 
     
@@ -1282,6 +1315,8 @@
   
     
     
+      
+        
       
         
       
@@ -1739,6 +1774,34 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/glossary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Glossary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1768,10 +1831,11 @@
 
   <h1>2. Git basics</h1>
 
-<ul>
-<li>Format: Lecture </li>
-<li>Teacher: Andreas</li>
-</ul>
+<p><a class="md-button" download="1-why-git.pdf" href="../downloads/1-why-git.pdf"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2m-9.5 8.5c0 .8-.7 1.5-1.5 1.5H7v2H5.5V9H8c.8 0 1.5.7 1.5 1.5zm5 2c0 .8-.7 1.5-1.5 1.5h-2.5V9H13c.8 0 1.5.7 1.5 1.5zm4-3H17v1h1.5V13H17v2h-1.5V9h3zm-6.5 0h1v3h-1zm-5 0h1v1H7z"/></svg></span> Download slides (.pdf)</a></p>
+<h2 id="slides">Slides<a class="headerlink" href="#slides" title="Permanent link">&para;</a></h2>
+<div class="slide-gallery">
+<p><img alt="Slide 1" src="../../slides/1-why-git/slide_001.png" /></p>
+</div>
 <h2 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">&para;</a></h2>
 <p>If you have ever worked on an analysis long enough, you will recognise the folder in the image below: a collection of files named <code>analysis_final.R</code>, <code>analysis_final2.R</code>, <code>analysis_FINAL_v3_USE_THIS.R</code>, and so on. Each file represents an attempt to preserve a working state before making a risky change, but without any record of what changed, when, or why. This approach breaks down quickly — it is difficult to know which version produced which result, nearly impossible to undo a specific change without losing other work, and a serious obstacle to collaboration and reproducibility.</p>
 <p><img align="right" alt="Chaos folder" src="../../assets/scripts-out-of-order.png" width="50%" /></p>
@@ -1779,7 +1843,7 @@
 <h2 id="git-short-version-history">Git short (version) history<a class="headerlink" href="#git-short-version-history" title="Permanent link">&para;</a></h2>
 <p>Git is a <strong>Distributed Version Control System (DVCS)</strong> — a tool that records the full history of changes to a set of files and allows multiple people to work on those files independently and in parallel.</p>
 <p><img align="right" alt="Linux logo" src="../../assets/linux_logo.png" width="20%" /></p>
-<p>Git was created by <strong>Linus Torvalds</strong> in <strong>2005</strong>, originally to manage the source code of the Linux kernel after the project outgrew its previous version control tool. Torvalds designed it to be fast, simple, and fully distributed, meaning that every contributor holds a complete copy of the repository and its history — there is no single point of failure.</p>
+<p>Git was created by <strong>Linus Torvalds</strong> and his Linux team in <strong>2005</strong>, originally to manage the source code of the Linux kernel after the project outgrew its previous version control tool. It was designed to be fast, simple, and fully distributed, meaning that every contributor holds a complete copy of the repository and its history — there is no single point of failure.</p>
 <p>A common point of confusion for newcomers is the relationship between <strong>Git</strong> and <strong>GitHub</strong>. Git is the version control software itself: it runs locally on your computer and has no dependency on the internet. GitHub is a commercial web platform built on top of Git that adds hosting, a browser interface, issue tracking, and collaboration features such as pull requests. You can use Git without GitHub entirely, and GitHub is just one of several hosting services — others include GitLab and Bitbucket. Think of Git as the engine and GitHub as one particular garage where you can park and share your work.
 <img align="right" alt="git logo" src="../../assets/git_logo.png" width="20%" /></p>
 <h2 id="how-does-git-work">How does Git work<a class="headerlink" href="#how-does-git-work" title="Permanent link">&para;</a></h2>
@@ -1811,9 +1875,84 @@ git<span class="w"> </span>status
 git<span class="w"> </span>add<span class="w"> </span>analysis.R
 
 <span class="c1"># 4. Commit them to the history with a message</span>
-git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Add outlier removal step to preprocessing&quot;</span>
+git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">"Add outlier removal step to preprocessing"</span>
 </code></pre></div>
 <p>Repeating this cycle — edit, stage, commit — is the core rhythm of working with Git. Each commit is a deliberate, documented decision rather than an automatic save, which is what gives the history its value as a record of how and why the analysis evolved.</p>
+<h2 id="writing-good-commit-messages">Writing good commit messages<a class="headerlink" href="#writing-good-commit-messages" title="Permanent link">&para;</a></h2>
+<p>A commit is only as useful as the message attached to it. Weeks later, the message — not the diff — is what you (and your collaborators) skim to understand <em>why</em> a change exists. A good message is the difference between a history you can navigate and one you fear to touch.</p>
+<div class="admonition info">
+<p class="admonition-title">What is a good commit message?</p>
+<p>A commit message should describe <strong>what</strong> changed and <strong>why</strong>, written from the perspective of the project after the change is applied. Aim for a single, focused unit of work per commit.
+<img align="right" alt="Goldilocks bears" src="../../assets/git_goldilocks.jpg" /></p>
+<ul>
+<li>Use the <strong>imperative mood</strong>: "Add", "Fix", "Remove" — as if completing the sentence <em>"This commit will …"</em>.</li>
+<li>Keep the <strong>subject line short</strong> (around 50 characters), capitalized, and without a trailing period.</li>
+<li>Put the <strong>why</strong>, not the what-you-typed, in a body when the change is not obvious. The diff already shows <em>what</em>; the message should explain <em>why</em>.</li>
+<li>One logical change per commit, so each message stays truthful and each commit can be reverted on its own.</li>
+</ul>
+</div>
+<p>A commit message follows the Goldilocks principle too little leaves you confused, too much buries the point, and <strong>just enough</strong> is exactly right.</p>
+<table>
+<thead>
+<tr>
+<th>Feel</th>
+<th>Example message</th>
+<th>Why it misses or hits</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img alt="🥶" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/1f976.svg" title=":cold_face:" /> <strong>Too little</strong></td>
+<td><code>fix</code> / <code>updates</code> / <code>stuff</code></td>
+<td>No context. Six months later you cannot tell what changed or why, and <code>git log</code> becomes useless.</td>
+</tr>
+<tr>
+<td><img alt="🔥" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/1f525.svg" title=":fire:" /> <strong>Too much</strong></td>
+<td><code>So I changed the mean function because the old one divided wrong and also I renamed some variables and updated the plot and oh also fixed a typo</code></td>
+<td>The real point is drowned in noise; nobody reads a wall of text, and the actual change is hard to spot.</td>
+</tr>
+<tr>
+<td><img alt="🐻" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/1f43b.svg" title=":bear:" /> <strong>Just enough</strong></td>
+<td><code>Fix mean calculation for empty input</code></td>
+<td>States what changed and the case it fixes in one scannable, imperative line. Clear, searchable, and revertible.</td>
+</tr>
+</tbody>
+</table>
+<p>A quick test for "just enough": if a teammate read only your subject line in <code>git log</code>, would they understand the change without opening the diff? If yes, you have found the Goldilocks zone.</p>
+<h2 id="how-often-should-you-commit">How often should you commit?<a class="headerlink" href="#how-often-should-you-commit" title="Permanent link">&para;</a></h2>
+<p>If commit messages are about <em>quality</em>, frequency is about <em>granularity</em>. The short answer: <strong>early and often, in small logical chunks</strong> — but not so often that each commit is meaningless.</p>
+<p>A useful rule of thumb is to commit whenever you reach a <strong>stable, self-contained step</strong> in your work: you finished cleaning a dataset, you got a function to pass its test, you fixed a bug. Each commit should represent one idea, so it can be understood, reviewed, and reverted on its own. If you ever catch yourself writing a message like "lots of changes" or "work in progress, don't look", that is a signal the commit is trying to hold too much — split it.</p>
+<table>
+<thead>
+<tr>
+<th>Feel</th>
+<th>Habit</th>
+<th>Consequence</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img alt="🥶" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/1f976.svg" title=":cold_face:" /> <strong>Too little</strong></td>
+<td>One giant commit at the end of the week (<code>everything works now</code>)</td>
+<td>You lose the trail of <em>how</em> you got there; a single bad change is hard to isolate and revert; collaborators cannot follow your reasoning.</td>
+</tr>
+<tr>
+<td><img alt="🔥" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/1f525.svg" title=":fire:" /> <strong>Too much</strong></td>
+<td>A commit for every saved keystroke (<code>typo</code>, <code>another typo</code>, <code>still going</code>)</td>
+<td>The history is noisy and the signal is lost; reviewing or bisecting becomes painful.</td>
+</tr>
+<tr>
+<td><img alt="🐻" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/1f43b.svg" title=":bear:" /> <strong>Just enough</strong></td>
+<td>A commit each time a small, complete change works (<code>add outlier removal</code>, <code>fix date parsing</code>, <code>pass test for empty input</code>)</td>
+<td>History reads like a clear story; any step can be reverted safely; <code>git bisect</code> and code review become practical.</td>
+</tr>
+</tbody>
+</table>
+<p>The Goldilocks zone is <strong>frequent enough to never lose more than a few minutes of work, coarse enough that each commit means something</strong>. When in doubt, commit a bit more often than feels natural — you can always explain or squash later, but you can never recover work you never committed. A good habit is to commit at the end of every focused session, and whenever a change passes your tests.</p>
+<div class="admonition tip">
+<p class="admonition-title">Commits are cheap and local</p>
+<p>Committing does not publish anything — it only writes a snapshot into your local <code>.git</code> database. You can commit freely, then tidy the history (amend, reorder, or squash) before you ever share it with a remote. Frequent local commits are a safety net, not a commitment to a messy public history.</p>
+</div>
 
 
 
