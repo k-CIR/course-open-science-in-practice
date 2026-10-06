@@ -1,7 +1,6 @@
 # Git and testing in practice
 
-- Format: Workshop
-- Teacher: Andreas
+[Not implemented]
 
 In this hands-on session you will learn how to combine **automated tests** with your Git workflow. A script that only *prints* results is hard to verify; tests assert that your code behaves as expected, give you a repeatable check after every change, and — crucially — become part of the version history you commit.
 

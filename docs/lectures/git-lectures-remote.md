@@ -86,6 +86,12 @@ An SSH key pair has two parts: a **private key** that stays on your machine and 
 
 The safety takeaway: add only the **public** key (the file ending in `.pub`) to GitHub. Anyone who obtains your public key learns nothing useful; only the private key grants access, so it stays local and is typically protected by a passphrase.
 
+??? tip "Adding your public key to GitHub"
+    :material-key-chain-variant: Already generated a key pair and just need to register the public half with your account? Step-by-step instructions (with copy commands for macOS, Linux, and Windows) are in the setup guide:
+
+    [:material-github: Add the key to GitHub :octicons-arrow-right-16:](../setup/github-setup.md#4-add-the-key-to-github){ .md-button }
+
+
 ## HTTPS vs SSH
 
 Both protocols are valid. SSH is convenient for repeated pushing from a trusted machine and avoids storing tokens locally. HTTPS with a token is common in restricted networks and continuous-integration systems. The safety rules — ignore junk, keep secrets out, push only intended files — apply identically regardless of which you choose. You can switch a remote between them at any time with `git remote set-url`.

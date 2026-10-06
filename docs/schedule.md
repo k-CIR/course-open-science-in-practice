@@ -6,7 +6,7 @@ Download schedule: [ICS](assets/K8F6106-schedule-2026.ics){ download='K8F6106-sc
 
 | Day               | Time    | Activity        | Material                                                                                | Location |
 |-------------------|---------|-----------------|------------------------------------------------------------------------------------------------------|--------|
-| **Monday 12/10**  |         |                 |                                                                                                        |  **[311](https://medarbetare.ki.se/campus-hus-och-miljoer/bokningsbara-lokaler/bokningsbara-lokaler-pa-campus-solna/311)** |
+| **Monday 12/10**  |         |                 ||  **[311](https://medarbetare.ki.se/campus-hus-och-miljoer/bokningsbara-lokaler/bokningsbara-lokaler-pa-campus-solna/311)** |
 |                   | 09:00   | Lecture         | [Why Git? - Intro and context](lectures/lecture-1-why-git.md)                                        |          |
 |                   | 12:00   | Lunch           | [Lunch places around campus](https://medarbetare.ki.se/dagens-lunch)                                                                                             |          |
 |                   | 13:00   | Lecture         | [Git basics](lectures/git-lectures-basics.md)                                                         |          |
