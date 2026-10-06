@@ -9,7 +9,7 @@ Each student presentation should be around 10-15 minutes (i.e. 3-5 powerpoint sl
 
 Some suggestions for what to put on your slides:
 
-- A description of data you simulated, that is relvant to your research
+- A description of how you simulated data relvant to your research
 - A flowchart of your analysis pipeline (i.e. how you organized your project)
 - A quality control figure you used to assess your data
 - A description of a custom function you are proud of that others may find useful

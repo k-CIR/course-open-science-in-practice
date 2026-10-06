@@ -15,8 +15,8 @@ Download schedule: [ICS](assets/K8F6106-schedule-2026.ics){ download='K8F6106-sc
 |                   |         | Exercise        | [Workshop #2 - Git remote](exercises/git-exercises-remote.md)                              |          |
 |                   | 17:00   | End of day      |                                                                                                        |          |
 | **Tuesday 13/10** |         |                 |                                                                                                        |  **[215](https://medarbetare.ki.se/campus-hus-och-miljoer/bokningsbara-lokaler/bokningsbara-lokaler-pa-campus-solna/215)** |
-|                   | 09:00   | Lecture         | [Working in an IDE: Positron](lectures/positron-lectures-1.md)                                                           |          |
-|                   | 10:00   | Lecture         | [Markdown and Quarto](lectures/markdown-quarto.md)                                                    |          |
+|                   | 09:00   | Lecture         | [Positron and environment management](lectures/positron-lectures-1.md)                                                           |          |
+|                   | 10:30   | Lecture         | [Markdown and Quarto](lectures/markdown-quarto.md)                                                    |          |
 |                   | 11:00   | Lecture         | [Agentic coding](lectures/agentic-coding.md)                                      |          |
 |                   | 12:00   | Lunch           | [Lunch places around campus](https://medarbetare.ki.se/dagens-lunch)                                                                                             |          |
 |                   | 13:00   | Lecture         | [Mini project and data overview](lectures/lecture-data-overview.md)                                      |          |
@@ -34,5 +34,5 @@ Download schedule: [ICS](assets/K8F6106-schedule-2026.ics){ download='K8F6106-sc
 |                   | 09:00   | Optional drop-in| [Support session: work on your project](project/project-description.md)                               |          |
 |                   | 15:00   | End of day      |                                                                                                        |          |
 | **Friday 23/10**  |         |                 |                                                                                                        |  **[311](https://medarbetare.ki.se/campus-hus-och-miljoer/bokningsbara-lokaler/bokningsbara-lokaler-pa-campus-solna/311)** |
-|                   |         | Examination     | [Examination](project/project-examination.md)                                                         |          |
+|                   | 09:00   | Examination     | [Examination](project/project-examination.md)                                                         |          |
 |                   | 16:00   | End of day      |                                                                                                        |          |

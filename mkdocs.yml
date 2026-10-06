@@ -81,7 +81,7 @@ nav:
       - '1. Why Git? Intro and context': lectures/lecture-1-why-git.md
       - '2. Git basics': lectures/git-lectures-basics.md
       - '3. Git remote': lectures/git-lectures-remote.md
-      - '4. Working in an IDE: Positron': lectures/positron-lectures-1.md
+      - '4. Positron and envs': lectures/positron-lectures-1.md
 #      - 'R #1 basics': lectures/r-lectures-1.md
       - '5. Markdown and Quarto': lectures/markdown-quarto.md
       - '6. Use AI in your work': lectures/agentic-coding.md
