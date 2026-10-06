@@ -9,8 +9,6 @@
         <meta name="description" content="Course docs for K8F6106 (KI, fall 2026)">
       
       
-        <meta name="author" content="Niklas Edvall & Andreas Gerhardsson">
-      
       
       
         <link rel="prev" href="../git-lectures-branching/">
@@ -24,7 +22,7 @@
     
     
       
-        <title>Positron features - Open Science in Practice: Collaborative Research with Git</title>
+        <title>5. Positron and envs - Open Science in Practice: Collaborative Research with Git</title>
       
     
     
@@ -78,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#summary" class="md-skip">
+        <a href="#ide-positron-and-environment-management" class="md-skip">
           Skip to content
         </a>
       
@@ -114,7 +112,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Positron features
+              5. Positron and envs
             
           </span>
         </div>
@@ -598,12 +596,14 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
           
   
   <span class="md-ellipsis">
-    5. Working in an IDE: Positron
+    5. Positron and envs
     
   </span>
   
@@ -615,7 +615,7 @@
         
   
   <span class="md-ellipsis">
-    5. Working in an IDE: Positron
+    5. Positron and envs
     
   </span>
   
@@ -628,6 +628,8 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -636,9 +638,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#summary" class="md-nav__link">
+  <a href="#slides" class="md-nav__link">
     <span class="md-ellipsis">
-      Summary
+      Slides
     </span>
   </a>
   
@@ -1491,98 +1493,40 @@
   
 
 
-  <h1>5. Working in an IDE: Positron</h1>
-
-<h2 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">&para;</a></h2>
-<h3 id="why-positron">Why Positron?<a class="headerlink" href="#why-positron" title="Permanent link">&para;</a></h3>
-<p>For many researchers, R has meant RStudio — a dedicated environment that has served the R community well for over a decade. Positron is a new code editor developed by Posit (the company behind RStudio) that takes a different approach: rather than building a separate application for each language, it extends <strong>Visual Studio Code</strong> — the most widely used code editor in the world — with first-class, deeply integrated support for both R and Python.</p>
-<p>The result is an editor that feels immediately familiar to anyone who has used VS Code, while still providing the console, environment pane, and plot viewer that R users expect. Positron is not a replacement for RStudio in the sense that it works differently — it is a deliberate step toward a more general, language-agnostic scientific computing environment.</p>
-<p>For this course, Positron matters for two reasons. First, it integrates tightly with Git, making the version control operations you will learn — staging, committing, branching — available directly in the editor without switching to a terminal. Second, it supports Quarto natively, which you will use to write reproducible documents that mix prose, code, and output.</p>
-<h3 id="what-is-positron">What is Positron?<a class="headerlink" href="#what-is-positron" title="Permanent link">&para;</a></h3>
-<p>Positron is a free, open-source code editor released by Posit in 2024. It is built on the <strong>VS Code engine</strong> (the same foundation used by GitHub Codespaces, Cursor, and many other tools), which means it inherits VS Code's extension ecosystem, keyboard shortcuts, settings format, and terminal integration.</p>
-<p>On top of that foundation, Posit has added:</p>
-<ul>
-<li>a dedicated <strong>R language server</strong> that provides auto-complete, inline diagnostics, and go-to-definition for R code</li>
-<li>an integrated <strong>R console</strong> and <strong>Python console</strong> that run inside the editor</li>
-<li>an <strong>environment pane</strong> showing variables, their types, and their values — similar to the RStudio Environment tab</li>
-<li>a <strong>plot viewer</strong> for R graphics output</li>
-<li>a <strong>data viewer</strong> for inspecting data frames interactively</li>
-<li>built-in support for <strong>Quarto</strong> documents and projects</li>
-</ul>
-<p>Because it is built on VS Code, Positron also inherits the Source Control panel — a graphical interface for the most common Git operations — and the integrated terminal, which gives you full shell access without leaving the editor.</p>
-<h3 id="the-positron-interface">The Positron interface<a class="headerlink" href="#the-positron-interface" title="Permanent link">&para;</a></h3>
-<p>The Positron window is divided into several areas that you will use throughout the course.</p>
-<p><strong>Activity bar</strong> (left edge)
-A vertical strip of icons that switch between the main sidebar panels: the file explorer, search, source control (Git), extensions, and others. Clicking an icon opens that panel in the sidebar; clicking it again collapses the sidebar.</p>
-<p><strong>Sidebar</strong>
-The panel to the right of the activity bar. In Explorer mode it shows the file and folder tree of your open workspace. In Source Control mode it shows staged, unstaged, and untracked changes and provides buttons for the most common Git operations.</p>
-<p><strong>Editor area</strong> (centre)
-Where files open for editing. Multiple files can be open as tabs. You can split the editor into two or more panes side by side, which is useful for reading a data file on one side while writing the script that processes it on the other.</p>
-<p><strong>Console and terminal panel</strong> (bottom)
-The lower panel holds several tabs. The R console runs your R code interactively; results, warnings, and errors appear here. The Terminal tab gives you a full shell session. Additional tabs appear for output logs and diagnostics from extensions.</p>
-<p><strong>Secondary sidebar</strong> (right, optional)
-Positron adds a second sidebar on the right that hosts the Environment pane (showing your R variables), the Plots pane, and the Connections pane. This layout mirrors the familiar RStudio four-pane design while keeping the editor at the centre.</p>
-<h3 id="workspaces-and-projects">Workspaces and projects<a class="headerlink" href="#workspaces-and-projects" title="Permanent link">&para;</a></h3>
-<p>In Positron, a <strong>workspace</strong> is a folder you open with <strong>File → Open Folder</strong>. Everything — the terminal working directory, relative file paths in your scripts, Git operations, and extension settings — is anchored to that folder. This is the equivalent of an RStudio project (<code>.Rproj</code>).</p>
-<p>The recommended workflow for this course is:</p>
-<ol>
-<li>Create a folder for your project.</li>
-<li>Open that folder in Positron as a workspace.</li>
-<li>Initialise a Git repository inside it (<code>git init</code> in the terminal, or use the Source Control panel).</li>
-<li>Write and run your R or Python scripts from within that workspace.</li>
-</ol>
-<p>Keeping all project files under one workspace folder, and that folder under Git version control, is the foundation of a reproducible and shareable analysis.</p>
-<h3 id="extensions">Extensions<a class="headerlink" href="#extensions" title="Permanent link">&para;</a></h3>
-<p>One of Positron's greatest strengths is its extension ecosystem, inherited from VS Code. Extensions add new capabilities to the editor — language support, linters, formatters, AI assistants, database connectors, and more. They are installed from the built-in marketplace (the puzzle-piece icon in the activity bar) and activated automatically when the editor starts.</p>
-<p>Extensions relevant to this course:</p>
-<ul>
-<li><strong>R</strong> (Posit) — the core R language server; installed by default in Positron</li>
-<li><strong>Quarto</strong> — syntax highlighting, preview, and render support for <code>.qmd</code> files</li>
-<li><strong>GitLens</strong> — enriches the built-in Git support with line-by-line blame, history browsing, and branch comparisons</li>
-<li><strong>GitHub Copilot</strong> — AI-powered code completion and chat (covered in a later session)</li>
-<li><strong>Rainbow CSV</strong> — colour-codes CSV columns in the editor, making data files easier to read</li>
-</ul>
-<p>You do not need to install all of these immediately. The R and Quarto extensions are the ones to have from the start; the others can be added as the course progresses.</p>
-<h3 id="git-integration-in-positron">Git integration in Positron<a class="headerlink" href="#git-integration-in-positron" title="Permanent link">&para;</a></h3>
-<p>Because Positron is built on VS Code, the Git integration is built in — no additional extension is required for basic operations. The <strong>Source Control panel</strong> (branch icon in the activity bar) shows:</p>
-<ul>
-<li><strong>Changes</strong> — files you have edited since the last commit, shown as unstaged</li>
-<li><strong>Staged changes</strong> — files you have added with <code>git add</code>, ready to commit</li>
-<li>A text box for the <strong>commit message</strong> and a <strong>Commit</strong> button</li>
-</ul>
-<p>Clicking the <code>+</code> icon next to a file stages it. Filling in the message box and clicking Commit is equivalent to <code>git commit -m "your message"</code>. The <code>...</code> menu at the top of the panel exposes push, pull, branch, and merge operations.</p>
-<p>For learning purposes, it is worth doing these operations in the terminal at least a few times first so that you understand what each command does. Once the concepts are clear, the graphical panel is a convenient shortcut for the day-to-day workflow.</p>
-<h3 id="quarto-in-positron">Quarto in Positron<a class="headerlink" href="#quarto-in-positron" title="Permanent link">&para;</a></h3>
-<p>Quarto is a document system that lets you write prose and executable code in the same file. In Positron, <code>.qmd</code> files open with full syntax highlighting and a <strong>Preview</strong> button in the top-right corner of the editor that renders the document and displays the result alongside the source.</p>
-<p>The typical Quarto document structure looks like this:</p>
-<div class="highlight"><pre><span></span><code>---
-title: &quot;My analysis&quot;
-<span class="gu">format: html</span>
-<span class="gu">---</span>
-
-<span class="gu">### Data preparation</span>
-
-```{{r}}
-library(dplyr)
-data &lt;- read.csv(&quot;data/input.csv&quot;)
-</code></pre></div>
-<p>Running the Preview renders all code chunks and weaves the output — tables, plots, printed values — directly into the document. The rendered file is a single self-contained HTML (or PDF) that can be shared with collaborators or published online without them needing to install R.</p>
-<p>Quarto documents committed to a Git repository give you a complete record of both the analysis code and its output at each point in time — which is the closest practical equivalent to a lab notebook for computational research.</p>
-<details class="tip">
-<summary>More about Positron</summary>
-<p>Positron's own website has a few <a href="https://positron.posit.co/tutorials.html">tutorials</a> about the basic setup to get started started. Then even more <a href="https://positron.posit.co/welcome.html">guides</a> to keep going. </p>
-<p>In this course we chose Positron since it is built for data science and is setup with the most useful extensions for that, including a nice R + Python configurations, that can be a bit tricky to setup manually. </p>
-<p>Since Positron is built on <a href="https://github.com/microsoft/vscode">Code OSS</a>, the open-source foundation of Visual Studio Code. For general editor features like commands, settings, and source control, you can use check out the <a href="https://code.visualstudio.com/docs">VS Code documentation</a>.</p>
-</details>
+<h1 id="ide-positron-and-environment-management">IDE: Positron and environment management<a class="headerlink" href="#ide-positron-and-environment-management" title="Permanent link">&para;</a></h1>
+<p><a href="https://positron.posit.co/">Positron</a> is a free, open-source code editor released by Posit in 2024. It is built on the VS Code engine, which means it inherits VS Code's extension ecosystem, keyboard shortcuts, settings format, and terminal integration. Because it is built on VS Code, Positron also inherits the Source Control panel — a graphical interface for the most common Git operations.</p>
+<p>During this lecture we go through the basics of Positron and how to manage a project in on git and github via it.</p>
+<p>Additionally, we touch on the concept on environment management: how to best manage the dependencies of your project. This is important for reproducibility and collaboration, as it allows you to specify the exact versions of packages that your project depends on.</p>
+<p>Check the <a href="https://positron.posit.co/layout.html">tutorials</a> on the posit website if you need a refresher on the basics of Positron or <a href="../../setup/positron-setup/">the setup page</a> for how you install it.</p>
+<p><a class="md-button" download="4-positron.pdf" href="../downloads/4-positron.pdf"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2m-9.5 8.5c0 .8-.7 1.5-1.5 1.5H7v2H5.5V9H8c.8 0 1.5.7 1.5 1.5zm5 2c0 .8-.7 1.5-1.5 1.5h-2.5V9H13c.8 0 1.5.7 1.5 1.5zm4-3H17v1h1.5V13H17v2h-1.5V9h3zm-6.5 0h1v3h-1zm-5 0h1v1H7z"/></svg></span> Download slides (.pdf)</a></p>
+<h2 id="slides">Slides<a class="headerlink" href="#slides" title="Permanent link">&para;</a></h2>
+<div class="slide-gallery">
+<p><img alt="Slide 1" src="../../slides/4-positron/slide_001.png" />
+<img alt="Slide 2" src="../../slides/4-positron/slide_002.png" />
+<img alt="Slide 3" src="../../slides/4-positron/slide_003.png" />
+<img alt="Slide 4" src="../../slides/4-positron/slide_004.png" />
+<img alt="Slide 5" src="../../slides/4-positron/slide_005.png" />
+<img alt="Slide 6" src="../../slides/4-positron/slide_006.png" />
+<img alt="Slide 7" src="../../slides/4-positron/slide_007.png" />
+<img alt="Slide 8" src="../../slides/4-positron/slide_008.png" />
+<img alt="Slide 9" src="../../slides/4-positron/slide_009.png" />
+<img alt="Slide 10" src="../../slides/4-positron/slide_010.png" />
+<img alt="Slide 11" src="../../slides/4-positron/slide_011.png" />
+<img alt="Slide 12" src="../../slides/4-positron/slide_012.png" />
+<img alt="Slide 13" src="../../slides/4-positron/slide_013.png" />
+<img alt="Slide 14" src="../../slides/4-positron/slide_014.png" />
+<img alt="Slide 15" src="../../slides/4-positron/slide_015.png" />
+<img alt="Slide 16" src="../../slides/4-positron/slide_016.png" />
+<img alt="Slide 17" src="../../slides/4-positron/slide_017.png" />
+<img alt="Slide 18" src="../../slides/4-positron/slide_018.png" />
+<img alt="Slide 19" src="../../slides/4-positron/slide_019.png" /></p>
+</div>
 
 
 
 
 
 
-
-  
-  
 
 
 
