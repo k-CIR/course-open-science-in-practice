@@ -14,6 +14,6 @@ Simulated data for your project is available in 4 different simulated datasets, 
     - An analysis pipeline that reads data and produce a result (figures, tables, result report, etc.).
     - The analysis should result in at least one figure and one "result".
     - A plausible commit history.
-    - One branch + merge (oppurtunity for collaboration during Excecise: [Git #4 - Collaboration](../exercises/git-exercises-collaboration.md)).
+    - At least one branch + merge (oppurtunity for collaboration during Excecise: [Git #4 - Collaboration](../exercises/git-exercises-collaboration.md)).
     - Well organized scripts – no monoliths.
     - Be well documented (README), commented, and easy to follow.

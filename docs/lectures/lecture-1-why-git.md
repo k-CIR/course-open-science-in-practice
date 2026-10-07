@@ -59,5 +59,10 @@ Research should be reproducible and performed in a transparent manner. To achiev
 ![Slide 49](../slides/1-why-git/slide_049.png)
 ![Slide 50](../slides/1-why-git/slide_050.png)
 ![Slide 51](../slides/1-why-git/slide_051.png)
+![Slide 52](../slides/1-why-git/slide_052.png)
+![Slide 53](../slides/1-why-git/slide_053.png)
+![Slide 54](../slides/1-why-git/slide_054.png)
+![Slide 55](../slides/1-why-git/slide_055.png)
+![Slide 56](../slides/1-why-git/slide_056.png)
 
 </div>

@@ -82,7 +82,7 @@ nav:
       - '2. Git basics': lectures/git-lectures-basics.md
       - '3. Git remote': lectures/git-lectures-remote.md
       - '4. Git branching': lectures/git-lectures-branching.md
-      - '5. Working in an IDE: Positron': lectures/positron-lectures-1.md
+      - '5. Positron and envs': lectures/positron-lectures-1.md
       - '6. Markdown and Quarto': lectures/markdown-quarto.md
       - '7. AI assistance': lectures/ai-assistance.md
       - '8. Mini project and data overview': lectures/lecture-data-overview.md
