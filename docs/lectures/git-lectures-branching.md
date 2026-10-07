@@ -113,6 +113,44 @@ A conflict is not an error — it is Git being honest that it cannot automatical
 
 The key insight is that conflicts are a *sign of parallel progress*, not a mistake. They are far easier to handle in small, frequent merges than in rare, massive ones — which is why short-lived branches that are merged often are a best practice.
 
+## Deleting branches: local and remote
+
+A branch is just a pointer, so deleting one only removes the label — it does not touch the commits it pointed to. If those commits are reachable from another branch (for example, because you already merged), they stay in the repository exactly as before; deleting the branch simply closes the portal, it does not undo the journey.
+
+```sh
+git branch -d experiment
+```
+
+`-d` (delete) is the **safe** form: Git checks first whether `experiment` has been merged into your current branch, and refuses if it has not, protecting you from silently losing work you never brought back into `main`.
+
+```sh
+git branch -D experiment
+```
+
+`-D` is shorthand for `--delete --force`: it deletes the branch **regardless** of merge status. Use it deliberately, when you are certain the branch's commits are no longer needed.
+
+!!! warning "A force-deleted branch is not gone, but it is hard to find"
+    The commits are not immediately erased — Git only drops the pointer, and unreachable commits typically remain in the repository until garbage-collected. But without the branch label you can normally only get back to them via their commit hash (recoverable for a while from `git reflog`). In practice, treat `-D` as a real deletion: do not rely on being able to undo it later.
+
+### Deleting a branch on the remote
+
+Deleting your local branch only removes *your* pointer — a copy pushed earlier still lives on the remote (e.g. `origin`) until you explicitly remove it there too:
+
+```sh
+git push origin --delete experiment
+```
+
+This tells `origin` to drop its `experiment` ref. It is a separate operation from `git branch -d`/`-D`, because the local and remote copies are independent refs — deleting one does not touch the other, in either direction. On GitHub, merging a pull request often offers to delete the source branch for you, which does exactly this.
+
+??? question "GitHub deleted the branch for me — why does `git branch -a` still show it?"
+    When a branch is deleted on the remote, your local **remote-tracking branch** (`origin/experiment`) does not disappear automatically — it becomes a stale reference to something that no longer exists. Clean these up with:
+
+    ```sh
+    git fetch --prune
+    ```
+
+    This fetches the latest state from the remote and removes any remote-tracking branches that no longer correspond to a branch there. Your own local `experiment` branch (if you still have one) is untouched — pruning only tidies up the bookkeeping about the remote.
+
 ## Summary
 
 - A branch is a movable pointer to a commit, not a copy of your files.
@@ -120,5 +158,6 @@ The key insight is that conflicts are a *sign of parallel progress*, not a mista
 - History is a graph; `git log --graph` lets you see it.
 - Merges join branches — either by fast-forward or by a merge commit.
 - Conflicts are expected and resolvable; merge often to keep them small.
+- Deleting a branch only removes its pointer: `-d` is safe and checks for merged work, `-D` forces it; a remote copy needs its own `git push origin --delete`, and `git fetch --prune` cleans up stale remote-tracking branches afterwards.
 
 In the workshop you will create branches, merge them, and resolve a conflict by hand. The conceptual model above is what makes those steps make sense rather than feel like incantations.

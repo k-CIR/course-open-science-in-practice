@@ -1,19 +1,16 @@
 # Git branching
 
-- Format: Workshop
-- Teacher: Andreas
-
 In this hands-on session you will practice branching in git. Still working locally.
 
 So far you have worked on a **single straight line** of commits — what Git calls a branch. Branches are what make Git powerful for experimentation and collaboration: they let you work on a new idea in isolation, without risking the stable version of your project. In this workshop everything stays on your own machine; remotes (GitHub, pushing, pull requests) come in a later session.
 
 By the end of the workshop you should be able to:
 
-- Explain what a branch is (a movable pointer to a commit)
-- Create, list, switch between, and delete branches
-- Merge a branch back into another and understand a fast-forward merge
-- Recognise and resolve a **merge conflict**
-- Visualise your history with `git log --graph`
+- [ ] Explain what a branch is (a movable pointer to a commit)
+- [ ] Create, list, switch between, and delete branches
+- [ ] Merge a branch back into another and understand a fast-forward merge
+- [ ] Recognise and resolve a **merge conflict**
+- [ ] Visualise your history with `git log --graph`
 
 Start by opening your project in Positron
 
@@ -39,53 +36,42 @@ git status
 !!! tip "Name branches by intent"
     Use descriptive names like `add-logging`, `fix-mean-bug`, or `try-new-model`. Avoid vague names like `test` or `branch1`.
 
-## Exercise 1 — Branch and commit in isolation
+## Exercise 3.1 — Branch and commit in isolation
 
 Start from the project you built in the previous session (the one with `analysis.R` / `analysis.py` and its tests).
 
-??? tip "Create and switch to a branch"
-
-      ```sh
-      git switch -c improve-summary
-      ```
-
+1. Create and switch to a branch
 2. On this branch, edit your script to also report the **median** value.
 3. Run your script to confirm everything works.
-??? tip "Commit the change"
+4. Stage and commit the change
+5. Switch back to `main` branch
 
-      ```sh
-      git add analysis.R          # or analysis.py
-      git commit -m "Report median in summary"
-      ```
+What happend?
 
-??? tip "Switch back to `main` and open the script"
-
-      ```sh
-      git switch main
-      ```
+??? help "Help"
+      Create and switch to branch: `git switch -c improve-summary`
+      Median: `median(values)`
+      Run script: `Rscript analysis.R`
+      Stage: `git add analysis.R          # or analysis.py`
+      Commit: `git commit -m "Report median in summary"`
+      Switch back to main: `git switch main`
 
       your median change is **not there**. That is the point: the work is isolated on `improve-summary`.
 
-## Merge a branch back
+## Exercise 3.2 — Merge a branch back
 
-Visualise your history
-```sh
-git log --oneline --graph --all
-```
+1. Visualise your history
+2. Make sure you are on `main` branch
+3. Merge improve-summary onto main
+4. Explain what happend to `HEAD`
+??? help "Help"
+      Visualise: `git log --oneline --graph --all`
+      Check branches: `git branch`
+      Merge: `git merge improve-summary`
 
-??? tip "Once a branch's work is finished and tested, bring it into `main` with a merge."
+      If `main` has not moved since you branched, Git simply moves the `main` pointer forward to the same commit as `improve-summary`. This is a **fast-forward** merge — no new commit is created, because the histories are already a straight line.
 
-      ```sh
-      # Make sure you are on the branch that should receive the changes
-      git switch main
-
-      # Merge the other branch in
-      git merge improve-summary
-      ```
-
-### Fast-forward merges
-
-??? task "Explain what happend to `HEAD`"
+??? task "What happend to `HEAD`"
 
       If `main` has not moved since you branched, Git simply moves the `main` pointer forward to the same commit as `improve-summary`. This is a **fast-forward** merge — no new commit is created, because the histories are already a straight line.
 
@@ -105,13 +91,20 @@ git log --oneline --graph --all
       * e15b308 first commit
       ```
 
-## Exercise 2 — A second branch and a real merge
+## Exercise 3.3 — A second branch and a real merge
 
-1. From `main`, create another branch: `git switch -c add-range`.
-2. On `add-range`, edit the script to also report the **range** (max − min).
-3. Check that script works and commit it.
+1. From `main`, create another branch called: `add-range`.
+2. On `add-range`, edit the script to also report the **range**.
+3. Check that script works, stage and commit it.
 4. Switch back to `main` and add **standard deviation**
-5. Check that script works and commit it.
+5. Check that script works, stage and commit it.
+
+??? help "Help"
+      Create and switch to new branch: `git switch -c add-range`
+      Range: `diff(range(values))` or `max(values) - min(values)`
+      Commit: `git add analysis.R` and `git commit -m "range added"`
+      Switch: `git switch main`
+      SD: `sd(values)`
 
 ??? task "Inspect the result: `git log --oneline --graph --all`. What do you see?"
 
@@ -129,21 +122,34 @@ git log --oneline --graph --all
 
 A conflict happens when two branches change the **same lines** of the same file and Git cannot decide which version to keep. This is normal and not dangerous — Git just pauses the merge and asks you to choose.
 
-### Trigger a conflict on purpose
+1. Merge add-range into main
+
+??? help "Help"
+      Merge: `git merge add-range`
+
+What happens?
+
+If you got a conflict lets wait with the merge: `git merge --abort`
+
+Let's add a deliberate conflict 
 
 1. From `main`, create `git switch -c change-label`.
 2. On `change-label`, edit the printed label text (for example change `"Mean:"` to `"Average:"`). Commit it.
 3. Switch to `main`, then create `git switch -c change-value` from `main`.
 4. On `change-value`, edit the **same line** to a different label (e.g. `"Mean value:"`). Commit it.
-5. Merge the first branch into `main`, then try to merge the second:
+5. Check your commit log `git log --oneline --graph --all`
+6. Merge `change-label` branch into `main` then `change-value` into main
 
-   ```sh
-   git switch main
-   git merge change-label
-   git merge change-value
-   ```
+What happens?
 
-   The second merge stops with `CONFLICT (content): Merge conflict in analysis.R`.
+??? help "Help"
+      ```sh
+      git switch main
+      git merge change-label
+      git merge change-value
+      ```
+
+      The second merge stops with `CONFLICT (content): Merge conflict in analysis.R`.
 
 ### Resolve the conflict
 
@@ -169,8 +175,11 @@ git add analysis.R          # or analysis.py
 git commit -m "Resolve label conflict, keep 'Mean value'"
 ```
 
-!!! tip "Abort a messy merge"
-    If a conflict gets out of hand, back out completely with `git merge --abort`. This returns you to the state before the merge started.
+Check log again: `git log  --oneline --all --graph`. Are the any unmerged branches (eg. `add-range`)?
+
+If so,
+1. Try again to merge `add-range` into main and resolve any conflicts
+2. Check the log again
 
 ## Clean up finished branches
 
@@ -179,9 +188,18 @@ After a branch is merged and you no longer need it, delete it to keep the list t
 ```sh
 git branch -d improve-summary
 git branch -d add-range
+git branch -d change-label
+git branch -d change-value
 ```
 
+Check your local branches
+
+
 Git refuses `git branch -d` on a branch whose work is not yet merged, which protects you from losing work. Use `-D` only when you are certain you want to discard an unmerged branch.
+
+## Remote branches
+
+A **remote branch** is a branch on another copy of a repository, usually hosted on GitHub. After `git fetch`, Git updates a remote-tracking reference such as `origin/main` to show the latest commit it knows about on that remote branch. You do not work directly on `origin/main`; you work on a local branch and later share commits with the remote. You will practise fetching and tracking remote branches in the collaboration exercises.
 
 ## Recap of the commands you learned
 
@@ -198,7 +216,3 @@ Git refuses `git branch -d` on a branch whose work is not yet merged, which prot
 
 !!! success "What you can now do"
     You can isolate experimental work on branches, merge finished work back into `main`, resolve the inevitable conflicts, and keep your history readable with a graph view — all locally.
-
-## What comes next
-
-Remotes (`git remote`, `git clone`, `git push`, `git pull`) and pull requests build directly on branching. The next workshop takes your local branches and connects them to a shared repository on GitHub.

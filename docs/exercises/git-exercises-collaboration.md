@@ -1,18 +1,15 @@
 # Git collaboration
 
-- Format: Group Workshop
-- Teacher: Andreas
-
 In this hands-on session you will close the circle and practice the collaboration process, by cloning, forking, merging and making pull requests.
 
 You will pair up with a **code buddy** and contribute to *each other's* mini-project repository: forking, branching, pushing, and opening a pull request against a real, live repository instead of your own. By the end you should be able to:
 
-- Clone a repository and confirm the remote it inherited
-- Fork a repository and add the original as a second (`upstream`) remote
-- Explain the difference between `fetch`, `pull`, and `clone`
-- Push a branch and open a pull request
-- Recover from a rejected push when the remote has moved on
-- Merge a pull request and sync the result back to your own machine
+- [ ] Clone a repository and confirm the remote it inherited
+- [ ] Fork a repository and add the original as a second (`upstream`) remote
+- [ ] Explain the difference between `fetch`, `pull`, and `clone`
+- [ ] Push a branch and open a pull request
+- [ ] Recover from a rejected push when the remote has moved on
+- [ ] Merge a pull request and sync the result back to your own machine
 
 ## Prerequisites
 
@@ -20,29 +17,39 @@ You will pair up with a **code buddy** and contribute to *each other's* mini-pro
 - Your own mini-project repository already pushed to GitHub, with at least one commit.
 - A **code buddy** — pair up with someone else in the room. You will fork their repository and they will fork yours.
 
-## Exercise 1 — Clone and inspect the inherited remote
+## Exercise 4.1 — Clone and inspect the inherited remote
 
 Before forking anything, confirm what cloning actually sets up for you.
 
-1. Clone any public repository you do not own, for example the course example repo:
+Clone any public repository you do not own, for example the course example repo:
 
-   ```sh
-   git clone https://github.com/NiklasEdvall/an-approved-repo.git
-   cd an-approved-repo
-   ```
+```sh
+git clone https://github.com/NiklasEdvall/an-approved-repo.git
+cd an-approved-repo
+```
 
-2. Inspect the remote that was created for you automatically:
+1. Inspect the remote that was created for you automatically. What is the remote?
+2. How many branches does the repository have?
+3. Inspect the commit history, what do you see?
+4. When was the first commit?
 
-   ```sh
-   git remote -v
-   ```
+??? help "Help"
 
-??? tip "What you should see"
-    A single remote named `origin`, pointing at the URL you cloned — both for fetch and for push, even if you do not actually have push access to it. `git clone` always wires up `origin`; whether you can push there is a separate question, decided by the remote's permissions, not by Git.
+      Check remote(s): `git remote -v`
 
-3. Compare this to starting from scratch: `git init` followed by `git remote add origin <url>` — the same end state, reached in two explicit steps instead of one.
+      A single remote named `origin`, pointing at the URL you cloned — both for fetch and for push, even if you do not actually have push access to it. `git clone` always wires up `origin`; whether you can push there is a separate question, decided by the remote's permissions, not by Git.
 
-## Exercise 2 — Fork your buddy's repository
+      Check branches: `git branch`
+
+      Check commit log: `git log --oneline --graph`
+
+      Check from beginning: `git log --reverse`
+
+Compare this to starting from scratch: `git init` followed by `git remote add origin <url>` — the same end state, reached in two explicit steps instead of one.
+
+
+
+## Exercise 4.2 — Fork your buddy's repository
 
 1. On GitHub, open your code buddy's mini-project repository and click **Fork**. This creates a copy under *your* account (`you/their-repo`).
 2. Clone **your fork** — not their original — to your machine:
@@ -62,7 +69,7 @@ Before forking anything, confirm what cloning actually sets up for you.
 
 You should now see two remotes: `origin` (your fork, read/write) and `upstream` (their original, read-only for you).
 
-## Exercise 3 — `fetch` vs. `pull`
+## Exercise 4.3 — `fetch` vs. `pull`
 
 1. Ask your buddy to make a small commit directly to their repository (e.g. add a line to their README) and push it.
 2. On your machine, download it *without* touching your files:
@@ -84,6 +91,27 @@ You should now see two remotes: `origin` (your fork, read/write) and `upstream` 
 
 ??? question "So what did `git pull` actually do?"
     `git pull upstream main` is shorthand for `git fetch upstream` followed by `git merge upstream/main`. Using `fetch` first (as in step 2) lets you inspect incoming changes before merging; `pull` does both at once, which is faster but skips the inspection step.
+
+### Exercise 4.4 — Create a local branch from a remote branch
+
+After `git fetch upstream`, `upstream/main` is a **remote-tracking branch**: your local record of the branch on the `upstream` remote. You do not work on that reference directly. Instead, create a local branch that tracks it:
+
+```sh
+git branch -r
+git switch --track -c inspect-upstream upstream/main
+git status
+git branch -vv
+```
+
+1. Which branch is checked out now: `inspect-upstream` or `upstream/main`?
+2. Switch back to your own `main` branch when you are done inspecting:
+
+   ```sh
+   git switch main
+   ```
+
+??? tip "What to notice"
+    `upstream/main` is updated by `git fetch upstream`; `inspect-upstream` is a local branch you can switch to and work on. It is set to track `upstream/main`. In this exercise, switch back to `main` before making or pushing contribution commits, because `upstream` is the buddy's repository and is read-only for you.
 
 ## Exercise 4 — Contribute a change via pull request
 
@@ -159,6 +187,8 @@ Swap roles: review the pull request your buddy opened against **your** repositor
 | `git clone <url>` | Copy a repository and automatically create `origin` |
 | `git remote add upstream <url>` | Register a second remote, e.g. the project you forked from |
 | `git fetch <remote>` | Download new commits without touching your branches or files |
+| `git branch -r` | List remote-tracking branches |
+| `git switch --track -c <local> <remote>/<branch>` | Create a local branch that tracks a remote branch |
 | `git pull <remote> <branch>` | `fetch` + `merge` in one step |
 | `git push -u origin <branch>` | Push a new branch and set it to track the remote |
 | `git push origin --delete <branch>` | Delete a branch on the remote after it is merged |

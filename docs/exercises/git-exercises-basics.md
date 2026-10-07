@@ -1,9 +1,6 @@
 # Git basics
 
-- Format: Workshop
-- Teacher: Andreas
-
-In this hands-on session you will learn the **local, single-track workflow** of Git: how to create a project, turn it into a repository, write a small analysis script, and record your work as a series of commits. We deliberately **skip branches and remotes** (GitHub, GitLab, pushing) in this session — those come later. Everything you do in this session stays on your own machine.
+In this hands-on session you will learn the **local, single-track workflow** of Git: how to create a project, turn it into a repository, write a small analysis script, and record your work as a series of commits.
 
 By the end of the workshop you should be able to:
 
@@ -13,7 +10,7 @@ By the end of the workshop you should be able to:
 - [ ] Read back your history and inspect what changed between versions
 - [ ] Write and run a small test alongside your script, and version it with Git
 
-We will work inside Positron and use the built in terminal but you could run all commands in the terminal of your choosing.
+We will work inside Positron and use the built in terminal but you could run all commands in the terminal of your choosing (except for Windows users who should use Git bash)
 
 ## Create a new project
 
@@ -175,16 +172,28 @@ The `-m` flag lets you write the commit message directly. Write messages in the 
     If you quit the editor changes are not committed.
     `Aborting commit due to empty commit message.` 
 
-## Exercise 1 — Make a change and commit it
+## Exercise 1.1 — Make a change and commit it
 
 1. Edit your script so it also reports the **minimum** value.
 2. Run the script and confirm the new output is correct.
-3. Stage and commit the change:
+3. Stage and commit the change
+   
+??? help "Help"
 
-   ```sh
-   git add analysis.R
-   git commit -m "Report minimum value in summary"
-   ```
+    ```R
+    ...
+    min_value = min(values)
+    
+    ...
+    ```
+    ```sh
+    Rscript analysis.R
+    ```
+
+    ```sh
+    git add analysis.R
+    git commit -m "Report minimum value in summary"
+    ```
 
 Confirm there are now two commits (see next section).
 
@@ -205,10 +214,10 @@ Shows every commit in reverse chronological order, with its hash, author, date, 
     | `git log --stat` | Which files changed in each commit |
     | `git log -p` | The full diff (line-by-line changes) of each commit |
 
-### `git diff` — what changed but is not yet staged
+### Exercise 1.2  `git diff` — what changed but is not yet staged
 
 1. Add some random values to the vector/list
-2. run `git diff` to see unstaged changes
+2. Check unstaged changes
 
 Compares your working directory against the staging area. 
 
@@ -232,25 +241,41 @@ Shows the most recent commit's metadata and its diff. Add a commit hash to inspe
 git show <commit-hash>
 ```
 
-## Exercise 2 — Inspect your work
+## Exercise 1.3 — Inspect your work
 
-1. Run `git log --oneline` and confirm you see both commits.
-2. Run `git diff HEAD~1` to see what the latest commit changed compared with the one before it.
-3. Run `git show HEAD~1` to read the full content of your first commit.
+1. Get an overview of your commits
+2. Compare the differences between your commits
+3. Check the full content of your first commit
 
-## Exercise 3 — Break it on purpose (then fix it)
+??? help "Help"
+    1. Run `git log --oneline` and confirm you see both commits.
+    2. Run `git diff HEAD~1` to see what the latest commit changed compared with the one before it.
+    3. Run `git show HEAD~1` to read the full content of your first commit.
 
-1. In your script, change the computation of the mean so it is wrong (for example, divide by `length(values) - 1` in R, or forget to divide in Python).
-2. Re-run the tests. They should **fail** — this proves the tests actually guard your logic.
-3. Fix the script so the tests pass again.
-4. Stage and commit:
+## Exercise 1.4 — Make a commit without a commit-message
 
-   ```sh
-   git add analysis.R            # or analysis.py
-   git commit -m "Fix mean calculation and restore tests"
-   ```
+1. In your script, make any changes you want
+2. Stage the changes
+3. commit but do not add a commit message and see what happens
 
-This edit → test → commit loop is the everyday rhythm of version-controlled, reproducible analysis.
+## Bonus quests
+
+1. Find the short hash of the current commit.
+2. Show your commit history on one line with dates and times.
+3. Make a change to your script, stage it, then unstage it without losing the edit.
+4. Make two different edits in your script. Stage only one part of the changes, then check what is staged and unstaged.
+5. Find the commit where you added the minimum value. Inspect its message and the changes it made.
+6. Compare your current script with the version from your first commit. What has changed?
+7. Add a short comment to your script, commit it, then use the history to find when you made that change.
+
+??? help "Help with bonus quests"
+    1. Run `git log --oneline`; the short hash is the code at the start of the line for your latest commit.
+    2. Run `git log --oneline --date=local --format="%h %ad %s"`.
+    3. After staging a change, run `git restore --staged analysis.R` (or `analysis.py`). The edit remains in your file, but is no longer staged. Confirm with `git status`.
+    4. Run `git add -p analysis.R` (or `analysis.py`) and choose which change to stage. Then run `git diff --staged` to inspect staged changes and `git diff` to inspect unstaged changes. If you prefer not to use interactive prompts, make two separate edits and stage the whole file with `git add analysis.R` (or `analysis.py`), then inspect it with `git diff --staged`.
+    5. Look through `git log --oneline` for the commit message from Exercise 1, then run `git show <commit-hash>` using its hash.
+    6. Run `git diff <first-commit-hash> HEAD -- analysis.R` (or `analysis.py`). Find the first commit's hash with `git log --oneline`.
+    7. Run `git log --oneline` to find the new commit. For more detail, inspect it with `git show <commit-hash>`.
 
 ## Recap of the commands you learned
 
@@ -266,9 +291,4 @@ This edit → test → commit loop is the everyday rhythm of version-controlled,
 | `git show <hash>` | View one commit in detail |
 
 !!! success "What you can now do"
-    You can start a project, write an R or Python script, back it up as meaningful commits, check your history, and protect it with automated tests — all locally, with no branches or remotes involved.
-
-## What we deliberately skipped
-
-Branches (`git branch`, `git switch`), remotes (`git remote`, `git push`, `git pull`), and pull requests are **out of scope for this session**. They build directly on what you learned here, so the next workshop will pick up exactly where this one ends.
-
+    You can start a project, write an R or Python script, back it up as meaningful commits and check your history — all locally, with no branches or remotes involved.

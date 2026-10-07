@@ -124,3 +124,5 @@ The Goldilocks zone is **frequent enough to never lose more than a few minutes o
 
 !!! tip "Commits are cheap and local"
     Committing does not publish anything — it only writes a snapshot into your local `.git` database. You can commit freely, then tidy the history (amend, reorder, or squash) before you ever share it with a remote. Frequent local commits are a safety net, not a commitment to a messy public history.
+
+The [Git basics exercises](../exercises/git-exercises-basics.md) will put these ideas into practice

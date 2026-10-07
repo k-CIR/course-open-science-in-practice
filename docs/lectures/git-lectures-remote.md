@@ -15,8 +15,6 @@ You can work on git completely on your own machine. That is great for privacy an
 
 However, it also means your work is one spilled coffee away from being lost, and it cannot be shared or collaborated on. A **remote** solves both problems — but it also introduces risk, because whatever you push can be seen by others, and on a public remote it can be seen by *everyone*. This lecture covers the concepts of remotes, and the safety practices — `.gitignore`, secret-handling, and SSH — that keep you from sharing what you did not mean to.
 
-
-
 ## Remote options
 There are a few options for remote handling of your repository. [GitHub](https://github.com) is the most common, but it is owned by Microsoft and not open source. [GitLab](https://about.gitlab.com) is open source and can be set up at a local server. [KI ITA offers a GitLab account](https://staff.ki.se/tools-and-support/it-and-telephony/order-it-and-telephony-services/ki-gitlab-for-managing-source-code) but it can only be accessed by KI associated.
 
@@ -26,8 +24,45 @@ Because Git is distributed, every clone is a full repository with its own comple
 
 A **remote** is just a saved reference — a URL — to another copy of your repository. Git stores it under a short name, by convention `origin`. Adding a remote does not copy anything; it only tells Git *where* `origin` points. The actual copying happens later, explicitly, when you `push` (send your history out) or `pull`/`clone` (bring history in).
 
+To add a remote, use `git remote add <name> <url>`. By convention the primary remote is called `origin`, but that is only a label — Git does not care what you call it.
+
+To change a remote later — for example switching from HTTPS to SSH, or because the repository moved — use `git remote set-url <name> <new-url>`. This only updates the recorded address; it does not touch any commits or history.
+
+You can have multiple remotes registered at once, each under its own name. This is exactly how the forking workflow in the [next lecture](git-lectures-collaboration.md) works: `origin` points at your own copy, while a second remote — conventionally named `upstream` — points at the project you forked from, so you can pull in updates without losing your changes.
+
+```sh
+git remote add origin git@github.com:your-user/your-repo.git             # register a remote
+git remote set-url origin https://github.com/your-user/your-repo.git     # change its URL
+git remote add upstream git@github.com:original-owner/original-repo.git  # add a second remote
+git remote -v                                                            # list all remotes, with URLs
+```
+
 ![remote](../assets/git_flow_remote.svg)
 
+!!! info "git pull/fetch/clone"
+    All three bring history from a remote onto your machine, but they differ in *how much* they do and whether they touch your files:
+
+    | Command | What it does |
+    | --- | --- |
+    | `git clone <url>` | One-time setup: copies the **entire** repository and its history into a new folder, and automatically sets up `origin` for you |
+    | `git fetch <remote>` | Downloads new commits and branches from the remote, but does **not** touch your current branch or working files — it only updates remote-tracking references such as `origin/main` |
+    | `git pull <remote> <branch>` | Runs `git fetch`, then immediately **merges** (or rebases) the new commits into your current branch — this is the one that can change your files and trigger a merge conflict |
+
+    A useful habit is to `git fetch` first to see *what* changed (`git log main..origin/main`), then `git pull` (or `git merge origin/main`) once you are ready to bring it in. `git clone`, by contrast, you only ever run once per project, right at the start.
+
+    The [collaboration lecture](git-lectures-collaboration.md) goes into more depth on this, including forking a project and keeping your copy in sync with `upstream`.
+
+??? info "The "Sync Changes" button in VS Code / Positron"
+
+    If you use the Source Control panel instead of the terminal, you will not see separate `fetch`, `pull`, and `push` buttons by default — instead there is usually one button, labelled **Sync Changes**, often shown as a circular-arrows icon with a count like `↓2 ↑1`. It is not a new Git operation; it is a convenience wrapper around the commands you already know:
+
+    1. **`git fetch`** — check what is new on the remote
+    2. **`git pull`** — merge those changes into your current branch
+    3. **`git push`** — send your own commits back up
+
+    The numbers next to the icon tell you *why* a sync is needed before you even click it: `↓2` means two commits exist on the remote that you do not have yet (incoming), `↑1` means you have one local commit the remote does not have yet (outgoing).
+
+    Clicking **Sync Changes** is equivalent to running `git pull` immediately followed by `git push` in the terminal. It has exactly the same behaviour: if the remote has commits that conflict with yours, the merge step pauses in the middle of the sync exactly as a plain `git pull` would, and you resolve it the same way — edit the marked file, stage it, commit — before the push half of the sync can go through.
 
 ## The danger: what gets committed, stays committed
 
@@ -103,5 +138,6 @@ Both protocols are valid. SSH is convenient for repeated pushing from a trusted 
 - `.gitignore` filters files at the entry point; commit source, ignore data/outputs/secrets.
 - Keep secrets in an ignored `.env` and read them from the environment at runtime.
 - SSH keys authenticate passwordlessly: share only the public key, guard the private key.
+- Your editor's **Sync Changes** button is just `pull` + `push` in one click — it can conflict and pause exactly like `git pull` does from the terminal.
 
-The workshop will put these ideas into practice: linking a remote, writing a `.gitignore`, and setting up SSH so you can push safely.
+The [Git remote exercises](../exercises/git-exercises-remote.md) will put these ideas into practice: linking a remote, writing a `.gitignore`, and setting up SSH so you can push safely.
