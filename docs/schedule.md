@@ -13,6 +13,8 @@ Download schedule: [ICS](assets/K8F6106-schedule-2026.ics){ download='K8F6106-sc
 |                   |         | Exercise        | [Workshop #1 - Git basics](exercises/git-exercises-basics.md)                                                     |          |
 |                   | 14:00   | Lecture         | [Git remote](lectures/git-lectures-remote.md)                                 |          |
 |                   |         | Exercise        | [Workshop #2 - Git remote](exercises/git-exercises-remote.md)                              |          |
+|                   | 15:00   | Lecture         | [Git branching](lectures/git-lectures-branching.md)                                       |          |
+|                   |         | Exercise        | [Workshop #3 - Git branching](exercises/git-exercises-branching.md)                                     |          |
 |                   | 17:00   | End of day      |                                                                                                        |          |
 | **Tuesday 13/10** |         |                 |                                                                                                        |  **[215](https://medarbetare.ki.se/campus-hus-och-miljoer/bokningsbara-lokaler/bokningsbara-lokaler-pa-campus-solna/215)** |
 |                   | 09:00   | Lecture         | [Positron and environment management](lectures/positron-lectures-1.md)                                                           |          |
@@ -23,11 +25,9 @@ Download schedule: [ICS](assets/K8F6106-schedule-2026.ics){ download='K8F6106-sc
 |                   | 14:00   | Independent work| [Work on you mini project](project/project-description.md)                                            |          |
 |                   | 17:00   | End of day      |                                                                                                        |          |
 | **Thursday 15/10**|         |                 |                                                                                                        |  **[221](https://medarbetare.ki.se/campus-hus-och-miljoer/bokningsbara-lokaler/bokningsbara-lokaler-pa-campus-solna/221)** |
-|                   | 09:00   | Lecture         | [Git branching](lectures/git-lectures-branching.md)                                       |          |
-|                   |         | Exercise        | [Workshop #3 - Git branching](exercises/git-exercises-branching.md)                                     |          |
-|                   | 10:00   | Lecture         | [Collaborate by forking](lectures/git-lectures-collaboration.md)                                 |          |
+|                   | 09:00   | Lecture         | [Git collaboration](lectures/git-lectures-collaboration.md)                                 |          |
+|                   |         | Group Exercise  | [Workshop #4 - Git collaboration](exercises/git-exercises-collaboration.md)                                         |          |
 |                   | 12:00   | Lunch           | [Lunch places around campus](https://medarbetare.ki.se/dagens-lunch)                                                                                             |          |
-|                   | 13:00   | Group Exercise  | [Workshop #4 - Fork and Pull Request to contribute](exercises/git-exercises-collaboration.md)                                         |          |
 |                   |         | Independent work| [Work on you mini project](project/project-description.md)                                            |          |
 |                   | 17:00   | End of day      |                                                                                                        |          |
 | **Tuesday 20/10** |         |                 |                                                                                                        |  **[215](https://medarbetare.ki.se/campus-hus-och-miljoer/bokningsbara-lokaler/bokningsbara-lokaler-pa-campus-solna/215)** |
