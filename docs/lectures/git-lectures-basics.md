@@ -3,12 +3,28 @@ title: Git basics
 author: "Niklas Edvall & Andreas Gerhardsson"
 ---
 
-[:material-file-pdf-box: Download slides (.pdf)](downloads/1-why-git.pdf){ .md-button download="1-why-git.pdf" }
+[:material-file-pdf-box: Download slides (.pdf)](downloads/2-git-basics.pdf){ .md-button download="2-git-basics.pdf" }
 
 ## Slides
 
 <div class="slide-gallery" markdown="1">
-![Slide 1](../slides/1-why-git/slide_001.png)
+![Slide 1](../slides/2-git-basics/slide_001.png)
+![Slide 2](../slides/2-git-basics/slide_002.png)
+![Slide 3](../slides/2-git-basics/slide_003.png)
+![Slide 4](../slides/2-git-basics/slide_004.png)
+![Slide 5](../slides/2-git-basics/slide_005.png)
+![Slide 6](../slides/2-git-basics/slide_006.png)
+![Slide 7](../slides/2-git-basics/slide_007.png)
+![Slide 8](../slides/2-git-basics/slide_008.png)
+![Slide 9](../slides/2-git-basics/slide_009.png)
+![Slide 10](../slides/2-git-basics/slide_010.png)
+![Slide 11](../slides/2-git-basics/slide_011.png)
+![Slide 12](../slides/2-git-basics/slide_012.png)
+![Slide 13](../slides/2-git-basics/slide_013.png)
+![Slide 14](../slides/2-git-basics/slide_014.png)
+![Slide 15](../slides/2-git-basics/slide_015.png)
+![Slide 16](../slides/2-git-basics/slide_016.png)
+![Slide 17](../slides/2-git-basics/slide_017.png)
 </div>
 
 ## Summary

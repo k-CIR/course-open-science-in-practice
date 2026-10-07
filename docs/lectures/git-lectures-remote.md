@@ -6,7 +6,33 @@ author: "Niklas Edvall & Andreas Gerhardsson"
 - Format: Lecture
 - Teacher: Andreas
 
+[:material-file-pdf-box: Download slides (.pdf)](downloads/3-git-remote.pdf){ .md-button download="3-git-remote.pdf" }
 
+## Slides
+
+<div class="slide-gallery" markdown="1">
+
+![Slide 1](../slides/3-git-remote/slide_001.png)
+![Slide 2](../slides/3-git-remote/slide_002.png)
+![Slide 3](../slides/3-git-remote/slide_003.png)
+![Slide 4](../slides/3-git-remote/slide_004.png)
+![Slide 5](../slides/3-git-remote/slide_005.png)
+![Slide 6](../slides/3-git-remote/slide_006.png)
+![Slide 7](../slides/3-git-remote/slide_007.png)
+![Slide 8](../slides/3-git-remote/slide_008.png)
+![Slide 9](../slides/3-git-remote/slide_009.png)
+![Slide 10](../slides/3-git-remote/slide_010.png)
+![Slide 11](../slides/3-git-remote/slide_011.png)
+![Slide 12](../slides/3-git-remote/slide_012.png)
+![Slide 13](../slides/3-git-remote/slide_013.png)
+![Slide 14](../slides/3-git-remote/slide_014.png)
+![Slide 15](../slides/3-git-remote/slide_015.png)
+![Slide 16](../slides/3-git-remote/slide_016.png)
+![Slide 17](../slides/3-git-remote/slide_017.png)
+![Slide 18](../slides/3-git-remote/slide_018.png)
+![Slide 19](../slides/3-git-remote/slide_019.png)
+![Slide 20](../slides/3-git-remote/slide_020.png)
+</div>
 
 ## Summary
 

@@ -6,6 +6,29 @@ author: "Niklas Edvall & Andreas Gerhardsson"
 - Format: Lecture
 - Teacher: Andreas
 
+[:material-file-pdf-box: Download slides (.pdf)](downloads/4-git-branching.pdf){ .md-button download="4-git-branching.pdf" }
+
+## Slides
+
+<div class="slide-gallery" markdown="1">
+
+![Slide 1](../slides/4-git-branching/slide_001.png)
+![Slide 2](../slides/4-git-branching/slide_002.png)
+![Slide 3](../slides/4-git-branching/slide_003.png)
+![Slide 4](../slides/4-git-branching/slide_004.png)
+![Slide 5](../slides/4-git-branching/slide_005.png)
+![Slide 6](../slides/4-git-branching/slide_006.png)
+![Slide 7](../slides/4-git-branching/slide_007.png)
+![Slide 8](../slides/4-git-branching/slide_008.png)
+![Slide 9](../slides/4-git-branching/slide_009.png)
+![Slide 10](../slides/4-git-branching/slide_010.png)
+![Slide 11](../slides/4-git-branching/slide_011.png)
+![Slide 12](../slides/4-git-branching/slide_012.png)
+![Slide 13](../slides/4-git-branching/slide_013.png)
+![Slide 14](../slides/4-git-branching/slide_014.png)
+![Slide 15](../slides/4-git-branching/slide_015.png)
+</div>
+
 ## Summary
 
 In the first session you worked on a single, straight line of commits. That line is already a branch — Git's default branch, usually called `main`. Branching is the feature that turns version control from a fancy undo-button into a tool for safe experimentation and real collaboration. This lecture explains *what* a branch is and *why* it matters.
