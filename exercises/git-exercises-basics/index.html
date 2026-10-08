@@ -1041,54 +1041,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#exercise-11-make-a-change-and-commit-it" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Exercise 1.1 — Make a change and commit it
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#reading-back-your-history" class="md-nav__link">
     <span class="md-ellipsis">
       
         Reading back your history
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#exercise-13-inspect-your-work" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Exercise 1.3 — Inspect your work
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#exercise-14-make-a-commit-without-a-commit-message" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Exercise 1.4 — Make a commit without a commit-message
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#bonus-quests" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Bonus quests
       
     </span>
   </a>
@@ -1928,8 +1884,8 @@
 </div>
 <h2 id="configure-git-once-per-machine">Configure Git once per machine<a class="headerlink" href="#configure-git-once-per-machine" title="Permanent link">&para;</a></h2>
 <p>Before your first commit, tell Git who you are. This information is written into every commit so the history can show who did what.</p>
-<div class="highlight"><pre><span></span><code>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>user.name<span class="w">  </span><span class="s2">&quot;Your Name&quot;</span>
-git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>user.email<span class="w"> </span><span class="s2">&quot;you@example.com&quot;</span>
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>user.name<span class="w">  </span><span class="s2">"Your Name"</span>
+git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>user.email<span class="w"> </span><span class="s2">"you@example.com"</span>
 </code></pre></div>
 <p>Use the same email you will later use for GitHub so your commits are attributed correctly. The <code>--global</code> flag saves this for every repository on your machine; omit it to set it only for the current project.</p>
 <details class="note">
@@ -1949,8 +1905,8 @@ git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"
 <span class="n">mean_value</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">mean</span><span class="p">(</span><span class="n">values</span><span class="p">)</span>
 <span class="n">max_value</span><span class="w">  </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">max</span><span class="p">(</span><span class="n">values</span><span class="p">)</span>
 
-<span class="nf">cat</span><span class="p">(</span><span class="nf">sprintf</span><span class="p">(</span><span class="s">&quot;Mean: %.2f\n&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">mean_value</span><span class="p">))</span>
-<span class="nf">cat</span><span class="p">(</span><span class="nf">sprintf</span><span class="p">(</span><span class="s">&quot;Max:  %d\n&quot;</span><span class="p">,</span><span class="w">   </span><span class="n">max_value</span><span class="p">))</span>
+<span class="nf">cat</span><span class="p">(</span><span class="nf">sprintf</span><span class="p">(</span><span class="s">"Mean: %.2f\n"</span><span class="p">,</span><span class="w"> </span><span class="n">mean_value</span><span class="p">))</span>
+<span class="nf">cat</span><span class="p">(</span><span class="nf">sprintf</span><span class="p">(</span><span class="s">"Max:  %d\n"</span><span class="p">,</span><span class="w">   </span><span class="n">max_value</span><span class="p">))</span>
 </code></pre></div>
 </div>
 <div class="tabbed-block">
@@ -1962,8 +1918,8 @@ git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"
 <span class="n">mean_value</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">values</span><span class="p">)</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">values</span><span class="p">)</span>
 <span class="n">max_value</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">values</span><span class="p">)</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Mean: </span><span class="si">{</span><span class="n">mean_value</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Max:  </span><span class="si">{</span><span class="n">max_value</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Mean: </span><span class="si">{</span><span class="n">mean_value</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Max:  </span><span class="si">{</span><span class="n">max_value</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 </code></pre></div>
 </div>
 </div>
@@ -2038,7 +1994,7 @@ git<span class="w"> </span>add<span class="w"> </span>analysis.R
 </details>
 <p>After staging, run <code>git status</code> again — the file now appears under <em>Changes to be committed</em>.</p>
 <h3 id="3-record-a-snapshot-git-commit">3. Record a snapshot — <code>git commit</code><a class="headerlink" href="#3-record-a-snapshot-git-commit" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Add first descriptive-stats script&quot;</span>
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">"Add first descriptive-stats script"</span>
 </code></pre></div>
 <p>The <code>-m</code> flag lets you write the commit message directly. Write messages in the <strong>imperative mood</strong> describing what the commit <em>does</em> (e.g. "Add…", "Fix…", "Remove…").</p>
 <details class="tip">
@@ -2069,7 +2025,8 @@ git<span class="w"> </span>add<span class="w"> </span>analysis.R
 <p>If you quit the editor changes are not committed.
 <code>Aborting commit due to empty commit message.</code> </p>
 </details>
-<h2 id="exercise-11-make-a-change-and-commit-it">Exercise 1.1 — Make a change and commit it<a class="headerlink" href="#exercise-11-make-a-change-and-commit-it" title="Permanent link">&para;</a></h2>
+<details class="task">
+<summary>Exercise 1.1 — Make a change and commit it</summary>
 <ol>
 <li>Edit your script so it also reports the <strong>minimum</strong> value.</li>
 <li>Run the script and confirm the new output is correct.</li>
@@ -2085,10 +2042,11 @@ git<span class="w"> </span>add<span class="w"> </span>analysis.R
 <div class="highlight"><pre><span></span><code>Rscript<span class="w"> </span>analysis.R
 </code></pre></div></p>
 <div class="highlight"><pre><span></span><code>git<span class="w"> </span>add<span class="w"> </span>analysis.R
-git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Report minimum value in summary&quot;</span>
+git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">"Report minimum value in summary"</span>
 </code></pre></div>
 </details>
 <p>Confirm there are now two commits (see next section).</p>
+</details>
 <h2 id="reading-back-your-history">Reading back your history<a class="headerlink" href="#reading-back-your-history" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code>git<span class="w"> </span>log
 </code></pre></div>
@@ -2122,12 +2080,13 @@ git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </sp
 </tbody>
 </table>
 </details>
-<h3 id="exercise-12-git-diff-what-changed-but-is-not-yet-staged">Exercise 1.2  <code>git diff</code> — what changed but is not yet staged<a class="headerlink" href="#exercise-12-git-diff-what-changed-but-is-not-yet-staged" title="Permanent link">&para;</a></h3>
+<details class="task">
+<summary>Exercise 1.2  <code>git diff</code> — what changed but is not yet staged</summary>
 <ol>
 <li>Add some random values to the vector/list</li>
 <li>Check unstaged changes</li>
 </ol>
-<p>Compares your working directory against the staging area. </p>
+<p>Compares your working directory against the staging area.</p>
 <details class="tip">
 <summary>Useful <code>git diff</code> arguments:</summary>
 <table>
@@ -2157,13 +2116,15 @@ git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </sp
 </tbody>
 </table>
 </details>
+</details>
 <h3 id="git-show-inspect-one-commit"><code>git show</code> — inspect one commit<a class="headerlink" href="#git-show-inspect-one-commit" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code>git<span class="w"> </span>show
 </code></pre></div>
 <p>Shows the most recent commit's metadata and its diff. Add a commit hash to inspect any specific commit:</p>
 <div class="highlight"><pre><span></span><code>git<span class="w"> </span>show<span class="w"> </span>&lt;commit-hash&gt;
 </code></pre></div>
-<h2 id="exercise-13-inspect-your-work">Exercise 1.3 — Inspect your work<a class="headerlink" href="#exercise-13-inspect-your-work" title="Permanent link">&para;</a></h2>
+<details class="task">
+<summary>Exercise 1.3 — Inspect your work</summary>
 <ol>
 <li>Get an overview of your commits</li>
 <li>Compare the differences between your commits</li>
@@ -2177,13 +2138,17 @@ git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </sp
 <li>Run <code>git show HEAD~1</code> to read the full content of your first commit.</li>
 </ol>
 </details>
-<h2 id="exercise-14-make-a-commit-without-a-commit-message">Exercise 1.4 — Make a commit without a commit-message<a class="headerlink" href="#exercise-14-make-a-commit-without-a-commit-message" title="Permanent link">&para;</a></h2>
+</details>
+<details class="task">
+<summary>Exercise 1.4 — Make a commit without a commit-message</summary>
 <ol>
 <li>In your script, make any changes you want</li>
 <li>Stage the changes</li>
 <li>commit but do not add a commit message and see what happens</li>
 </ol>
-<h2 id="bonus-quests">Bonus quests<a class="headerlink" href="#bonus-quests" title="Permanent link">&para;</a></h2>
+</details>
+<details class="task">
+<summary>Bonus quests</summary>
 <ol>
 <li>Find the short hash of the current commit.</li>
 <li>Show your commit history on one line with dates and times.</li>
@@ -2204,6 +2169,7 @@ git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </sp
 <li>Run <code>git diff &lt;first-commit-hash&gt; HEAD -- analysis.R</code> (or <code>analysis.py</code>). Find the first commit's hash with <code>git log --oneline</code>.</li>
 <li>Run <code>git log --oneline</code> to find the new commit. For more detail, inspect it with <code>git show &lt;commit-hash&gt;</code>.</li>
 </ol>
+</details>
 </details>
 <h2 id="recap-of-the-commands-you-learned">Recap of the commands you learned<a class="headerlink" href="#recap-of-the-commands-you-learned" title="Permanent link">&para;</a></h2>
 <table>

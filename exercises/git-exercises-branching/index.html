@@ -1064,61 +1064,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#exercise-31-branch-and-commit-in-isolation" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Exercise 3.1 — Branch and commit in isolation
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#exercise-32-merge-a-branch-back" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Exercise 3.2 — Merge a branch back
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#exercise-33-a-second-branch-and-a-real-merge" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Exercise 3.3 — A second branch and a real merge
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#merge-conflicts" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Merge conflicts
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#clean-up-finished-branches" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Clean up finished branches
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#remote-branches" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1933,7 +1878,8 @@
 <p class="admonition-title">Name branches by intent</p>
 <p>Use descriptive names like <code>add-logging</code>, <code>fix-mean-bug</code>, or <code>try-new-model</code>. Avoid vague names like <code>test</code> or <code>branch1</code>.</p>
 </div>
-<h2 id="exercise-31-branch-and-commit-in-isolation">Exercise 3.1 — Branch and commit in isolation<a class="headerlink" href="#exercise-31-branch-and-commit-in-isolation" title="Permanent link">&para;</a></h2>
+<details class="task">
+<summary>Exercise 3.1 — Branch and commit in isolation</summary>
 <p>Start from the project you built in the previous session (the one with <code>analysis.R</code> / <code>analysis.py</code> and its tests).</p>
 <ol>
 <li>Create and switch to a branch</li>
@@ -1946,14 +1892,16 @@
 <details class="help">
 <summary>Help</summary>
 <p>Create and switch to branch: <code>git switch -c improve-summary</code>
-  Median: <code>median(values)</code>
-  Run script: <code>Rscript analysis.R</code>
-  Stage: <code>git add analysis.R          # or analysis.py</code>
-  Commit: <code>git commit -m "Report median in summary"</code>
-  Switch back to main: <code>git switch main</code></p>
+Median: <code>median(values)</code>
+Run script: <code>Rscript analysis.R</code>
+Stage: <code>git add analysis.R          # or analysis.py</code>
+Commit: <code>git commit -m "Report median in summary"</code>
+Switch back to main: <code>git switch main</code></p>
 <p>your median change is <strong>not there</strong>. That is the point: the work is isolated on <code>improve-summary</code>.</p>
 </details>
-<h2 id="exercise-32-merge-a-branch-back">Exercise 3.2 — Merge a branch back<a class="headerlink" href="#exercise-32-merge-a-branch-back" title="Permanent link">&para;</a></h2>
+</details>
+<details class="task">
+<summary>Exercise 3.2 — Merge a branch back</summary>
 <ol>
 <li>Visualise your history</li>
 <li>Make sure you are on <code>main</code> branch</li>
@@ -1963,8 +1911,8 @@
 <details class="help">
 <summary>Help</summary>
 <p>Visualise: <code>git log --oneline --graph --all</code>
-  Check branches: <code>git branch</code>
-  Merge: <code>git merge improve-summary</code></p>
+Check branches: <code>git branch</code>
+Merge: <code>git merge improve-summary</code></p>
 <p>If <code>main</code> has not moved since you branched, Git simply moves the <code>main</code> pointer forward to the same commit as <code>improve-summary</code>. This is a <strong>fast-forward</strong> merge — no new commit is created, because the histories are already a straight line.</p>
 </details>
 <details class="task">
@@ -1983,7 +1931,9 @@
 *<span class="w"> </span>e15b308<span class="w"> </span>first<span class="w"> </span>commit
 </code></pre></div>
 </details>
-<h2 id="exercise-33-a-second-branch-and-a-real-merge">Exercise 3.3 — A second branch and a real merge<a class="headerlink" href="#exercise-33-a-second-branch-and-a-real-merge" title="Permanent link">&para;</a></h2>
+</details>
+<details class="task">
+<summary>Exercise 3.3 — A second branch and a real merge</summary>
 <ol>
 <li>From <code>main</code>, create another branch called: <code>add-range</code>.</li>
 <li>On <code>add-range</code>, edit the script to also report the <strong>range</strong>.</li>
@@ -1994,23 +1944,25 @@
 <details class="help">
 <summary>Help</summary>
 <p>Create and switch to new branch: <code>git switch -c add-range</code>
-  Range: <code>diff(range(values))</code> or <code>max(values) - min(values)</code>
-  Commit: <code>git add analysis.R</code> and <code>git commit -m "range added"</code>
-  Switch: <code>git switch main</code>
-  SD: <code>sd(values)</code></p>
+Range: <code>diff(range(values))</code> or <code>max(values) - min(values)</code>
+Commit: <code>git add analysis.R</code> and <code>git commit -m "range added"</code>
+Switch: <code>git switch main</code>
+SD: <code>sd(values)</code></p>
 </details>
 <details class="task">
 <summary>Inspect the result: <code>git log --oneline --graph --all</code>. What do you see?</summary>
 <div class="highlight"><pre><span></span><code>*<span class="w"> </span>d6c6e69<span class="w"> </span><span class="o">(</span>HEAD<span class="w"> </span>-&gt;<span class="w"> </span>main<span class="o">)</span><span class="w"> </span>sd<span class="w"> </span>added
 <span class="p">|</span><span class="w"> </span>*<span class="w"> </span>7e5c133<span class="w"> </span><span class="o">(</span>add-range<span class="o">)</span><span class="w"> </span>range<span class="w"> </span>added
-<span class="p">|</span>/<span class="w">  </span>
+<span class="p">|</span>/
 *<span class="w"> </span>232528e<span class="w"> </span><span class="o">(</span>improve-summary<span class="o">)</span><span class="w"> </span>added<span class="w"> </span>median
 *<span class="w"> </span>d3d4264<span class="w"> </span>added<span class="w"> </span>values
 *<span class="w"> </span>f701e59<span class="w"> </span>added<span class="w"> </span>min<span class="w"> </span>values
 *<span class="w"> </span>e15b308<span class="w"> </span>first<span class="w"> </span>commit
 </code></pre></div>
 </details>
-<h2 id="merge-conflicts">Merge conflicts<a class="headerlink" href="#merge-conflicts" title="Permanent link">&para;</a></h2>
+</details>
+<details class="task">
+<summary>Exercise 3.4 —Merge conflicts</summary>
 <p>A conflict happens when two branches change the <strong>same lines</strong> of the same file and Git cannot decide which version to keep. This is normal and not dangerous — Git just pauses the merge and asks you to choose.</p>
 <ol>
 <li>Merge add-range into main</li>
@@ -2021,7 +1973,7 @@
 </details>
 <p>What happens?</p>
 <p>If you got a conflict lets wait with the merge: <code>git merge --abort</code></p>
-<p>Let's add a deliberate conflict </p>
+<p>Let's add a deliberate conflict</p>
 <ol>
 <li>From <code>main</code>, create <code>git switch -c change-label</code>.</li>
 <li>On <code>change-label</code>, edit the printed label text (for example change <code>"Mean:"</code> to <code>"Average:"</code>). Commit it.</li>
@@ -2042,9 +1994,9 @@ git<span class="w"> </span>merge<span class="w"> </span>change-value
 <h3 id="resolve-the-conflict">Resolve the conflict<a class="headerlink" href="#resolve-the-conflict" title="Permanent link">&para;</a></h3>
 <p>Open the conflicted file. Git marks the conflicting region like this:</p>
 <div class="highlight"><pre><span></span><code>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
-cat(sprintf(&quot;Mean value: %.2f\n&quot;, mean_value))
+cat(sprintf("Mean value: %.2f\n", mean_value))
 =======
-cat(sprintf(&quot;Average: %.2f\n&quot;, mean_value))
+cat(sprintf("Average: %.2f\n", mean_value))
 &gt;&gt;&gt;&gt;&gt;&gt;&gt; change-value
 </code></pre></div>
 <ul>
@@ -2054,13 +2006,15 @@ cat(sprintf(&quot;Average: %.2f\n&quot;, mean_value))
 <p>Edit the file so it contains <strong>only the version you want</strong> (delete the marker lines), or try the <code>Resolve in Merge Editor</code> if that is available. This tool can be helpful especially when there are larger conflicts.</p>
 <p>then stage and commit:</p>
 <div class="highlight"><pre><span></span><code>git<span class="w"> </span>add<span class="w"> </span>analysis.R<span class="w">          </span><span class="c1"># or analysis.py</span>
-git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Resolve label conflict, keep &#39;Mean value&#39;&quot;</span>
+git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">"Resolve label conflict, keep 'Mean value'"</span>
 </code></pre></div>
 <p>Check log again: <code>git log  --oneline --all --graph</code>. Are the any unmerged branches (eg. <code>add-range</code>)?</p>
 <p>If so,
 1. Try again to merge <code>add-range</code> into main and resolve any conflicts
 2. Check the log again</p>
-<h2 id="clean-up-finished-branches">Clean up finished branches<a class="headerlink" href="#clean-up-finished-branches" title="Permanent link">&para;</a></h2>
+</details>
+<details class="task">
+<summary>Exercise 3.5 — Clean up finished branches</summary>
 <p>After a branch is merged and you no longer need it, delete it to keep the list tidy:</p>
 <div class="highlight"><pre><span></span><code>git<span class="w"> </span>branch<span class="w"> </span>-d<span class="w"> </span>improve-summary
 git<span class="w"> </span>branch<span class="w"> </span>-d<span class="w"> </span>add-range
@@ -2069,6 +2023,7 @@ git<span class="w"> </span>branch<span class="w"> </span>-d<span class="w"> </sp
 </code></pre></div>
 <p>Check your local branches</p>
 <p>Git refuses <code>git branch -d</code> on a branch whose work is not yet merged, which protects you from losing work. Use <code>-D</code> only when you are certain you want to discard an unmerged branch.</p>
+</details>
 <h2 id="remote-branches">Remote branches<a class="headerlink" href="#remote-branches" title="Permanent link">&para;</a></h2>
 <p>A <strong>remote branch</strong> is a branch on another copy of a repository, usually hosted on GitHub. After <code>git fetch</code>, Git updates a remote-tracking reference such as <code>origin/main</code> to show the latest commit it knows about on that remote branch. You do not work directly on <code>origin/main</code>; you work on a local branch and later share commits with the remote. You will practise fetching and tracking remote branches in the collaboration exercises.</p>
 <h2 id="recap-of-the-commands-you-learned">Recap of the commands you learned<a class="headerlink" href="#recap-of-the-commands-you-learned" title="Permanent link">&para;</a></h2>

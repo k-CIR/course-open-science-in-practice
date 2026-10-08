@@ -1987,7 +1987,7 @@ error: failed to push some refs
 <p>Git refuses to push because doing so would silently discard commits it does not know about — the same protective instinct as a merge conflict. The fix is the same shape every time: fetch, integrate, then push.</p>
 <div class="highlight"><pre><span></span><code>git<span class="w"> </span>pull<span class="w"> </span>origin<span class="w"> </span>main<span class="w">   </span><span class="c1"># fetch + merge the commits you were missing</span>
 <span class="c1"># resolve any conflicts, exactly as in the branching session</span>
-git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </span>main<span class="w">   </span><span class="c1"># now it is a fast-forward from the remote&#39;s point of view</span>
+git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </span>main<span class="w">   </span><span class="c1"># now it is a fast-forward from the remote's point of view</span>
 </code></pre></div>
 <div class="admonition info">
 <p class="admonition-title">A rejected push is not a conflict — yet</p>

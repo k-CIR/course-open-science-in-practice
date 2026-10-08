@@ -1047,87 +1047,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#exercise-21-create-and-add-a-remote" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Exercise 2.1: Create and add a remote
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#exercise-22-push-and-clone" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Exercise 2.2: Push and clone
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#gitignore-keep-junk-and-secrets-out" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        .gitignore — keep junk and secrets out
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#exercise-23-ignore-the-right-things" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Exercise 2.3 — Ignore the right things
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#secrets-never-commit-credentials" class="md-nav__link">
     <span class="md-ellipsis">
       
         Secrets: never commit credentials
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#exercise-24-prove-a-secret-stays-out" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Exercise 2.4 — Prove a secret stays out
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#ssh-keys-push-without-a-password" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        SSH keys — push without a password
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#exercise-25-end-to-end-safe-push" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Exercise 2.5 — End-to-end safe push
       
     </span>
   </a>
@@ -1916,12 +1839,11 @@
 <p>Make sure to have setup your GitHub account and </p>
 <h2 id="what-is-a-remote">What is a remote?<a class="headerlink" href="#what-is-a-remote" title="Permanent link">&para;</a></h2>
 <p>A <strong>remote</strong> is simply a reference (a URL) to another repository. Git stores it under a short name — by convention the primary remote is called <code>origin</code>. Adding a remote does not copy anything yet; it just tells Git <em>where</em> <code>origin</code> points. Nothing is transferred until you push your remote.</p>
-<h2 id="exercise-21-create-and-add-a-remote">Exercise 2.1: Create and add a remote<a class="headerlink" href="#exercise-21-create-and-add-a-remote" title="Permanent link">&para;</a></h2>
-<ol>
-<li>Create an empty remote on github</li>
-<li>Add remote to your local repository</li>
-<li>List remote(s)</li>
-</ol>
+<details class="task">
+<summary>Exercise 2.1: Create and add a remote</summary>
+<p><strong>1</strong> Create an empty remote on github</p>
+<p><strong>2</strong> Add remote to your local repository</p>
+<p><strong>3.</strong> List remote(s)</p>
 <details class="help">
 <summary>Help</summary>
 <div class="highlight"><pre><span></span><code><span class="c1"># After creating an empty repo on GitHub, link it to your local repo</span>
@@ -1961,26 +1883,36 @@ git<span class="w"> </span>remote<span class="w"> </span>-v
 </tbody>
 </table>
 </details>
-<h2 id="exercise-22-push-and-clone">Exercise 2.2: Push and clone<a class="headerlink" href="#exercise-22-push-and-clone" title="Permanent link">&para;</a></h2>
+</details>
+<details class="task">
+<summary>Exercise 2.2: Push and clone</summary>
+<p><strong>1.</strong> Push your project to a remote</p>
 <details class="help">
 <summary>Help</summary>
-</details>
 <div class="highlight"><pre><span></span><code><span class="c1"># Send your local main branch (and its history) to origin</span>
 git<span class="w"> </span>push<span class="w"> </span>-u<span class="w"> </span>origin<span class="w"> </span>main
 </code></pre></div>
 <p>The <code>-u</code> (set-upstream) flag links your local <code>main</code> to <code>origin/main</code>, so later you can just run <code>git push</code> / <code>git pull</code>.</p>
+</details>
+<p><strong>2.</strong> Clone a remote and inspect the results</p>
+<details class="help">
+<summary>Help</summary>
 <p>To get a copy of an existing repository (for example a course template):</p>
 <div class="highlight"><pre><span></span><code>git<span class="w"> </span>clone<span class="w"> </span>git@github.com:some-user/some-repo.git
 </code></pre></div>
 <p><code>git clone</code> automatically sets <code>origin</code> for you and checks out the default branch.</p>
+</details>
 <div class="admonition warning">
 <p class="admonition-title">Push only what you intend to share</p>
 <p>Once something is pushed to a public remote, assume it is public forever. This is why <code>.gitignore</code> and secret-handling (below) matter <em>before</em> your first push.</p>
 </div>
-<h2 id="gitignore-keep-junk-and-secrets-out"><code>.gitignore</code> — keep junk and secrets out<a class="headerlink" href="#gitignore-keep-junk-and-secrets-out" title="Permanent link">&para;</a></h2>
+</details>
+<details class="task">
+<summary>Exercise 2.3 create a <code>.gitignore</code> — keep junk and secrets out</summary>
 <p>A <code>.gitignore</code> file lists patterns for files Git should <strong>never track</strong>. It belongs in the root of your repository and is committed like any other file, so everyone collaborating on the project shares the same rules.</p>
-<p>Create a <code>.gitignore</code> file:</p>
-<p>A good starter for a data-science project:</p>
+<p><strong>1.</strong> Create a <code>.gitignore</code> file:</p>
+<details class="tip">
+<summary>A good starter for a data-science project:</summary>
 <div class="highlight"><pre><span></span><code># OS noise
 .DS_Store
 Thumbs.db
@@ -2003,8 +1935,10 @@ __pycache__/
 *.key
 credentials.json
 </code></pre></div>
+</details>
 <p>Lines starting with <code>#</code> are comments. A leading <code>/</code> anchors the pattern to the repository root; <code>*</code> is a wildcard.</p>
-<p>Useful ignore commands:</p>
+<details class="tip">
+<summary>Useful ignore commands:</summary>
 <table>
 <thead>
 <tr>
@@ -2031,16 +1965,20 @@ credentials.json
 </tr>
 </tbody>
 </table>
-<p>Commit your <code>.gitignore</code> so the rules travel with the project:</p>
+</details>
+<p><strong>2.</strong> Commit your <code>.gitignore</code> so the rules travel with the project:</p>
+<details class="help">
+<summary>Help</summary>
 <div class="highlight"><pre><span></span><code>git<span class="w"> </span>add<span class="w"> </span>.gitignore
-git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Add .gitignore for outputs, OS noise, and secrets&quot;</span>
+git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">"Add .gitignore for outputs, OS noise, and secrets"</span>
 </code></pre></div>
-<h2 id="exercise-23-ignore-the-right-things">Exercise 2.3 — Ignore the right things<a class="headerlink" href="#exercise-23-ignore-the-right-things" title="Permanent link">&para;</a></h2>
-<ol>
-<li>In your project, create a file you do <strong>not</strong> want tracked, e.g. <code>notes.txt</code> containing scratch thoughts, or <code>draft.png</code> as a throwaway plot.</li>
-<li>Add a rule to <code>.gitignore</code> for it (e.g. <code>notes.txt</code> or <code>*.png</code>).</li>
-<li>Confirm Git agrees:</li>
-</ol>
+</details>
+</details>
+<details class="task">
+<summary>Exercise 2.4 — Ignore the right things</summary>
+<p><strong>1.</strong> In your project, create a file you do <strong>not</strong> want tracked, e.g. <code>notes.txt</code> containing scratch thoughts, or <code>draft.png</code> as a throwaway plot.
+1. Add a rule to <code>.gitignore</code> for it (e.g. <code>notes.txt</code> or <code>*.png</code>).
+2. Confirm Git agrees:</p>
 <div class="highlight"><pre><span></span><code>git<span class="w"> </span>check-ignore<span class="w"> </span>-v<span class="w"> </span>notes.txt
 git<span class="w"> </span>status<span class="w"> </span>--ignored
 </code></pre></div>
@@ -2048,6 +1986,7 @@ git<span class="w"> </span>status<span class="w"> </span>--ignored
 <li>Confirm it does <strong>not</strong> appear under "Changes not staged for commit".</li>
 <li>Commit your updated <code>.gitignore</code>.</li>
 </ol>
+</details>
 <h2 id="secrets-never-commit-credentials">Secrets: never commit credentials<a class="headerlink" href="#secrets-never-commit-credentials" title="Permanent link">&para;</a></h2>
 <p>API keys, tokens, passwords, and private keys must never enter Git — not even "temporarily", and not even if you later delete them, because the data stays in history.</p>
 <ul>
@@ -2058,36 +1997,39 @@ git<span class="w"> </span>status<span class="w"> </span>--ignored
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><span class="c1"># Read a token from the environment, never hard-code it</span>
-<span class="n">token</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">Sys.getenv</span><span class="p">(</span><span class="s">&quot;GITHUB_TOKEN&quot;</span><span class="p">)</span>
-<span class="kr">if</span><span class="w"> </span><span class="p">(</span><span class="n">token</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="p">)</span><span class="w"> </span><span class="nf">stop</span><span class="p">(</span><span class="s">&quot;Set the GITHUB_TOKEN environment variable&quot;</span><span class="p">)</span>
+<span class="n">token</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">Sys.getenv</span><span class="p">(</span><span class="s">"GITHUB_TOKEN"</span><span class="p">)</span>
+<span class="kr">if</span><span class="w"> </span><span class="p">(</span><span class="n">token</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">""</span><span class="p">)</span><span class="w"> </span><span class="nf">stop</span><span class="p">(</span><span class="s">"Set the GITHUB_TOKEN environment variable"</span><span class="p">)</span>
 </code></pre></div>
 </div>
 <div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
 
-<span class="n">token</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;GITHUB_TOKEN&quot;</span><span class="p">)</span>
+<span class="n">token</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"GITHUB_TOKEN"</span><span class="p">)</span>
 <span class="k">if</span> <span class="ow">not</span> <span class="n">token</span><span class="p">:</span>
-    <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="s2">&quot;Set the GITHUB_TOKEN environment variable&quot;</span><span class="p">)</span>
+    <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="s2">"Set the GITHUB_TOKEN environment variable"</span><span class="p">)</span>
 </code></pre></div>
 </div>
 </div>
 </div>
 <p>If you <strong>accidentally commit a secret</strong>, treat it as compromised: rotate/revoke it immediately. Removing the file and committing again does <em>not</em> erase it from history. (Fully purging history needs <code>git filter-repo</code> or the BFG Repo-Cleaner and a force-push — out of scope here, but the rule stands: prevent, don't just delete.)</p>
-<h2 id="exercise-24-prove-a-secret-stays-out">Exercise 2.4 — Prove a secret stays out<a class="headerlink" href="#exercise-24-prove-a-secret-stays-out" title="Permanent link">&para;</a></h2>
+<details class="task">
+<summary>Exercise 2.5 — Prove a secret stays out</summary>
 <ol>
 <li>Create <code>.env</code> with a fake line: <code>GITHUB_TOKEN=fake-not-a-real-token</code>.</li>
 <li>Add <code>.env</code> to <code>.gitignore</code> and confirm it is ignored with <code>git check-ignore -v .env</code>.</li>
 <li>Try staging .env (What happens?)</li>
 <li>If you ever needed to commit a <em>template</em> instead, commit <code>.env.example</code> with placeholder values and keep the real <code>.env</code> ignored.</li>
 </ol>
-<h2 id="ssh-keys-push-without-a-password">SSH keys — push without a password<a class="headerlink" href="#ssh-keys-push-without-a-password" title="Permanent link">&para;</a></h2>
+</details>
+<details class="task">
+<summary>SSH keys — push without a password</summary>
 <p>HTTPS remotes ask for your username/password (or a token) on every push. SSH keys let your machine prove its identity to GitHub automatically and securely.</p>
 <h3 id="1-generate-a-key-pair">1. Generate a key pair<a class="headerlink" href="#1-generate-a-key-pair" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code>ssh-keygen<span class="w"> </span>-t<span class="w"> </span>ed25519<span class="w"> </span>-C<span class="w"> </span><span class="s2">&quot;you@example.com&quot;</span>
+<div class="highlight"><pre><span></span><code>ssh-keygen<span class="w"> </span>-t<span class="w"> </span>ed25519<span class="w"> </span>-C<span class="w"> </span><span class="s2">"you@example.com"</span>
 </code></pre></div>
 <p>Press Enter to accept the default location (<code>~/.ssh/id_ed25519</code>). You may add a passphrase for extra safety.</p>
 <h3 id="2-start-the-agent-and-add-the-key">2. Start the agent and add the key<a class="headerlink" href="#2-start-the-agent-and-add-the-key" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><span class="nb">eval</span><span class="w"> </span><span class="s2">&quot;</span><span class="k">$(</span>ssh-agent<span class="w"> </span>-s<span class="k">)</span><span class="s2">&quot;</span>
+<div class="highlight"><pre><span></span><code><span class="nb">eval</span><span class="w"> </span><span class="s2">"</span><span class="k">$(</span>ssh-agent<span class="w"> </span>-s<span class="k">)</span><span class="s2">"</span>
 ssh-add<span class="w"> </span>~/.ssh/id_ed25519
 </code></pre></div>
 <h3 id="3-add-the-public-key-to-github">3. Add the <strong>public</strong> key to GitHub<a class="headerlink" href="#3-add-the-public-key-to-github" title="Permanent link">&para;</a></h3>
@@ -2108,7 +2050,9 @@ git<span class="w"> </span>push<span class="w"> </span>-u<span class="w"> </span
 <p class="admonition-title">SSH vs HTTPS</p>
 <p>Both work. SSH is convenient for repeated pushing from one machine; HTTPS with a token is common in CI and restricted networks. The safety rules (<code>.gitignore</code>, no secrets) apply either way.</p>
 </div>
-<h2 id="exercise-25-end-to-end-safe-push">Exercise 2.5 — End-to-end safe push<a class="headerlink" href="#exercise-25-end-to-end-safe-push" title="Permanent link">&para;</a></h2>
+</details>
+<details class="task">
+<summary>Exercise 2.6 — End-to-end safe push</summary>
 <ol>
 <li>Ensure your <code>.gitignore</code> covers outputs and secrets.</li>
 <li>Confirm no unwanted files are staged: <code>git status</code>.</li>
@@ -2121,6 +2065,7 @@ git<span class="w"> </span>push<span class="w"> </span>-u<span class="w"> </span
 <ol>
 <li>On GitHub, confirm your committed files are present but your ignored files (<code>.env</code>, outputs) are <strong>not</strong>.</li>
 </ol>
+</details>
 <h2 id="recap">Recap<a class="headerlink" href="#recap" title="Permanent link">&para;</a></h2>
 <table>
 <thead>

@@ -1092,72 +1092,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#exercise-41-clone-and-inspect-the-inherited-remote" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Exercise 4.1 — Clone and inspect the inherited remote
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#exercise-42-fork-your-buddys-repository" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Exercise 4.2 — Fork your buddy's repository
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#exercise-43-fetch-vs-pull" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Exercise 4.3 — fetch vs. pull
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#exercise-4-contribute-a-change-via-pull-request" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Exercise 4 — Contribute a change via pull request
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#exercise-5-handle-a-rejected-push" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Exercise 5 — Handle a rejected push
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#exercise-6-review-and-merge-the-pull-request" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Exercise 6 — Review and merge the pull request
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#recap-of-the-commands-you-learned" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1897,18 +1831,17 @@
 <li>Your own mini-project repository already pushed to GitHub, with at least one commit.</li>
 <li>A <strong>code buddy</strong> — pair up with someone else in the room. You will fork their repository and they will fork yours.</li>
 </ul>
-<h2 id="exercise-41-clone-and-inspect-the-inherited-remote">Exercise 4.1 — Clone and inspect the inherited remote<a class="headerlink" href="#exercise-41-clone-and-inspect-the-inherited-remote" title="Permanent link">&para;</a></h2>
+<details class="task">
+<summary>Exercise 4.1 — Clone and inspect the inherited remote</summary>
 <p>Before forking anything, confirm what cloning actually sets up for you.</p>
 <p>Clone any public repository you do not own, for example the course example repo:</p>
 <div class="highlight"><pre><span></span><code>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/NiklasEdvall/an-approved-repo.git
 <span class="nb">cd</span><span class="w"> </span>an-approved-repo
 </code></pre></div>
-<ol>
-<li>Inspect the remote that was created for you automatically. What is the remote?</li>
-<li>How many branches does the repository have?</li>
-<li>Inspect the commit history, what do you see?</li>
-<li>When was the first commit?</li>
-</ol>
+<p><strong>1.</strong> Inspect the remote that was created for you automatically. What is the remote?</p>
+<p><strong>2.</strong> How many branches does the repository have?</p>
+<p><strong>3.</strong> Inspect the commit history, what do you see?</p>
+<p><strong>4.</strong> When was the first commit?</p>
 <details class="help">
 <summary>Help</summary>
 <p>Check remote(s): <code>git remote -v</code></p>
@@ -1918,34 +1851,32 @@
 <p>Check from beginning: <code>git log --reverse</code></p>
 </details>
 <p>Compare this to starting from scratch: <code>git init</code> followed by <code>git remote add origin &lt;url&gt;</code> — the same end state, reached in two explicit steps instead of one.</p>
-<h2 id="exercise-42-fork-your-buddys-repository">Exercise 4.2 — Fork your buddy's repository<a class="headerlink" href="#exercise-42-fork-your-buddys-repository" title="Permanent link">&para;</a></h2>
-<ol>
-<li>On GitHub, open your code buddy's mini-project repository and click <strong>Fork</strong>. This creates a copy under <em>your</em> account (<code>you/their-repo</code>).</li>
-<li>Clone <strong>your fork</strong> — not their original — to your machine:</li>
-</ol>
+</details>
+<details class="task">
+<summary>Exercise 4.2 — Fork your buddy's repository</summary>
+<p><strong>1.</strong> On GitHub, open your code buddy's mini-project repository and click <strong>Fork</strong>. This creates a copy under <em>your</em> account (<code>you/their-repo</code>).</p>
+<p><strong>2.</strong> Clone <strong>your fork</strong> — not their original — to your machine:</p>
 <div class="highlight"><pre><span></span><code>git<span class="w"> </span>clone<span class="w"> </span>git@github.com:you/their-repo.git
 <span class="nb">cd</span><span class="w"> </span>their-repo
 git<span class="w"> </span>remote<span class="w"> </span>-v
 </code></pre></div>
-<ol>
-<li>Confirm <code>origin</code> points at your fork, then add their original repository as a second remote:</li>
-</ol>
+<p><strong>3.</strong> Confirm <code>origin</code> points at your fork, then add their original repository as a second remote:</p>
 <div class="highlight"><pre><span></span><code>git<span class="w"> </span>remote<span class="w"> </span>add<span class="w"> </span>upstream<span class="w"> </span>git@github.com:buddy/their-repo.git
 git<span class="w"> </span>remote<span class="w"> </span>-v
 </code></pre></div>
 <p>You should now see two remotes: <code>origin</code> (your fork, read/write) and <code>upstream</code> (their original, read-only for you).</p>
-<h2 id="exercise-43-fetch-vs-pull">Exercise 4.3 — <code>fetch</code> vs. <code>pull</code><a class="headerlink" href="#exercise-43-fetch-vs-pull" title="Permanent link">&para;</a></h2>
-<ol>
-<li>Ask your buddy to make a small commit directly to their repository (e.g. add a line to their README) and push it.</li>
-<li>On your machine, download it <em>without</em> touching your files:</li>
-</ol>
-<div class="highlight"><pre><span></span><code>git<span class="w"> </span>fetch<span class="w"> </span>upstream
+</details>
+<details class="task">
+<summary>Exercise 4.3 — <code>fetch</code> vs. <code>pull</code></summary>
+<p><strong>1.</strong> Ask your buddy to make a small commit directly to their repository (e.g. add a line to their README) and push it.</p>
+<p><strong>2.</strong> On your machine, download it <em>without</em> touching your files:</p>
+<p><div class="highlight"><pre><span></span><code>git<span class="w"> </span>fetch<span class="w"> </span>upstream
 git<span class="w"> </span>log<span class="w"> </span>main..upstream/main<span class="w"> </span>--oneline
 </code></pre></div>
+What do you see?</p>
+<p>Try also <code>git log --oneline</code></p>
 <p>Your working directory and <code>main</code> are unchanged — only <code>upstream/main</code> moved.</p>
-<ol>
-<li>Now actually bring it in:</li>
-</ol>
+<p><strong>3.</strong> Now actually bring it in:</p>
 <div class="highlight"><pre><span></span><code>git<span class="w"> </span>merge<span class="w"> </span>upstream/main
 </code></pre></div>
 <p>or, equivalently in one step next time: <code>git pull upstream main</code>.</p>
@@ -1953,55 +1884,65 @@ git<span class="w"> </span>log<span class="w"> </span>main..upstream/main<span c
 <summary>So what did <code>git pull</code> actually do?</summary>
 <p><code>git pull upstream main</code> is shorthand for <code>git fetch upstream</code> followed by <code>git merge upstream/main</code>. Using <code>fetch</code> first (as in step 2) lets you inspect incoming changes before merging; <code>pull</code> does both at once, which is faster but skips the inspection step.</p>
 </details>
-<h3 id="exercise-44-create-a-local-branch-from-a-remote-branch">Exercise 4.4 — Create a local branch from a remote branch<a class="headerlink" href="#exercise-44-create-a-local-branch-from-a-remote-branch" title="Permanent link">&para;</a></h3>
-<p>After <code>git fetch upstream</code>, <code>upstream/main</code> is a <strong>remote-tracking branch</strong>: your local record of the branch on the <code>upstream</code> remote. You do not work on that reference directly. Instead, create a local branch that tracks it:</p>
+</details>
+<details class="task">
+<summary>Exercise 4.4 — Create a local branch from a remote branch</summary>
+<p><strong>1.</strong> Run the following commands and explain what you think they are doing</p>
 <div class="highlight"><pre><span></span><code>git<span class="w"> </span>branch<span class="w"> </span>-r
 git<span class="w"> </span>switch<span class="w"> </span>--track<span class="w"> </span>-c<span class="w"> </span>inspect-upstream<span class="w"> </span>upstream/main
 git<span class="w"> </span>status
 git<span class="w"> </span>branch<span class="w"> </span>-vv
 </code></pre></div>
-<ol>
-<li>Which branch is checked out now: <code>inspect-upstream</code> or <code>upstream/main</code>?</li>
-<li>Switch back to your own <code>main</code> branch when you are done inspecting:</li>
-</ol>
-<div class="highlight"><pre><span></span><code>git<span class="w"> </span>switch<span class="w"> </span>main
+<details class="help">
+<summary>Help</summary>
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>branch<span class="w"> </span>-r<span class="w">                                  </span><span class="c1"># List remote-tracking branches available locally</span>
+git<span class="w"> </span>switch<span class="w"> </span>--track<span class="w"> </span>-c<span class="w"> </span>inspect-upstream<span class="w"> </span>upstream/main<span class="w">  </span><span class="c1"># Create and switch to a local branch tracking upstream/main</span>
+git<span class="w"> </span>status<span class="w">                                     </span><span class="c1"># Show the current branch and working-tree status</span>
+git<span class="w"> </span>branch<span class="w"> </span>-vv<span class="w">                                 </span><span class="c1"># List local branches, their latest commits, and tracking status</span>
 </code></pre></div>
-<details class="tip">
-<summary>What to notice</summary>
-<p><code>upstream/main</code> is updated by <code>git fetch upstream</code>; <code>inspect-upstream</code> is a local branch you can switch to and work on. It is set to track <code>upstream/main</code>. In this exercise, switch back to <code>main</code> before making or pushing contribution commits, because <code>upstream</code> is the buddy's repository and is read-only for you.</p>
 </details>
-<h2 id="exercise-4-contribute-a-change-via-pull-request">Exercise 4 — Contribute a change via pull request<a class="headerlink" href="#exercise-4-contribute-a-change-via-pull-request" title="Permanent link">&para;</a></h2>
-<ol>
-<li>Create a branch for your contribution:</li>
-</ol>
+<p><strong>2.</strong> Which branch is checked out now?</p>
+<p><strong>3.</strong> Make a change to .gitignore eg. add <code>.DS_Store</code>, stage and commit your changes and <code>git push upstream HEAD:main</code>. What happens?</p>
+<details class="help">
+<summary>Help</summary>
+<p>Your don't have write access to upstream branch.
+<code>upstream/main</code> is updated by <code>git fetch upstream</code>; <code>inspect-upstream</code> is a local branch you can switch to and work on. It is set to track <code>upstream/main</code>. In this exercise, switch back to <code>main</code> before making or pushing contribution commits, because <code>upstream</code> is the buddy's repository and is read-only for you.</p>
+</details>
+<p><strong>4.</strong> Switch back to your own <code>main</code> branch and merge the changes in inspect-upstream:</p>
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>switch<span class="w"> </span>main
+git<span class="w"> </span>merge<span class="w"> </span>inspect-upstream
+</code></pre></div>
+</details>
+<details class="task">
+<summary>Exercise 4.5 — Contribute a change via pull request</summary>
+<p><strong>1.</strong> Create a branch for your contribution:</p>
 <div class="highlight"><pre><span></span><code>git<span class="w"> </span>switch<span class="w"> </span>-c<span class="w"> </span>add-my-name
 </code></pre></div>
-<ol>
-<li>Make a small, safe change — for example add your name to a <code>CONTRIBUTORS.md</code> file, or fix an obvious typo in their README. Commit it.</li>
-<li>Push the branch to <strong>your fork</strong> (<code>origin</code>, not <code>upstream</code> — you have no write access there):</li>
-</ol>
-<div class="highlight"><pre><span></span><code>git<span class="w"> </span>push<span class="w"> </span>-u<span class="w"> </span>origin<span class="w"> </span>add-my-name
+<p><strong>2.</strong> Make a small, safe change — for example add your name to a <code>CONTRIBUTORS.md</code> file, or fix an obvious typo in their README. Commit it.</p>
+<p><strong>3.</strong> Push the branch to <strong>your fork</strong> (<code>origin</code>, not <code>upstream</code> — you have no write access there):</p>
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>push<span class="w"> </span>-u<span class="w"> </span>origin<span class="w"> </span>add-my-name<span class="w">  </span><span class="c1"># Push the local add-my-name branch to origin and set it as its upstream</span>
 </code></pre></div>
-<ol>
-<li>On GitHub, open your fork. You should see a prompt to open a pull request. Open one <strong>targeting your buddy's repository</strong>, with a short, clear title and description of what the change does and why.</li>
-</ol>
+<p><strong>4.</strong> On GitHub, open your fork. You should see a prompt to open a pull request. Open one <strong>targeting your buddy's repository</strong>, with a short, clear title and description of what the change does and why.</p>
 <div class="admonition info">
 <p class="admonition-title">Where does a fork's pull request go?</p>
 <p>Even though your branch lives on <code>origin</code> (your fork), the pull request targets <code>upstream</code> (their repository) — GitHub remembers the fork relationship and offers this automatically.</p>
 </div>
-<h2 id="exercise-5-handle-a-rejected-push">Exercise 5 — Handle a rejected push<a class="headerlink" href="#exercise-5-handle-a-rejected-push" title="Permanent link">&para;</a></h2>
-<p>Simulate the most common collaboration hiccup: pushing when the remote has moved on without you.</p>
-<ol>
-<li>Make a new commit locally on <code>main</code> (your fork), but do <strong>not</strong> push it yet.</li>
-<li>Ask your buddy to merge a small change into your fork directly (or simulate it yourself by editing the file directly on GitHub's web interface, which creates a commit on <code>origin/main</code> you do not have locally).</li>
-<li>Try to push:</li>
-</ol>
+</details>
+<details class="task">
+<summary>Exercise 4.6 — Handle a rejected push</summary>
+<p>Simulate the most common collaboration hiccup (or if you have worked on two different machines): pushing when the remote has moved on without you.</p>
+<p><strong>1.</strong> Make a new commit locally on <code>main</code>, but do <strong>not</strong> push it yet.</p>
+<p><strong>2.</strong> Edit a the file directly on GitHub's web interface, which creates a commit on <code>origin/main</code> you do not have locally.</p>
+<p><strong>3.</strong> Try to push. What happens?</p>
+<details class="help">
+<summary>Help</summary>
 <div class="highlight"><pre><span></span><code>git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </span>main
 </code></pre></div>
 <p>Git refuses:</p>
 <div class="highlight"><pre><span></span><code>! [rejected]        main -&gt; main (fetch first)
 error: failed to push some refs
 </code></pre></div>
+</details>
 <ol>
 <li>Recover exactly as the error suggests:</li>
 </ol>
@@ -2013,14 +1954,14 @@ git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </
 <summary>Why does Git refuse instead of overwriting?</summary>
 <p>A plain push can only <strong>fast-forward</strong> the remote. If the remote has commits you do not have, pushing anyway would silently erase them from the branch. Git refuses and asks you to integrate those commits first — the same protective instinct behind merge conflicts.</p>
 </details>
-<h2 id="exercise-6-review-and-merge-the-pull-request">Exercise 6 — Review and merge the pull request<a class="headerlink" href="#exercise-6-review-and-merge-the-pull-request" title="Permanent link">&para;</a></h2>
+</details>
+<details class="task">
+<summary>Exercise 4.7 — Review and merge the pull request</summary>
 <p>Swap roles: review the pull request your buddy opened against <strong>your</strong> repository.</p>
-<ol>
-<li>On GitHub, open the pull request in your repository. Read the diff, leave at least one review comment.</li>
-<li>If it looks good, click <strong>Merge pull request</strong>.</li>
-<li>Delete the now-merged branch (GitHub offers a button; or from the command line: <code>git push origin --delete &lt;branch-name&gt;</code>).</li>
-<li>Both of you should now pull the merged result down locally:</li>
-</ol>
+<p><strong>1.</strong> On GitHub, open the pull request in your repository. Read the diff, leave at least one review comment.</p>
+<p><strong>2.</strong> If it looks good, click <strong>Merge pull request</strong>.</p>
+<p><strong>3.</strong> Delete the now-merged branch (GitHub offers a button; or from the command line: <code>git push origin --delete &lt;branch-name&gt;</code>).</p>
+<p><strong>4.</strong> Both of you should now pull the merged result down locally:</p>
 <div class="highlight"><pre><span></span><code>git<span class="w"> </span>switch<span class="w"> </span>main
 git<span class="w"> </span>pull<span class="w"> </span>origin<span class="w"> </span>main
 </code></pre></div>
@@ -2028,6 +1969,7 @@ git<span class="w"> </span>pull<span class="w"> </span>origin<span class="w"> </
 <p class="admonition-title">Merging on GitHub only changes the remote</p>
 <p>Clicking <strong>Merge</strong> updates <code>main</code> on GitHub — it does <strong>not</strong> touch anyone's local <code>main</code> automatically. Everyone, including whoever opened the PR, still needs to <code>git pull</code> to see the merged result on their own machine.</p>
 </div>
+</details>
 <h2 id="recap-of-the-commands-you-learned">Recap of the commands you learned<a class="headerlink" href="#recap-of-the-commands-you-learned" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
