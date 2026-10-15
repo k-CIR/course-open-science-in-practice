@@ -20,115 +20,122 @@ Make sure to have setup your GitHub account and
 
 A **remote** is simply a reference (a URL) to another repository. Git stores it under a short name — by convention the primary remote is called `origin`. Adding a remote does not copy anything yet; it just tells Git *where* `origin` points. Nothing is transferred until you push your remote.
 
-## Exercise 2.1: Create and add a remote
-
-1. Create an empty remote on github
-2. Add remote to your local repository
-3. List remote(s)
+??? task "Exercise 2.1: Create and add a remote"
 
 
-??? help "Help"
+    **1** Create an empty remote on github
+
+    **2** Add remote to your local repository
+
+    **3.** List remote(s)
+
+    ??? help "Help"
+        ```sh
+        # After creating an empty repo on GitHub, link it to your local repo
+        git remote add origin git@github.com:your-user/your-repo.git
+
+        # List your remotes and their URLs
+        git remote -v
+        ```
+
+        | Command | What it does |
+        | --- | --- |
+        | `git remote -v` | Show remotes and their fetch/push URLs |
+        | `git remote add <name> <url>` | Register a new remote |
+        | `git remote set-url <name> <url>` | Change a remote's URL (e.g. switch to SSH) |
+        | `git remote rename <old> <new>` | Rename a remote |
+        | `git remote remove <name>` | Delete a remote reference |
+
+??? task "Exercise 2.2: Push and clone"
+
+    **1.** Push your project to a remote
+
+    ??? help "Help"
+        ```sh
+        # Send your local main branch (and its history) to origin
+        git push -u origin main
+        ```
+
+        The `-u` (set-upstream) flag links your local `main` to `origin/main`, so later you can just run `git push` / `git pull`.
+
+    **2.** Clone a remote and inspect the results
+
+    ??? help "Help"
+        To get a copy of an existing repository (for example a course template):
+
+        ```sh
+        git clone git@github.com:some-user/some-repo.git
+        ```
+
+        `git clone` automatically sets `origin` for you and checks out the default branch.
+
+    !!! warning "Push only what you intend to share"
+        Once something is pushed to a public remote, assume it is public forever. This is why `.gitignore` and secret-handling (below) matter *before* your first push.
+
+??? task "Exercise 2.3 create a `.gitignore` — keep junk and secrets out"
+
+    A `.gitignore` file lists patterns for files Git should **never track**. It belongs in the root of your repository and is committed like any other file, so everyone collaborating on the project shares the same rules.
+
+    **1.** Create a `.gitignore` file:
+
+    ??? tip "A good starter for a data-science project:"
+
+        ```text
+        # OS noise
+        .DS_Store
+        Thumbs.db
+
+        # Editor / IDE
+        .Rproj.user/
+        .Rhistory
+        .venv/
+        __pycache__/
+        *.swp
+
+        # Outputs that can be regenerated
+        /output/
+        /results/
+        *.csv
+        *.png
+
+        # Secrets — NEVER commit these
+        .env
+        *.key
+        credentials.json
+        ```
+
+    Lines starting with `#` are comments. A leading `/` anchors the pattern to the repository root; `*` is a wildcard.
+
+    ??? tip "Useful ignore commands:"
+
+        | Command | What it does |
+        | --- | --- |
+        | `git status` | Shows ignored files only if you ask (see below) |
+        | `git check-ignore -v <file>` | Explains *why* a file is ignored (which rule matched) |
+        | `git add -f <file>` | Force-add a file even if it matches an ignore rule |
+        | `git status --ignored` | List both tracked and ignored files |
+
+    **2.** Commit your `.gitignore` so the rules travel with the project:
+
+    ??? help "Help"
+        ```sh
+        git add .gitignore
+        git commit -m "Add .gitignore for outputs, OS noise, and secrets"
+        ```
+
+??? task "Exercise 2.4 — Ignore the right things"
+
+    **1.** In your project, create a file you do **not** want tracked, e.g. `notes.txt` containing scratch thoughts, or `draft.png` as a throwaway plot.
+    1. Add a rule to `.gitignore` for it (e.g. `notes.txt` or `*.png`).
+    2. Confirm Git agrees:
+
     ```sh
-    # After creating an empty repo on GitHub, link it to your local repo
-    git remote add origin git@github.com:your-user/your-repo.git
-
-    # List your remotes and their URLs
-    git remote -v
+    git check-ignore -v notes.txt
+    git status --ignored
     ```
 
-    | Command | What it does |
-    | --- | --- |
-    | `git remote -v` | Show remotes and their fetch/push URLs |
-    | `git remote add <name> <url>` | Register a new remote |
-    | `git remote set-url <name> <url>` | Change a remote's URL (e.g. switch to SSH) |
-    | `git remote rename <old> <new>` | Rename a remote |
-    | `git remote remove <name>` | Delete a remote reference |
-
-## Exercise 2.2: Push and clone
-
-
-??? help "Help"
-```sh
-# Send your local main branch (and its history) to origin
-git push -u origin main
-```
-
-The `-u` (set-upstream) flag links your local `main` to `origin/main`, so later you can just run `git push` / `git pull`.
-
-To get a copy of an existing repository (for example a course template):
-
-```sh
-git clone git@github.com:some-user/some-repo.git
-```
-
-`git clone` automatically sets `origin` for you and checks out the default branch.
-
-!!! warning "Push only what you intend to share"
-    Once something is pushed to a public remote, assume it is public forever. This is why `.gitignore` and secret-handling (below) matter *before* your first push.
-
-## `.gitignore` — keep junk and secrets out
-
-A `.gitignore` file lists patterns for files Git should **never track**. It belongs in the root of your repository and is committed like any other file, so everyone collaborating on the project shares the same rules.
-
-Create a `.gitignore` file:
-
-A good starter for a data-science project:
-
-```text
-# OS noise
-.DS_Store
-Thumbs.db
-
-# Editor / IDE
-.Rproj.user/
-.Rhistory
-.venv/
-__pycache__/
-*.swp
-
-# Outputs that can be regenerated
-/output/
-/results/
-*.csv
-*.png
-
-# Secrets — NEVER commit these
-.env
-*.key
-credentials.json
-```
-
-Lines starting with `#` are comments. A leading `/` anchors the pattern to the repository root; `*` is a wildcard.
-
-Useful ignore commands:
-
-| Command | What it does |
-| --- | --- |
-| `git status` | Shows ignored files only if you ask (see below) |
-| `git check-ignore -v <file>` | Explains *why* a file is ignored (which rule matched) |
-| `git add -f <file>` | Force-add a file even if it matches an ignore rule |
-| `git status --ignored` | List both tracked and ignored files |
-
-Commit your `.gitignore` so the rules travel with the project:
-
-```sh
-git add .gitignore
-git commit -m "Add .gitignore for outputs, OS noise, and secrets"
-```
-
-## Exercise 2.3 — Ignore the right things
-
-1. In your project, create a file you do **not** want tracked, e.g. `notes.txt` containing scratch thoughts, or `draft.png` as a throwaway plot.
-2. Add a rule to `.gitignore` for it (e.g. `notes.txt` or `*.png`).
-3. Confirm Git agrees:
-
-   ```sh
-   git check-ignore -v notes.txt
-   git status --ignored
-   ```
-
-4. Confirm it does **not** appear under "Changes not staged for commit".
-5. Commit your updated `.gitignore`.
+    3. Confirm it does **not** appear under "Changes not staged for commit".
+    4. Commit your updated `.gitignore`.
 
 ## Secrets: never commit credentials
 
@@ -157,75 +164,75 @@ API keys, tokens, passwords, and private keys must never enter Git — not even 
 
 If you **accidentally commit a secret**, treat it as compromised: rotate/revoke it immediately. Removing the file and committing again does *not* erase it from history. (Fully purging history needs `git filter-repo` or the BFG Repo-Cleaner and a force-push — out of scope here, but the rule stands: prevent, don't just delete.)
 
-## Exercise 2.4 — Prove a secret stays out
+??? task "Exercise 2.5 — Prove a secret stays out"
 
-1. Create `.env` with a fake line: `GITHUB_TOKEN=fake-not-a-real-token`.
-2. Add `.env` to `.gitignore` and confirm it is ignored with `git check-ignore -v .env`.
-3. Try staging .env (What happens?)
-4. If you ever needed to commit a *template* instead, commit `.env.example` with placeholder values and keep the real `.env` ignored.
+    1. Create `.env` with a fake line: `GITHUB_TOKEN=fake-not-a-real-token`.
+    2. Add `.env` to `.gitignore` and confirm it is ignored with `git check-ignore -v .env`.
+    3. Try staging .env (What happens?)
+    4. If you ever needed to commit a *template* instead, commit `.env.example` with placeholder values and keep the real `.env` ignored.
 
-## SSH keys — push without a password
+??? task "SSH keys — push without a password"
 
-HTTPS remotes ask for your username/password (or a token) on every push. SSH keys let your machine prove its identity to GitHub automatically and securely.
+    HTTPS remotes ask for your username/password (or a token) on every push. SSH keys let your machine prove its identity to GitHub automatically and securely.
 
-### 1. Generate a key pair
+    ### 1. Generate a key pair
 
-```sh
-ssh-keygen -t ed25519 -C "you@example.com"
-```
+    ```sh
+    ssh-keygen -t ed25519 -C "you@example.com"
+    ```
 
-Press Enter to accept the default location (`~/.ssh/id_ed25519`). You may add a passphrase for extra safety.
+    Press Enter to accept the default location (`~/.ssh/id_ed25519`). You may add a passphrase for extra safety.
 
-### 2. Start the agent and add the key
+    ### 2. Start the agent and add the key
 
-```sh
-eval "$(ssh-agent -s)"
-ssh-add ~/.ssh/id_ed25519
-```
+    ```sh
+    eval "$(ssh-agent -s)"
+    ssh-add ~/.ssh/id_ed25519
+    ```
 
-### 3. Add the **public** key to GitHub
+    ### 3. Add the **public** key to GitHub
 
-```sh
-cat ~/.ssh/id_ed25519.pub
-```
+    ```sh
+    cat ~/.ssh/id_ed25519.pub
+    ```
 
-Copy that output and paste it into GitHub → Settings → SSH and GPG keys → New SSH key. **Never** share the private key (`id_ed25519` without `.pub`).
+    Copy that output and paste it into GitHub → Settings → SSH and GPG keys → New SSH key. **Never** share the private key (`id_ed25519` without `.pub`).
 
-### 4. Test the connection
+    ### 4. Test the connection
 
-```sh
-ssh -T git@github.com
-```
+    ```sh
+    ssh -T git@github.com
+    ```
 
-You should see a message like `Hi <user>! You've successfully authenticated...`.
+    You should see a message like `Hi <user>! You've successfully authenticated...`.
 
-### 5. Use the SSH remote
+    ### 5. Use the SSH remote
 
-If your remote is still an HTTPS URL, switch it:
+    If your remote is still an HTTPS URL, switch it:
 
-```sh
-git remote set-url origin git@github.com:your-user/your-repo.git
-git push -u origin main
-```
+    ```sh
+    git remote set-url origin git@github.com:your-user/your-repo.git
+    git push -u origin main
+    ```
 
-Now pushes no longer prompt for credentials.
+    Now pushes no longer prompt for credentials.
 
-!!! note "SSH vs HTTPS"
-    Both work. SSH is convenient for repeated pushing from one machine; HTTPS with a token is common in CI and restricted networks. The safety rules (`.gitignore`, no secrets) apply either way.
+    !!! note "SSH vs HTTPS"
+        Both work. SSH is convenient for repeated pushing from one machine; HTTPS with a token is common in CI and restricted networks. The safety rules (`.gitignore`, no secrets) apply either way.
 
-## Exercise 2.5 — End-to-end safe push
+??? task "Exercise 2.6 — End-to-end safe push"
 
-1. Ensure your `.gitignore` covers outputs and secrets.
-2. Confirm no unwanted files are staged: `git status`.
-3. Generate an SSH key (if you have not), add the public key to GitHub, and verify with `ssh -T git@github.com`.
-4. Set your remote to the SSH URL and push:
+    1. Ensure your `.gitignore` covers outputs and secrets.
+    2. Confirm no unwanted files are staged: `git status`.
+    3. Generate an SSH key (if you have not), add the public key to GitHub, and verify with `ssh -T git@github.com`.
+    4. Set your remote to the SSH URL and push:
 
-   ```sh
-   git remote set-url origin git@github.com:your-user/your-repo.git
-   git push -u origin main
-   ```
+       ```sh
+       git remote set-url origin git@github.com:your-user/your-repo.git
+       git push -u origin main
+       ```
 
-5. On GitHub, confirm your committed files are present but your ignored files (`.env`, outputs) are **not**.
+    5. On GitHub, confirm your committed files are present but your ignored files (`.env`, outputs) are **not**.
 
 ## Recap
 

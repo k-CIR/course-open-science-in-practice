@@ -172,30 +172,30 @@ The `-m` flag lets you write the commit message directly. Write messages in the 
     If you quit the editor changes are not committed.
     `Aborting commit due to empty commit message.` 
 
-## Exercise 1.1 — Make a change and commit it
+??? task "Exercise 1.1 — Make a change and commit it"
 
-1. Edit your script so it also reports the **minimum** value.
-2. Run the script and confirm the new output is correct.
-3. Stage and commit the change
-   
-??? help "Help"
+    1. Edit your script so it also reports the **minimum** value.
+    2. Run the script and confirm the new output is correct.
+    3. Stage and commit the change
 
-    ```R
-    ...
-    min_value = min(values)
-    
-    ...
-    ```
-    ```sh
-    Rscript analysis.R
-    ```
+    ??? help "Help"
 
-    ```sh
-    git add analysis.R
-    git commit -m "Report minimum value in summary"
-    ```
+        ```R
+        ...
+        min_value = min(values)
 
-Confirm there are now two commits (see next section).
+        ...
+        ```
+        ```sh
+        Rscript analysis.R
+        ```
+
+        ```sh
+        git add analysis.R
+        git commit -m "Report minimum value in summary"
+        ```
+
+    Confirm there are now two commits (see next section).
 
 ## Reading back your history
 
@@ -214,20 +214,20 @@ Shows every commit in reverse chronological order, with its hash, author, date, 
     | `git log --stat` | Which files changed in each commit |
     | `git log -p` | The full diff (line-by-line changes) of each commit |
 
-### Exercise 1.2  `git diff` — what changed but is not yet staged
+??? task "Exercise 1.2  `git diff` — what changed but is not yet staged"
 
-1. Add some random values to the vector/list
-2. Check unstaged changes
+    1. Add some random values to the vector/list
+    2. Check unstaged changes
 
-Compares your working directory against the staging area. 
+    Compares your working directory against the staging area.
 
-??? tip "Useful `git diff` arguments:"
-    | Command | What it compares |
-    | --- | --- |
-    | `git diff` | Working directory ↔ staging area |
-    | `git diff --staged` | Staging area ↔ last commit (what you are about to commit) |
-    | `git diff HEAD~1` | Working directory ↔ the previous commit |
-    | `git diff <hash1> <hash2>` | Two specific commits |
+    ??? tip "Useful `git diff` arguments:"
+        | Command | What it compares |
+        | --- | --- |
+        | `git diff` | Working directory ↔ staging area |
+        | `git diff --staged` | Staging area ↔ last commit (what you are about to commit) |
+        | `git diff HEAD~1` | Working directory ↔ the previous commit |
+        | `git diff <hash1> <hash2>` | Two specific commits |
 
 ### `git show` — inspect one commit
 
@@ -241,41 +241,41 @@ Shows the most recent commit's metadata and its diff. Add a commit hash to inspe
 git show <commit-hash>
 ```
 
-## Exercise 1.3 — Inspect your work
+??? task "Exercise 1.3 — Inspect your work"
 
-1. Get an overview of your commits
-2. Compare the differences between your commits
-3. Check the full content of your first commit
+    1. Get an overview of your commits
+    2. Compare the differences between your commits
+    3. Check the full content of your first commit
 
-??? help "Help"
-    1. Run `git log --oneline` and confirm you see both commits.
-    2. Run `git diff HEAD~1` to see what the latest commit changed compared with the one before it.
-    3. Run `git show HEAD~1` to read the full content of your first commit.
+    ??? help "Help"
+        1. Run `git log --oneline` and confirm you see both commits.
+        2. Run `git diff HEAD~1` to see what the latest commit changed compared with the one before it.
+        3. Run `git show HEAD~1` to read the full content of your first commit.
 
-## Exercise 1.4 — Make a commit without a commit-message
+??? task "Exercise 1.4 — Make a commit without a commit-message"
 
-1. In your script, make any changes you want
-2. Stage the changes
-3. commit but do not add a commit message and see what happens
+    1. In your script, make any changes you want
+    2. Stage the changes
+    3. commit but do not add a commit message and see what happens
 
-## Bonus quests
+??? task "Bonus quests"
 
-1. Find the short hash of the current commit.
-2. Show your commit history on one line with dates and times.
-3. Make a change to your script, stage it, then unstage it without losing the edit.
-4. Make two different edits in your script. Stage only one part of the changes, then check what is staged and unstaged.
-5. Find the commit where you added the minimum value. Inspect its message and the changes it made.
-6. Compare your current script with the version from your first commit. What has changed?
-7. Add a short comment to your script, commit it, then use the history to find when you made that change.
+    1. Find the short hash of the current commit.
+    2. Show your commit history on one line with dates and times.
+    3. Make a change to your script, stage it, then unstage it without losing the edit.
+    4. Make two different edits in your script. Stage only one part of the changes, then check what is staged and unstaged.
+    5. Find the commit where you added the minimum value. Inspect its message and the changes it made.
+    6. Compare your current script with the version from your first commit. What has changed?
+    7. Add a short comment to your script, commit it, then use the history to find when you made that change.
 
-??? help "Help with bonus quests"
-    1. Run `git log --oneline`; the short hash is the code at the start of the line for your latest commit.
-    2. Run `git log --oneline --date=local --format="%h %ad %s"`.
-    3. After staging a change, run `git restore --staged analysis.R` (or `analysis.py`). The edit remains in your file, but is no longer staged. Confirm with `git status`.
-    4. Run `git add -p analysis.R` (or `analysis.py`) and choose which change to stage. Then run `git diff --staged` to inspect staged changes and `git diff` to inspect unstaged changes. If you prefer not to use interactive prompts, make two separate edits and stage the whole file with `git add analysis.R` (or `analysis.py`), then inspect it with `git diff --staged`.
-    5. Look through `git log --oneline` for the commit message from Exercise 1, then run `git show <commit-hash>` using its hash.
-    6. Run `git diff <first-commit-hash> HEAD -- analysis.R` (or `analysis.py`). Find the first commit's hash with `git log --oneline`.
-    7. Run `git log --oneline` to find the new commit. For more detail, inspect it with `git show <commit-hash>`.
+    ??? help "Help with bonus quests"
+        1. Run `git log --oneline`; the short hash is the code at the start of the line for your latest commit.
+        2. Run `git log --oneline --date=local --format="%h %ad %s"`.
+        3. After staging a change, run `git restore --staged analysis.R` (or `analysis.py`). The edit remains in your file, but is no longer staged. Confirm with `git status`.
+        4. Run `git add -p analysis.R` (or `analysis.py`) and choose which change to stage. Then run `git diff --staged` to inspect staged changes and `git diff` to inspect unstaged changes. If you prefer not to use interactive prompts, make two separate edits and stage the whole file with `git add analysis.R` (or `analysis.py`), then inspect it with `git diff --staged`.
+        5. Look through `git log --oneline` for the commit message from Exercise 1, then run `git show <commit-hash>` using its hash.
+        6. Run `git diff <first-commit-hash> HEAD -- analysis.R` (or `analysis.py`). Find the first commit's hash with `git log --oneline`.
+        7. Run `git log --oneline` to find the new commit. For more detail, inspect it with `git show <commit-hash>`.
 
 ## Recap of the commands you learned
 

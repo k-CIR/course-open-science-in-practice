@@ -17,168 +17,196 @@ You will pair up with a **code buddy** and contribute to *each other's* mini-pro
 - Your own mini-project repository already pushed to GitHub, with at least one commit.
 - A **code buddy** — pair up with someone else in the room. You will fork their repository and they will fork yours.
 
-## Exercise 4.1 — Clone and inspect the inherited remote
+??? task "Exercise 4.1 — Clone and inspect the inherited remote"
 
-Before forking anything, confirm what cloning actually sets up for you.
+    Before forking anything, confirm what cloning actually sets up for you.
 
-Clone any public repository you do not own, for example the course example repo:
+    Clone any public repository you do not own, for example the course example repo:
 
-```sh
-git clone https://github.com/NiklasEdvall/an-approved-repo.git
-cd an-approved-repo
-```
+    ```sh
+    git clone https://github.com/NiklasEdvall/an-approved-repo.git
+    cd an-approved-repo
+    ```
 
-1. Inspect the remote that was created for you automatically. What is the remote?
-2. How many branches does the repository have?
-3. Inspect the commit history, what do you see?
-4. When was the first commit?
+    **1.** Inspect the remote that was created for you automatically. What is the remote?
 
-??? help "Help"
+    **2.** How many branches does the repository have?
 
-      Check remote(s): `git remote -v`
+    **3.** Inspect the commit history, what do you see?
 
-      A single remote named `origin`, pointing at the URL you cloned — both for fetch and for push, even if you do not actually have push access to it. `git clone` always wires up `origin`; whether you can push there is a separate question, decided by the remote's permissions, not by Git.
+    **4.** When was the first commit?
 
-      Check branches: `git branch`
+    ??? help "Help"
 
-      Check commit log: `git log --oneline --graph`
+        Check remote(s): `git remote -v`
 
-      Check from beginning: `git log --reverse`
+        A single remote named `origin`, pointing at the URL you cloned — both for fetch and for push, even if you do not actually have push access to it. `git clone` always wires up `origin`; whether you can push there is a separate question, decided by the remote's permissions, not by Git.
 
-Compare this to starting from scratch: `git init` followed by `git remote add origin <url>` — the same end state, reached in two explicit steps instead of one.
+        Check branches: `git branch`
+
+        Check commit log: `git log --oneline --graph`
+
+        Check from beginning: `git log --reverse`
+
+    Compare this to starting from scratch: `git init` followed by `git remote add origin <url>` — the same end state, reached in two explicit steps instead of one.
 
 
 
-## Exercise 4.2 — Fork your buddy's repository
+??? task "Exercise 4.2 — Fork your buddy's repository"
 
-1. On GitHub, open your code buddy's mini-project repository and click **Fork**. This creates a copy under *your* account (`you/their-repo`).
-2. Clone **your fork** — not their original — to your machine:
+    **1.** On GitHub, open your code buddy's mini-project repository and click **Fork**. This creates a copy under *your* account (`you/their-repo`).
 
-   ```sh
-   git clone git@github.com:you/their-repo.git
-   cd their-repo
-   git remote -v
-   ```
+    **2.** Clone **your fork** — not their original — to your machine:
 
-3. Confirm `origin` points at your fork, then add their original repository as a second remote:
+    ```sh
+    git clone git@github.com:you/their-repo.git
+    cd their-repo
+    git remote -v
+    ```
 
-   ```sh
-   git remote add upstream git@github.com:buddy/their-repo.git
-   git remote -v
-   ```
+    **3.** Confirm `origin` points at your fork, then add their original repository as a second remote:
 
-You should now see two remotes: `origin` (your fork, read/write) and `upstream` (their original, read-only for you).
+    ```sh
+    git remote add upstream git@github.com:buddy/their-repo.git
+    git remote -v
+    ```
 
-## Exercise 4.3 — `fetch` vs. `pull`
+    You should now see two remotes: `origin` (your fork, read/write) and `upstream` (their original, read-only for you).
 
-1. Ask your buddy to make a small commit directly to their repository (e.g. add a line to their README) and push it.
-2. On your machine, download it *without* touching your files:
+??? task "Exercise 4.3 — `fetch` vs. `pull`"
 
-   ```sh
-   git fetch upstream
-   git log main..upstream/main --oneline
-   ```
+    **1.** Ask your buddy to make a small commit directly to their repository (e.g. add a line to their README) and push it.
 
-   Your working directory and `main` are unchanged — only `upstream/main` moved.
+    **2.** On your machine, download it *without* touching your files:
 
-3. Now actually bring it in:
+    ```sh
+    git fetch upstream
+    git log main..upstream/main --oneline
+    ```
+    What do you see?
 
-   ```sh
-   git merge upstream/main
-   ```
+    Try also `git log --oneline`
 
-   or, equivalently in one step next time: `git pull upstream main`.
+    Your working directory and `main` are unchanged — only `upstream/main` moved.
 
-??? question "So what did `git pull` actually do?"
-    `git pull upstream main` is shorthand for `git fetch upstream` followed by `git merge upstream/main`. Using `fetch` first (as in step 2) lets you inspect incoming changes before merging; `pull` does both at once, which is faster but skips the inspection step.
+    **3.** Now actually bring it in:
 
-### Exercise 4.4 — Create a local branch from a remote branch
+    ```sh
+    git merge upstream/main
+    ```
 
-After `git fetch upstream`, `upstream/main` is a **remote-tracking branch**: your local record of the branch on the `upstream` remote. You do not work on that reference directly. Instead, create a local branch that tracks it:
+    or, equivalently in one step next time: `git pull upstream main`.
 
-```sh
-git branch -r
-git switch --track -c inspect-upstream upstream/main
-git status
-git branch -vv
-```
+    ??? question "So what did `git pull` actually do?"
+        `git pull upstream main` is shorthand for `git fetch upstream` followed by `git merge upstream/main`. Using `fetch` first (as in step 2) lets you inspect incoming changes before merging; `pull` does both at once, which is faster but skips the inspection step.
 
-1. Which branch is checked out now: `inspect-upstream` or `upstream/main`?
-2. Switch back to your own `main` branch when you are done inspecting:
+??? task "Exercise 4.4 — Create a local branch from a remote branch"
 
-   ```sh
-   git switch main
-   ```
+    **1.** Run the following commands and explain what you think they are doing
 
-??? tip "What to notice"
-    `upstream/main` is updated by `git fetch upstream`; `inspect-upstream` is a local branch you can switch to and work on. It is set to track `upstream/main`. In this exercise, switch back to `main` before making or pushing contribution commits, because `upstream` is the buddy's repository and is read-only for you.
+    ```sh
+    git branch -r
+    git switch --track -c inspect-upstream upstream/main
+    git status
+    git branch -vv
+    ```
 
-## Exercise 4 — Contribute a change via pull request
+    ??? help "Help"
+        ```sh
+        git branch -r                                  # List remote-tracking branches available locally
+        git switch --track -c inspect-upstream upstream/main  # Create and switch to a local branch tracking upstream/main
+        git status                                     # Show the current branch and working-tree status
+        git branch -vv                                 # List local branches, their latest commits, and tracking status
+        ```
 
-1. Create a branch for your contribution:
+    **2.** Which branch is checked out now?
 
-   ```sh
-   git switch -c add-my-name
-   ```
+    **3.** Make a change to .gitignore eg. add `.DS_Store`, stage and commit your changes and `git push upstream HEAD:main`. What happens?
 
-2. Make a small, safe change — for example add your name to a `CONTRIBUTORS.md` file, or fix an obvious typo in their README. Commit it.
-3. Push the branch to **your fork** (`origin`, not `upstream` — you have no write access there):
+    ??? help "Help"
+        Your don't have write access to upstream branch.
+        `upstream/main` is updated by `git fetch upstream`; `inspect-upstream` is a local branch you can switch to and work on. It is set to track `upstream/main`. In this exercise, switch back to `main` before making or pushing contribution commits, because `upstream` is the buddy's repository and is read-only for you.
 
-   ```sh
-   git push -u origin add-my-name
-   ```
+    **4.** Switch back to your own `main` branch and merge the changes in inspect-upstream:
 
-4. On GitHub, open your fork. You should see a prompt to open a pull request. Open one **targeting your buddy's repository**, with a short, clear title and description of what the change does and why.
+    ```sh
+    git switch main
+    git merge inspect-upstream
+    ```
 
-!!! info "Where does a fork's pull request go?"
-    Even though your branch lives on `origin` (your fork), the pull request targets `upstream` (their repository) — GitHub remembers the fork relationship and offers this automatically.
+??? task "Exercise 4.5 — Contribute a change via pull request"
 
-## Exercise 5 — Handle a rejected push
+    **1.** Create a branch for your contribution:
 
-Simulate the most common collaboration hiccup: pushing when the remote has moved on without you.
+    ```sh
+    git switch -c add-my-name
+    ```
 
-1. Make a new commit locally on `main` (your fork), but do **not** push it yet.
-2. Ask your buddy to merge a small change into your fork directly (or simulate it yourself by editing the file directly on GitHub's web interface, which creates a commit on `origin/main` you do not have locally).
-3. Try to push:
+    **2.** Make a small, safe change — for example add your name to a `CONTRIBUTORS.md` file, or fix an obvious typo in their README. Commit it.
 
-   ```sh
-   git push origin main
-   ```
+    **3.** Push the branch to **your fork** (`origin`, not `upstream` — you have no write access there):
 
-   Git refuses:
+    ```sh
+    git push -u origin add-my-name  # Push the local add-my-name branch to origin and set it as its upstream
+    ```
 
-   ```text
-   ! [rejected]        main -> main (fetch first)
-   error: failed to push some refs
-   ```
+    **4.** On GitHub, open your fork. You should see a prompt to open a pull request. Open one **targeting your buddy's repository**, with a short, clear title and description of what the change does and why.
 
-4. Recover exactly as the error suggests:
+    !!! info "Where does a fork's pull request go?"
+        Even though your branch lives on `origin` (your fork), the pull request targets `upstream` (their repository) — GitHub remembers the fork relationship and offers this automatically.
 
-   ```sh
-   git pull origin main
-   # resolve any conflicts, same as in the branching workshop
-   git push origin main
-   ```
+??? task "Exercise 4.6 — Handle a rejected push"
 
-??? tip "Why does Git refuse instead of overwriting?"
-    A plain push can only **fast-forward** the remote. If the remote has commits you do not have, pushing anyway would silently erase them from the branch. Git refuses and asks you to integrate those commits first — the same protective instinct behind merge conflicts.
+    Simulate the most common collaboration hiccup (or if you have worked on two different machines): pushing when the remote has moved on without you.
 
-## Exercise 6 — Review and merge the pull request
+    **1.** Make a new commit locally on `main`, but do **not** push it yet.
 
-Swap roles: review the pull request your buddy opened against **your** repository.
+    **2.** Edit a the file directly on GitHub's web interface, which creates a commit on `origin/main` you do not have locally.
 
-1. On GitHub, open the pull request in your repository. Read the diff, leave at least one review comment.
-2. If it looks good, click **Merge pull request**.
-3. Delete the now-merged branch (GitHub offers a button; or from the command line: `git push origin --delete <branch-name>`).
-4. Both of you should now pull the merged result down locally:
+    **3.** Try to push. What happens?
 
-   ```sh
-   git switch main
-   git pull origin main
-   ```
+    ??? help "Help"
+        ```sh
+        git push origin main
+        ```
 
-!!! info "Merging on GitHub only changes the remote"
-    Clicking **Merge** updates `main` on GitHub — it does **not** touch anyone's local `main` automatically. Everyone, including whoever opened the PR, still needs to `git pull` to see the merged result on their own machine.
+        Git refuses:
+
+        ```text
+        ! [rejected]        main -> main (fetch first)
+        error: failed to push some refs
+        ```
+
+    4. Recover exactly as the error suggests:
+
+       ```sh
+       git pull origin main
+       # resolve any conflicts, same as in the branching workshop
+       git push origin main
+       ```
+
+    ??? tip "Why does Git refuse instead of overwriting?"
+        A plain push can only **fast-forward** the remote. If the remote has commits you do not have, pushing anyway would silently erase them from the branch. Git refuses and asks you to integrate those commits first — the same protective instinct behind merge conflicts.
+
+??? task "Exercise 4.7 — Review and merge the pull request"
+
+    Swap roles: review the pull request your buddy opened against **your** repository.
+
+    **1.** On GitHub, open the pull request in your repository. Read the diff, leave at least one review comment.
+
+    **2.** If it looks good, click **Merge pull request**.
+
+    **3.** Delete the now-merged branch (GitHub offers a button; or from the command line: `git push origin --delete <branch-name>`).
+
+    **4.** Both of you should now pull the merged result down locally:
+
+    ```sh
+    git switch main
+    git pull origin main
+    ```
+
+    !!! info "Merging on GitHub only changes the remote"
+        Clicking **Merge** updates `main` on GitHub — it does **not** touch anyone's local `main` automatically. Everyone, including whoever opened the PR, still needs to `git pull` to see the merged result on their own machine.
 
 ## Recap of the commands you learned
 

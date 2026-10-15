@@ -36,166 +36,167 @@ git status
 !!! tip "Name branches by intent"
     Use descriptive names like `add-logging`, `fix-mean-bug`, or `try-new-model`. Avoid vague names like `test` or `branch1`.
 
-## Exercise 3.1 — Branch and commit in isolation
+??? task "Exercise 3.1 — Branch and commit in isolation"
 
-Start from the project you built in the previous session (the one with `analysis.R` / `analysis.py` and its tests).
+    Start from the project you built in the previous session (the one with `analysis.R` / `analysis.py` and its tests).
 
-1. Create and switch to a branch
-2. On this branch, edit your script to also report the **median** value.
-3. Run your script to confirm everything works.
-4. Stage and commit the change
-5. Switch back to `main` branch
+    1. Create and switch to a branch
+    2. On this branch, edit your script to also report the **median** value.
+    3. Run your script to confirm everything works.
+    4. Stage and commit the change
+    5. Switch back to `main` branch
 
-What happend?
+    What happend?
 
-??? help "Help"
-      Create and switch to branch: `git switch -c improve-summary`
-      Median: `median(values)`
-      Run script: `Rscript analysis.R`
-      Stage: `git add analysis.R          # or analysis.py`
-      Commit: `git commit -m "Report median in summary"`
-      Switch back to main: `git switch main`
+    ??? help "Help"
+        Create and switch to branch: `git switch -c improve-summary`
+        Median: `median(values)`
+        Run script: `Rscript analysis.R`
+        Stage: `git add analysis.R          # or analysis.py`
+        Commit: `git commit -m "Report median in summary"`
+        Switch back to main: `git switch main`
 
-      your median change is **not there**. That is the point: the work is isolated on `improve-summary`.
+        your median change is **not there**. That is the point: the work is isolated on `improve-summary`.
 
-## Exercise 3.2 — Merge a branch back
+??? task "Exercise 3.2 — Merge a branch back"
 
-1. Visualise your history
-2. Make sure you are on `main` branch
-3. Merge improve-summary onto main
-4. Explain what happend to `HEAD`
-??? help "Help"
-      Visualise: `git log --oneline --graph --all`
-      Check branches: `git branch`
-      Merge: `git merge improve-summary`
+    1. Visualise your history
+    2. Make sure you are on `main` branch
+    3. Merge improve-summary onto main
+    4. Explain what happend to `HEAD`
 
-      If `main` has not moved since you branched, Git simply moves the `main` pointer forward to the same commit as `improve-summary`. This is a **fast-forward** merge — no new commit is created, because the histories are already a straight line.
+    ??? help "Help"
+        Visualise: `git log --oneline --graph --all`
+        Check branches: `git branch`
+        Merge: `git merge improve-summary`
 
-??? task "What happend to `HEAD`"
+        If `main` has not moved since you branched, Git simply moves the `main` pointer forward to the same commit as `improve-summary`. This is a **fast-forward** merge — no new commit is created, because the histories are already a straight line.
 
-      If `main` has not moved since you branched, Git simply moves the `main` pointer forward to the same commit as `improve-summary`. This is a **fast-forward** merge — no new commit is created, because the histories are already a straight line.
+    ??? task "What happend to `HEAD`"
 
-      To always record a merge commit even when a fast-forward is possible, use:
+        If `main` has not moved since you branched, Git simply moves the `main` pointer forward to the same commit as `improve-summary`. This is a **fast-forward** merge — no new commit is created, because the histories are already a straight line.
 
-      ```sh
-      git merge --no-ff improve-summary
-      ```
+        To always record a merge commit even when a fast-forward is possible, use:
 
-      The `--no-ff` (no fast-forward) flag creates an explicit merge commit, which keeps a clear record that the work came from a separate branch. Many teams prefer this for readability.
+        ```sh
+        git merge --no-ff improve-summary
+        ```
 
-??? task "Visualise your history: git`git log --oneline --graph --all`. What do you see?"
-      ```sh
-      * 232528e (HEAD -> main, improve-summary) added median
-      * d3d4264 added values
-      * f701e59 added min values
-      * e15b308 first commit
-      ```
+        The `--no-ff` (no fast-forward) flag creates an explicit merge commit, which keeps a clear record that the work came from a separate branch. Many teams prefer this for readability.
 
-## Exercise 3.3 — A second branch and a real merge
+    ??? task "Visualise your history: git`git log --oneline --graph --all`. What do you see?"
+        ```sh
+        * 232528e (HEAD -> main, improve-summary) added median
+        * d3d4264 added values
+        * f701e59 added min values
+        * e15b308 first commit
+        ```
 
-1. From `main`, create another branch called: `add-range`.
-2. On `add-range`, edit the script to also report the **range**.
-3. Check that script works, stage and commit it.
-4. Switch back to `main` and add **standard deviation**
-5. Check that script works, stage and commit it.
+??? task "Exercise 3.3 — A second branch and a real merge"
 
-??? help "Help"
-      Create and switch to new branch: `git switch -c add-range`
-      Range: `diff(range(values))` or `max(values) - min(values)`
-      Commit: `git add analysis.R` and `git commit -m "range added"`
-      Switch: `git switch main`
-      SD: `sd(values)`
+    1. From `main`, create another branch called: `add-range`.
+    2. On `add-range`, edit the script to also report the **range**.
+    3. Check that script works, stage and commit it.
+    4. Switch back to `main` and add **standard deviation**
+    5. Check that script works, stage and commit it.
 
-??? task "Inspect the result: `git log --oneline --graph --all`. What do you see?"
+    ??? help "Help"
+        Create and switch to new branch: `git switch -c add-range`
+        Range: `diff(range(values))` or `max(values) - min(values)`
+        Commit: `git add analysis.R` and `git commit -m "range added"`
+        Switch: `git switch main`
+        SD: `sd(values)`
 
-      ```sh
-      * d6c6e69 (HEAD -> main) sd added
-      | * 7e5c133 (add-range) range added
-      |/  
-      * 232528e (improve-summary) added median
-      * d3d4264 added values
-      * f701e59 added min values
-      * e15b308 first commit
-      ```
+    ??? task "Inspect the result: `git log --oneline --graph --all`. What do you see?"
 
-## Merge conflicts
+        ```sh
+        * d6c6e69 (HEAD -> main) sd added
+        | * 7e5c133 (add-range) range added
+        |/
+        * 232528e (improve-summary) added median
+        * d3d4264 added values
+        * f701e59 added min values
+        * e15b308 first commit
+        ```
 
-A conflict happens when two branches change the **same lines** of the same file and Git cannot decide which version to keep. This is normal and not dangerous — Git just pauses the merge and asks you to choose.
+??? task "Exercise 3.4 —Merge conflicts"
 
-1. Merge add-range into main
+    A conflict happens when two branches change the **same lines** of the same file and Git cannot decide which version to keep. This is normal and not dangerous — Git just pauses the merge and asks you to choose.
 
-??? help "Help"
-      Merge: `git merge add-range`
+    1. Merge add-range into main
 
-What happens?
+    ??? help "Help"
+        Merge: `git merge add-range`
 
-If you got a conflict lets wait with the merge: `git merge --abort`
+    What happens?
 
-Let's add a deliberate conflict 
+    If you got a conflict lets wait with the merge: `git merge --abort`
 
-1. From `main`, create `git switch -c change-label`.
-2. On `change-label`, edit the printed label text (for example change `"Mean:"` to `"Average:"`). Commit it.
-3. Switch to `main`, then create `git switch -c change-value` from `main`.
-4. On `change-value`, edit the **same line** to a different label (e.g. `"Mean value:"`). Commit it.
-5. Check your commit log `git log --oneline --graph --all`
-6. Merge `change-label` branch into `main` then `change-value` into main
+    Let's add a deliberate conflict
 
-What happens?
+    1. From `main`, create `git switch -c change-label`.
+    2. On `change-label`, edit the printed label text (for example change `"Mean:"` to `"Average:"`). Commit it.
+    3. Switch to `main`, then create `git switch -c change-value` from `main`.
+    4. On `change-value`, edit the **same line** to a different label (e.g. `"Mean value:"`). Commit it.
+    5. Check your commit log `git log --oneline --graph --all`
+    6. Merge `change-label` branch into `main` then `change-value` into main
 
-??? help "Help"
-      ```sh
-      git switch main
-      git merge change-label
-      git merge change-value
-      ```
+    What happens?
 
-      The second merge stops with `CONFLICT (content): Merge conflict in analysis.R`.
+    ??? help "Help"
+        ```sh
+        git switch main
+        git merge change-label
+        git merge change-value
+        ```
 
-### Resolve the conflict
+        The second merge stops with `CONFLICT (content): Merge conflict in analysis.R`.
 
-Open the conflicted file. Git marks the conflicting region like this:
+    ### Resolve the conflict
 
-```text
-<<<<<<< HEAD
-cat(sprintf("Mean value: %.2f\n", mean_value))
-=======
-cat(sprintf("Average: %.2f\n", mean_value))
->>>>>>> change-value
-```
+    Open the conflicted file. Git marks the conflicting region like this:
 
-- The part between `<<<<<<< HEAD` and `=======` is your current branch's version.
-- The part between `=======` and `>>>>>>> change-value` is the incoming branch's version.
+    ```text
+    <<<<<<< HEAD
+    cat(sprintf("Mean value: %.2f\n", mean_value))
+    =======
+    cat(sprintf("Average: %.2f\n", mean_value))
+    >>>>>>> change-value
+    ```
 
-Edit the file so it contains **only the version you want** (delete the marker lines), or try the `Resolve in Merge Editor` if that is available. This tool can be helpful especially when there are larger conflicts.
+    - The part between `<<<<<<< HEAD` and `=======` is your current branch's version.
+    - The part between `=======` and `>>>>>>> change-value` is the incoming branch's version.
 
-then stage and commit:
+    Edit the file so it contains **only the version you want** (delete the marker lines), or try the `Resolve in Merge Editor` if that is available. This tool can be helpful especially when there are larger conflicts.
 
-```sh
-git add analysis.R          # or analysis.py
-git commit -m "Resolve label conflict, keep 'Mean value'"
-```
+    then stage and commit:
 
-Check log again: `git log  --oneline --all --graph`. Are the any unmerged branches (eg. `add-range`)?
+    ```sh
+    git add analysis.R          # or analysis.py
+    git commit -m "Resolve label conflict, keep 'Mean value'"
+    ```
 
-If so,
-1. Try again to merge `add-range` into main and resolve any conflicts
-2. Check the log again
+    Check log again: `git log  --oneline --all --graph`. Are the any unmerged branches (eg. `add-range`)?
 
-## Clean up finished branches
+    If so,
+    1. Try again to merge `add-range` into main and resolve any conflicts
+    2. Check the log again
 
-After a branch is merged and you no longer need it, delete it to keep the list tidy:
+??? task "Exercise 3.5 — Clean up finished branches"
 
-```sh
-git branch -d improve-summary
-git branch -d add-range
-git branch -d change-label
-git branch -d change-value
-```
+    After a branch is merged and you no longer need it, delete it to keep the list tidy:
 
-Check your local branches
+    ```sh
+    git branch -d improve-summary
+    git branch -d add-range
+    git branch -d change-label
+    git branch -d change-value
+    ```
+
+    Check your local branches
 
 
-Git refuses `git branch -d` on a branch whose work is not yet merged, which protects you from losing work. Use `-D` only when you are certain you want to discard an unmerged branch.
+    Git refuses `git branch -d` on a branch whose work is not yet merged, which protects you from losing work. Use `-D` only when you are certain you want to discard an unmerged branch.
 
 ## Remote branches
 
