@@ -3,8 +3,39 @@ title: Use AI in Your Work
 author: "Niklas Edvall & Andreas Gerhardsson"
 ---
 
-- Format: Lecture
-- Teacher: -
+[:material-file-pdf-box: Download slides (.pdf)](downloads/6-ai-assistance.pdf){ .md-button download="6-ai-assistance.pdf" }
+
+## Slides
+
+<div class="slide-gallery" markdown="1">
+![Slide 1](../slides/6-ai-assistance/slide_001.png)
+![Slide 2](../slides/6-ai-assistance/slide_002.png)
+![Slide 3](../slides/6-ai-assistance/slide_003.png)
+![Slide 4](../slides/6-ai-assistance/slide_004.png)
+![Slide 5](../slides/6-ai-assistance/slide_005.png)
+![Slide 6](../slides/6-ai-assistance/slide_006.png)
+![Slide 7](../slides/6-ai-assistance/slide_007.png)
+![Slide 8](../slides/6-ai-assistance/slide_008.png)
+![Slide 9](../slides/6-ai-assistance/slide_009.png)
+![Slide 10](../slides/6-ai-assistance/slide_010.png)
+![Slide 11](../slides/6-ai-assistance/slide_011.png)
+![Slide 12](../slides/6-ai-assistance/slide_012.png)
+![Slide 13](../slides/6-ai-assistance/slide_013.png)
+![Slide 14](../slides/6-ai-assistance/slide_014.png)
+![Slide 15](../slides/6-ai-assistance/slide_015.png)
+![Slide 16](../slides/6-ai-assistance/slide_016.png)
+![Slide 17](../slides/6-ai-assistance/slide_018.png)
+![Slide 17](../slides/6-ai-assistance/slide_019.png)
+![Slide 17](../slides/6-ai-assistance/slide_020.png)
+![Slide 17](../slides/6-ai-assistance/slide_021.png)
+![Slide 17](../slides/6-ai-assistance/slide_022.png)
+![Slide 17](../slides/6-ai-assistance/slide_023.png)
+![Slide 17](../slides/6-ai-assistance/slide_024.png)
+![Slide 17](../slides/6-ai-assistance/slide_025.png)
+![Slide 17](../slides/6-ai-assistance/slide_026.png)
+![Slide 17](../slides/6-ai-assistance/slide_027.png)
+</div>
+
 
 ## Summary
 
