@@ -96,6 +96,8 @@ Posit Assistant is explicitly built for data science: it can inspect your R and 
 
 ### Kilo Code — an open, agentic coding assistant
 
+![kilo-code](../assets/kilo-code.png)
+
 **Kilo Code** is an open-source AI coding agent, distributed as an editor extension, that focuses only on the agentic end of the spectrum. Rather than only suggesting text, it can plan a task into steps, read and edit multiple files across your project, run terminal commands, and check its own work (for example, running your test suite after making a change) — asking for your approval at each consequential step. It is provider-agnostic, meaning you (or your institution) choose which underlying LLM powers it. Because it is open-source, its behaviour is inspectable rather than a black box, which matters if you want to understand exactly what it is capable of doing to your repository before you grant it permission.
 
 | Tool | Best for | Interaction style |
@@ -130,16 +132,14 @@ Some concrete habits that consistently improve results:
 
 AI coding tools raise the same questions as any other powerful, largely reliable but occasionally-wrong collaborator. The following rules apply throughout this course, and are good practice well beyond it:
 
-!!! warning "You are responsible for every line you commit"
-    Accepting an AI suggestion does not transfer responsibility for it. If code you accepted is wrong, insecure, or fabricates a result, **you** are accountable for it in your project and your examination — "the AI wrote it" is not a defence. Treat every suggestion as a draft from a fast but fallible collaborator, not as a finished answer.
+!!! note "Writing is thinking"
+    "... every time I delegated the writing (to the AI) I missed out on much of the thinking that I would have done while trying to think through or explain an idea.”  - Anonymous Researcher
 
-- **Never paste sensitive data into a cloud-hosted tool.** Participant data, unpublished results, credentials, and API keys should not go into a prompt sent to an external provider, for the same reason they should never be committed to Git (see the [remote and safety lecture](git-lectures-remote.md)) — once sent, you generally cannot guarantee it was not retained. Prefer synthetic or already-public example data when asking for help with a data-shaped problem.
-- **Verify before you trust.** Run the code. Run the tests. Check that a cited function, package, or argument actually exists. A model's fluent, confident tone is not evidence of correctness (see hallucination, above).
-- **Understand what you commit.** If you cannot explain what a suggested block of code does, do not commit it — ask the tool to explain it first, or rewrite it yourself until you can.
-- **Disclose AI use where it is expected.** Follow your course's, your institution's, and any journal's policy on declaring AI assistance. Academic integrity expectations apply to AI-assisted work exactly as they do to work copied from any other source.
-- **Keep the reasoning yours.** AI tools are well suited to writing mechanical code — parsing, plotting boilerplate, test scaffolding. The scientific interpretation of your results, and the judgement calls about your analysis, should remain your own reasoning, not a generated paragraph you did not critically evaluate.
-- **Respect licensing.** Code suggested by a model can resemble licensed code it was trained on. Do not blindly paste large, distinctive blocks of suggested code into a public repository without considering where it might have come from.
-- **Use it to learn, not to skip learning.** Asking "explain why this works" is a good use of these tools during a course; asking it to produce an assignment you do not understand defeats the purpose of doing the assignment at all.
+- **Stand behind every idea and line of code.** Accepting an AI suggestion does not transfer responsibility for it. If code you accepted is wrong, insecure, or fabricates a result, **you** are accountable for it in your project and your examination — "the AI wrote it" is not a defence. Treat every suggestion as a draft from a fast but fallible collaborator, not as a finished answer.
+- **Understand what you commit; document it and learn how it works** If you cannot explain what a suggested block of code does, do not commit it — ask the tool to explain it first, or rewrite it yourself until you can. Ask the assistant to explain it.
+- **Never give AI tools access to sensitive data or information.** Participant data, unpublished results, credentials, and API keys should not go into a prompt sent to an external provider, for the same reason they should never be committed to Git (see the [remote and safety lecture](git-lectures-remote.md)) — once sent, you generally cannot guarantee it was not retained. Prefer synthetic or already-public example data when asking for help with a data-shaped problem.
+- **Test and review the code.** Run the code. Run the tests. Check that a cited function, package, or argument actually exists. A model's fluent, confident tone is not evidence of correctness (see hallucination, above).
+- **Be transparent about AI's role** Follow your course's, your institution's, and any journal's policy on declaring AI assistance. Academic integrity expectations apply to AI-assisted work exactly as they do to work copied from any other source.
 
 ## Managing resources efficiently
 
@@ -161,7 +161,7 @@ It is not a coincidence that this course puts Git and AI assistance back to back
 - **"Read the diff before accepting" *is* a Git skill.** The review habit from the prompting section above — checking what an agent actually changed before you keep it — is the exact same skill as reviewing a colleague's pull request in the [collaboration lecture](git-lectures-collaboration.md). `git diff` (or your editor's diff view) is the tool that turns "the agent said it fixed it" into something you can actually verify, line by line.
 - **Small, frequent commits protect you from AI mistakes too.** The habit of committing in small, working steps (from the version-control lectures) means that if an agent's third edit in a row breaks something, you can isolate exactly which step did it and roll back only that one — instead of untangling one enormous, mixed diff.
 - **Agents increasingly use Git themselves.** Many agentic tools, Kilo Code included, can stage, commit, branch, or even open a pull request as one of their available actions, not just edit files. Supervising an agent that can run `git commit` on your behalf requires the same judgement as supervising any collaborator who can push to your repository — you approve what it stages, the same way you would review any other change before it becomes part of your history.
-- **History is context an LLM does not otherwise have.** A model's context window is limited and resets between sessions, but your commit history, messages, and diffs persist. Good commit messages and a clean history are not just good practice for your human collaborators — they are also the record an AI tool reads to understand *why* the code looks the way it does, which is only useful if that history is legible in the first place.
+- **History is context an LLM does not otherwise have.** A model's context window is limited and resets between sessions, but your commit history, messages, and diffs persist. Good commit messages and a clean history are not just good practice for your human collaborators — they are also the record an AI tool reads to understand *why* the code looks the way it does, which is only useful if that history is legible in the first place. In addition you can add a AGENTS.md-file understandable by most assistants that can inform future agents.
 
 ??? tip "Treat an agent's changes like an unreviewed pull request"
     Before you let an agentic tool commit on your behalf, consider asking it to stop at the staged-changes step so you can inspect `git diff --staged` yourself first — the same discipline as reviewing a PR before merging it, just compressed into a single working session.
@@ -170,14 +170,8 @@ It is not a coincidence that this course puts Git and AI assistance back to back
 
 Every prompt you send has to be computed somewhere, on hardware that draws real electricity. This is not a reason to avoid these tools — it is a reason to use them deliberately, the same way you would avoid running an unnecessary loop in your analysis code.
 
-A peer-reviewed 2025 study modelling AI adoption across the entire US economy quantified this:
 
-- Widespread AI adoption is projected to raise US energy use by roughly **28 petajoules (≈7.8 TWh) per year** and CO2 emissions by about **897 kilotonnes of CO2 per year** — a scale of emissions comparable to the total annual output of a small country such as Iceland.
-- In relative terms this is small: about **0.03% of US energy use** and **0.02% of US CO2 emissions** — but it is not zero, and it is distributed unevenly. Energy-intensive industries such as education saw disproportionately large impacts compared with, for example, publishing.
-- Directly, training a single large language model can use as much energy as several hundred households do in a year, but *running* the finished model for millions of everyday queries (**inference**) adds up to considerably more energy over time than training it once. As one data point, day-to-day inference for a widely used chat assistant was estimated at roughly 0.2 TWh per year.
-- Meeting this growing demand requires real infrastructure: the same study estimates around **0.9 GW of additional US electricity generation capacity** is needed annually just to keep pace with AI-driven demand growth.
-
-!!! info "Watts and bots: the energy implications of AI adoption"
+??? info "Watts and bots: the energy implications of AI adoption"
     Harding, A. R., & Moreno-Cruz, J. (2025). *Watts and bots: the energy implications of AI adoption.* **Environmental Research Letters**, 20, 114084. [doi.org/10.1088/1748-9326/ae0e3b](https://doi.org/10.1088/1748-9326/ae0e3b)
 
     The paper models how AI-driven productivity gains ripple through energy use and emissions across 55 US industries, and cross-checks that economy-wide estimate against direct, hardware-based estimates of AI energy consumption — finding the two approaches broadly agree. Read it with the same critical eye you would apply to any source you cite in your own project: the authors disclose funding from Google, and the headline numbers carry substantial uncertainty ranges, both clearly reported in the paper's own sensitivity analysis.
