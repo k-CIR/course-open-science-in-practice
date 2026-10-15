@@ -833,6 +833,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#slides" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Slides
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#two-ways-to-collaborate" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1889,6 +1900,24 @@
 </ul>
 <h2 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">&para;</a></h2>
 <p>So far every remote you have touched has been one you created yourself: you pushed, and only you pulled. Real collaboration means several people push to and pull from the <em>same</em> shared history, often without ever talking to each other about who does what first. This lecture closes that gap. It covers <strong>cloning</strong> (getting a full, working copy of someone else's repository), <strong>forking</strong> (getting your own remote copy of it on GitHub), and the <strong>pull request</strong> — the mechanism that lets your work travel back into a project you do not have direct write access to.</p>
+<p><a class="md-button" download="8-git-collaboration.pdf" href="../downloads/8-git-collaboration.pdf"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2m-9.5 8.5c0 .8-.7 1.5-1.5 1.5H7v2H5.5V9H8c.8 0 1.5.7 1.5 1.5zm5 2c0 .8-.7 1.5-1.5 1.5h-2.5V9H13c.8 0 1.5.7 1.5 1.5zm4-3H17v1h1.5V13H17v2h-1.5V9h3zm-6.5 0h1v3h-1zm-5 0h1v1H7z"/></svg></span> Download slides (.pdf)</a></p>
+<h2 id="slides">Slides<a class="headerlink" href="#slides" title="Permanent link">&para;</a></h2>
+<div class="slide-gallery">
+<p><img alt="Slide 1" src="../../slides/8-git-collaboration/slide_001.png" />
+<img alt="Slide 2" src="../../slides/8-git-collaboration/slide_002.png" />
+<img alt="Slide 3" src="../../slides/8-git-collaboration/slide_003.png" />
+<img alt="Slide 4" src="../../slides/8-git-collaboration/slide_004.png" />
+<img alt="Slide 5" src="../../slides/8-git-collaboration/slide_005.png" />
+<img alt="Slide 6" src="../../slides/8-git-collaboration/slide_006.png" />
+<img alt="Slide 7" src="../../slides/8-git-collaboration/slide_007.png" />
+<img alt="Slide 8" src="../../slides/8-git-collaboration/slide_008.png" />
+<img alt="Slide 9" src="../../slides/8-git-collaboration/slide_009.png" />
+<img alt="Slide 10" src="../../slides/8-git-collaboration/slide_010.png" />
+<img alt="Slide 11" src="../../slides/8-git-collaboration/slide_011.png" />
+<img alt="Slide 12" src="../../slides/8-git-collaboration/slide_012.png" />
+<img alt="Slide 13" src="../../slides/8-git-collaboration/slide_013.png" />
+<img alt="Slide 14" src="../../slides/8-git-collaboration/slide_014.png" /></p>
+</div>
 <h2 id="two-ways-to-collaborate">Two ways to collaborate<a class="headerlink" href="#two-ways-to-collaborate" title="Permanent link">&para;</a></h2>
 <p>There are two common shapes of collaboration, and the difference is about <em>who can push where</em>:</p>
 <ul>
@@ -1987,7 +2016,7 @@ error: failed to push some refs
 <p>Git refuses to push because doing so would silently discard commits it does not know about — the same protective instinct as a merge conflict. The fix is the same shape every time: fetch, integrate, then push.</p>
 <div class="highlight"><pre><span></span><code>git<span class="w"> </span>pull<span class="w"> </span>origin<span class="w"> </span>main<span class="w">   </span><span class="c1"># fetch + merge the commits you were missing</span>
 <span class="c1"># resolve any conflicts, exactly as in the branching session</span>
-git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </span>main<span class="w">   </span><span class="c1"># now it is a fast-forward from the remote's point of view</span>
+git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </span>main<span class="w">   </span><span class="c1"># now it is a fast-forward from the remote&#39;s point of view</span>
 </code></pre></div>
 <div class="admonition info">
 <p class="admonition-title">A rejected push is not a conflict — yet</p>
