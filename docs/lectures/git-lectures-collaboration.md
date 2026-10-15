@@ -10,6 +10,28 @@ author: "Niklas Edvall & Andreas Gerhardsson"
 
 So far every remote you have touched has been one you created yourself: you pushed, and only you pulled. Real collaboration means several people push to and pull from the *same* shared history, often without ever talking to each other about who does what first. This lecture closes that gap. It covers **cloning** (getting a full, working copy of someone else's repository), **forking** (getting your own remote copy of it on GitHub), and the **pull request** — the mechanism that lets your work travel back into a project you do not have direct write access to.
 
+[:material-file-pdf-box: Download slides (.pdf)](downloads/8-git-collaboration.pdf){ .md-button download="8-git-collaboration.pdf" }
+
+## Slides
+
+<div class="slide-gallery" markdown="1">
+![Slide 1](../slides/8-git-collaboration/slide_001.png)
+![Slide 2](../slides/8-git-collaboration/slide_002.png)
+![Slide 3](../slides/8-git-collaboration/slide_003.png)
+![Slide 4](../slides/8-git-collaboration/slide_004.png)
+![Slide 5](../slides/8-git-collaboration/slide_005.png)
+![Slide 6](../slides/8-git-collaboration/slide_006.png)
+![Slide 7](../slides/8-git-collaboration/slide_007.png)
+![Slide 8](../slides/8-git-collaboration/slide_008.png)
+![Slide 9](../slides/8-git-collaboration/slide_009.png)
+![Slide 10](../slides/8-git-collaboration/slide_010.png)
+![Slide 11](../slides/8-git-collaboration/slide_011.png)
+![Slide 12](../slides/8-git-collaboration/slide_012.png)
+![Slide 13](../slides/8-git-collaboration/slide_013.png)
+![Slide 14](../slides/8-git-collaboration/slide_014.png)
+
+</div>
+
 ## Two ways to collaborate
 
 There are two common shapes of collaboration, and the difference is about *who can push where*:
