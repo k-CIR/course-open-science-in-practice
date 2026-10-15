@@ -41,6 +41,12 @@ git init
 !!! tip "Check your git location"
     Run `git status` right after `git init`. Git replies with `On branch main` (or `master`) and `No commits yet`. That confirms you are inside a fresh repository.
 
+??? tip "Local to remote or remote to local?" 
+    ### Local to remote or remote to local? { #git-init-clone }
+    
+    There are two ways to start your Git journey. `git init` starts you off locally and you do your git work without the need for a remote. Alternatively, you can create an empty repository on eg. GitHub and use `git clone <URL>` to create the your local (empty) project. If you already have a project folder, use `git clone <URL> .` to only clone the content, not create a folder. What is important is that a `.git` folder will be in your project either way.
+
+
 ## Configure Git once per machine
 
 Before your first commit, tell Git who you are. This information is written into every commit so the history can show who did what.

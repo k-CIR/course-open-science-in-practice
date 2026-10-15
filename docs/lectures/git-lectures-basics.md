@@ -59,7 +59,7 @@ Git also makes it practically impossible to lose or corrupt work silently. Every
 
 ![.git tree](../assets/git_folder.png){ width="50%" align="right" }
 
-When you run `git init` in a folder, or clone an existing repository, Git creates a hidden directory called `.git` inside your project folder. This is the database — it contains the entire history of your project: every commit, every version of every file, every branch, and every tag, going all the way back to the very first change ever recorded.
+When you run `git init` in a folder, or clone an existing repository, Git creates a hidden directory called `.git` inside your project folder [two ways to start](../exercises/git-exercises-basics.md#git-init-clone). This is the database — it contains the entire history of your project: every commit, every version of every file, every branch, and every tag, going all the way back to the very first change ever recorded.
 
 The `.git` directory is self-contained and portable. If you copy the folder to another machine, you bring the full history with you. If you delete a file from your project by mistake, Git can restore it from the database. If you want to see what your analysis looked like six months ago, Git reads it directly from there.
 
