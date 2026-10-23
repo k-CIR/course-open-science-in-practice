@@ -1943,6 +1943,9 @@
 <p>Creating a branch is just pinning a new label to the commit you are on right now — <code>HEAD</code>. Because a branch is only a pointer, the act of creating one is instant and costs nothing; no files are copied.</p>
 <p>To create a new branch simply run <code>git branch experiment</code>. Note that you will stay on the working branch until you switch.</p>
 <p>Optionally you can run <code>git switch -c experiment</code>, to both create the branch <em>and</em> move onto it in one step:</p>
+<div class="admonition warning">
+<p class="admonition-title"><code>git branch -c</code> copies a branch!</p>
+</div>
 <p>The <code>-c</code> flag means "create the branch if it does not exist, then switch to it". After running it, <code>git status</code> reports <code>On branch experiment</code>, and any new commits you make now advance the <code>experiment</code> pointer while <code>main</code> stays exactly where it was. In practice, creating and switching together is what you will do most often.</p>
 <h2 id="switching-branches">Switching branches<a class="headerlink" href="#switching-branches" title="Permanent link">&para;</a></h2>
 <p>To list all your local branches run <code>git branch</code> or <code>git branch --list</code>. This only shows you local branches. Run <code>git branch --remotes/-r</code> for remotes only or <code>git branch --all/-a</code> for both local and remote.</p>
