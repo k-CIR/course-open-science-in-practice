@@ -71,6 +71,8 @@ To create a new branch simply run `git branch experiment`. Note that you will st
 
 Optionally you can run `git switch -c experiment`, to both create the branch *and* move onto it in one step:
 
+!!! warning "`git branch -c` copies a branch!" 
+
 The `-c` flag means "create the branch if it does not exist, then switch to it". After running it, `git status` reports `On branch experiment`, and any new commits you make now advance the `experiment` pointer while `main` stays exactly where it was. In practice, creating and switching together is what you will do most often.
 
 ## Switching branches
