@@ -1,6 +1,6 @@
 # Open Science in Practice: Collaborative Research with Git
 
-!!! quote "This course should be mandatory the first semester for any student enrolled in a phd programme that is focused on data analysis."
+!!! quote "*This course should be mandatory the first semester for any student enrolled in a phd programme that is focused on data analysis.*"
 
 This site is the course handbook for a PhD level course given at [Karolinska Institutet](https://ki.se/).
 
