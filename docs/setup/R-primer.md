@@ -1,5 +1,10 @@
-## Why R?
+If you need a refresher on R, we recommend the video series below that covers the basics of R programming and data analysis, using the tools we will use in this course.
 
+<div style="position: relative; width: 100%; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+<iframe src="https://www.youtube-nocookie.com/embed/CRUaBwJbypI" title="YouTube video player" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
+
+## Why R?
 R was designed from the ground up for statistical computing and data analysis. Unlike general-purpose programming languages that require significant setup before you can work with data, R treats data as a first-class citizen: reading a spreadsheet, fitting a regression model, and producing a publication-quality plot are each a matter of a few lines of code and a well-documented function call.
 
 For researchers, this matters in a practical sense. The skills you invest in learning R carry directly across disciplines — the same language used to clean a clinical dataset is used to analyse genomic sequences, model ecological populations, or visualise survey responses. R has a large and active community of researchers who publish their methods as packages, which means that specialised statistical procedures relevant to your field are often already implemented, documented, and peer-reviewed.

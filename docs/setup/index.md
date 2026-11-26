@@ -2,14 +2,16 @@
 
 If you do not have git or positron installed, or registered a github account - follow the guides below **before the course start** to get this setup.
 
-- [ ] [Setup Git](git-setup.md)
-- [ ] [Setup GitHub](github-setup.md)
-- [ ] [Install R](install-r.md)
-- [ ] [Setup Positron](positron-setup.md)
+- [Setup Git](git-setup.md)
+- [Setup GitHub](github-setup.md)
+- [Install R](install-r.md)
+- [Setup Positron](positron-setup.md)
 
-We like python and pandas, but most analysis, reports and figures in the course material are created using R. See below for a refresher on the basics of R is you need it.
+For a refresher on the basics of R:
 
-- [ ] [R-efresher](R-primer.md)
+- [R-efresher](R-primer.md)
+
+We like python and pandas, but most analysis, reports and figures in the course material are created using R. You are free use any programming language you like, the course is about **git** for open science and reproducible research, not a specific programming language. However, we can only offer specific support for R and Python (+pandas) for data analysis in the course.
 
 ## Verify Your Setup
 
